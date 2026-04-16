@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -34,19 +34,18 @@ tr:hover td{background:#1c2128}
 .crypto-card{background:#161b22;border:1px solid #21262d;border-radius:10px;padding:12px}
 .crypto-card h3{font-size:0.68rem;color:#8b949e;margin-bottom:5px}
 .crypto-card .precio{font-size:1.1rem;font-weight:700;margin-bottom:3px}
+.señal-card{background:#161b22;border:1px solid #21262d;border-radius:10px;padding:14px;margin-bottom:10px}
+.señal-niveles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:0.72rem;margin-top:10px}
+.nivel{background:#21262d;border-radius:6px;padding:6px;text-align:center}
+.top-picks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.top-card{border-radius:10px;padding:14px;text-align:center}
 footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:1px solid #21262d}
 </style>
 </head>
 <body>
 <header>
-<div>
-<h1>Agente Financiero AR</h1>
-<div style="font-size:0.72rem;color:#58a6ff;margin-top:2px">Brian - Panel de Control</div>
-</div>
-<div style="font-size:0.78rem;color:#8b949e;text-align:right">
-<div id="fecha">-</div>
-<div id="estado" style="font-size:0.68rem;color:#3fb950">-</div>
-</div>
+<div><h1>Agente Financiero AR</h1><div style="font-size:0.72rem;color:#58a6ff;margin-top:2px">Brian - Panel de Control</div></div>
+<div style="font-size:0.78rem;color:#8b949e;text-align:right"><div id="fecha">-</div><div id="estado" style="font-size:0.68rem;color:#3fb950">-</div></div>
 </header>
 <div class="grid">
 <div class="card"><h3>Oficial</h3><div class="valor" id="of">-</div></div>
@@ -59,111 +58,74 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 <div class="tab active" onclick="showTab('cedears',this)">CEDEARs</div>
 <div class="tab" onclick="showTab('acciones',this)">Acciones AR</div>
 <div class="tab" onclick="showTab('crypto',this)">Crypto</div>
+<div class="tab" onclick="showTab('ia',this)">Señales IA</div>
 <div class="tab" onclick="showTab('alertas',this)">Alertas <span id="badge" style="background:#f85149;color:white;border-radius:10px;padding:1px 5px;font-size:0.65rem;display:none">0</span></div>
 </div>
 <div class="seccion visible" id="tab-cedears">
 <h2>CEDEARs</h2>
 <div class="overflow"><table>
-<thead><tr><th>Ticker</th><th>USD</th><th>Var%</th><th>ARS</th><th>Al Obj.</th><th>Dividendo</th><th>Senal</th></tr></thead>
-<tbody id="tc"></tbody>
-</table></div>
-</div>
+<thead><tr><th>Ticker</th><th>USD</th><th>Var%</th><th>ARS</th><th>Al Obj.</th><th>Div.</th><th>Senal</th></tr></thead>
+<tbody id="tc"><tr><td colspan="7" style="text-align:center;padding:20px;color:#8b949e">Cargando...</td></tr></tbody>
+</table></div></div>
 <div class="seccion" id="tab-acciones">
 <h2>Acciones BYMA</h2>
 <div class="overflow"><table>
 <thead><tr><th>Ticker</th><th>ARS</th><th>Var%</th><th>USD</th><th>Sector</th><th>Senal</th></tr></thead>
-<tbody id="ta"></tbody>
-</table></div>
-</div>
+<tbody id="ta"><tr><td colspan="6" style="text-align:center;padding:20px;color:#8b949e">Cargando...</td></tr></tbody>
+</table></div></div>
 <div class="seccion" id="tab-crypto">
 <h2>Crypto</h2>
-<div class="crypto-grid" id="tcy"></div>
+<div class="crypto-grid" id="tcy"><div style="text-align:center;padding:20px;color:#8b949e">Cargando...</div></div>
+</div>
+<div class="seccion" id="tab-ia">
+<h2>Señales IA — Claude</h2>
+<div id="resumen-macro" style="background:#161b22;border:1px solid #21262d;border-radius:10px;padding:14px;margin-bottom:14px;font-size:0.85rem;border-left:4px solid #58a6ff;color:#e6edf3">Cargando analisis macro...</div>
+<div class="top-picks">
+<div class="top-card" style="background:#1a4731"><div style="font-size:0.7rem;color:#3fb950;text-transform:uppercase;margin-bottom:4px">Top Compra</div><div id="top-compra" style="font-size:1.4rem;font-weight:700;color:#3fb950">-</div></div>
+<div class="top-card" style="background:#3d1a1a"><div style="font-size:0.7rem;color:#f85149;text-transform:uppercase;margin-bottom:4px">Top Riesgo</div><div id="top-venta" style="font-size:1.4rem;font-weight:700;color:#f85149">-</div></div>
+</div>
+<div id="señales-ia"><div style="text-align:center;padding:20px;color:#8b949e">Cargando señales...</div></div>
 </div>
 <div class="seccion" id="tab-alertas">
 <h2>Alertas activas</h2>
-<div id="tal"></div>
+<div id="tal"><div class="alerta info"><div class="at">Cargando...</div></div></div>
 </div>
-<footer>Datos generados desde tu PC | Actualiza cada 30 min | <span id="pie">-</span></footer>
+<footer>Yahoo Finance + DolarAPI + CoinGecko + Claude AI | Datos generados desde PC cada 30 min | <span id="pie">-</span></footer>
 <script>
-function showTab(n,el){
-document.querySelectorAll('.seccion').forEach(s=>s.classList.remove('visible'));
-document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-document.getElementById('tab-'+n).classList.add('visible');
-el.classList.add('active');
-}
+function showTab(n,el){document.querySelectorAll('.seccion').forEach(s=>s.classList.remove('visible'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById('tab-'+n).classList.add('visible');el.classList.add('active');}
 function tick(){document.getElementById('fecha').textContent=new Date().toLocaleString('es-AR');}
 async function cargar(){
 try{
 const r=await fetch('datos.json?t='+Date.now());
 const d=await r.json();
-document.getElementById('of').textContent='$'+d.of.toLocaleString('es-AR');
-document.getElementById('bl').textContent='$'+d.bl.toLocaleString('es-AR');
-document.getElementById('me').textContent='$'+d.me.toLocaleString('es-AR');
-document.getElementById('ccl').textContent='$'+d.ccl.toLocaleString('es-AR');
+document.getElementById('of').textContent='$'+Number(d.of).toLocaleString('es-AR');
+document.getElementById('bl').textContent='$'+Number(d.bl).toLocaleString('es-AR');
+document.getElementById('me').textContent='$'+Number(d.me).toLocaleString('es-AR');
+document.getElementById('ccl').textContent='$'+Number(d.ccl).toLocaleString('es-AR');
 document.getElementById('br').textContent=d.brecha+'%';
 const sb=document.getElementById('sb');
-if(d.brecha<5){sb.textContent='Estabilidad';sb.className='sube';}
-else if(d.brecha<20){sb.textContent='Moderada';sb.className='neutro';}
-else{sb.textContent='Alta tension';sb.className='baja';}
+if(d.brecha<5){sb.textContent='Estabilidad';sb.className='sube';}else if(d.brecha<20){sb.textContent='Moderada';sb.className='neutro';}else{sb.textContent='Alta tension';sb.className='baja';}
 document.getElementById('estado').textContent='Actualizado: '+d.fecha;
 document.getElementById('pie').textContent='Datos de: '+d.fecha;
-
-// CEDEARs
-const arr=Array.isArray(d.cedears)?d.cedears:[d.cedears];
 let alertas=[];
+const arr=Array.isArray(d.cedears)?d.cedears:[d.cedears];
 let tc='';
-arr.forEach(c=>{
-if(!c||!c.p)return;
-let sc='be',st='Esperar';
-if(c.p>=c.obj){sc='bo';st='Ganancia';alertas.push({tipo:'venta',t:'OBJETIVO: '+c.n,d:'USD '+c.p.toFixed(2)+' supero obj USD '+c.obj});}
-else if(c.v<=-5){sc='bc';st='Compra!';alertas.push({tipo:'compra',t:'COMPRA FUERTE: '+c.n,d:'Bajo '+c.v+'% - USD '+c.p.toFixed(2)});}
-else if(c.v<=-2&&c.dO>10){sc='bc';st='Compra';}
-else if(c.p<=c.stop*1.03){sc='bs';st='Stop!';}
-const vc=c.v>0?'sube':c.v<0?'baja':'neutro';
-tc+='<tr><td><strong>'+c.t+'</strong></td><td>'+c.p.toFixed(2)+'</td><td class="'+vc+'">'+(c.v>0?'+':'')+c.v+'%</td><td>$'+c.ars.toLocaleString('es-AR')+'</td><td class="'+(c.dO<5&&c.dO>0?'sube':'neutro')+'">'+(c.dO>0?c.dO+'%':'OK')+'</td><td style="font-size:0.7rem;color:#8b949e">'+c.div+'</td><td><span class="badge '+sc+'">'+st+'</span></td></tr>';
-});
-document.getElementById('tc').innerHTML=tc;
-
-// Acciones
+arr.forEach(c=>{if(!c||c.p===undefined)return;let sc='be',st='Esperar';if(c.p>=c.obj){sc='bo';st='Ganancia';alertas.push({tipo:'venta',t:'OBJETIVO: '+c.n,d:'USD '+Number(c.p).toFixed(2)+' supero obj USD '+c.obj});}else if(c.v<=-5){sc='bc';st='Compra!';alertas.push({tipo:'compra',t:'COMPRA CEDEAR: '+c.n,d:'Bajo '+c.v+'%'});}else if(c.v<=-2&&c.dO>10){sc='bc';st='Compra';}else if(c.p<=c.stop*1.03){sc='bs';st='Stop!';}const vc=c.v>0?'sube':c.v<0?'baja':'neutro';tc+='<tr><td><strong>'+c.t+'</strong></td><td>'+Number(c.p).toFixed(2)+'</td><td class="'+vc+'">'+(c.v>0?'+':'')+c.v+'%</td><td>$'+Number(c.ars).toLocaleString('es-AR')+'</td><td class="'+(c.dO<5&&c.dO>0?'sube':'neutro')+'">'+(c.dO>0?c.dO+'%':'OK')+'</td><td style="font-size:0.7rem;color:#8b949e">'+c.div+'</td><td><span class="badge '+sc+'">'+st+'</span></td></tr>';});
+document.getElementById('tc').innerHTML=tc||'<tr><td colspan="7" style="text-align:center;padding:20px;color:#8b949e">Sin datos</td></tr>';
 const aacc=Array.isArray(d.acciones)?d.acciones:[d.acciones];
 let ta='';
-aacc.forEach(a=>{
-if(!a||!a.p)return;
-let sc='be',st='Neutral';
-if(a.v<=-5){sc='bc';st='Compra!';alertas.push({tipo:'compra',t:'COMPRA AR: '+a.n,d:'Bajo '+a.v+'% - ARS '+a.p.toLocaleString('es-AR')});}
-else if(a.v<=-2){sc='bc';st='Compra';}
-else if(a.v>=5){sc='bo';st='Ganancia';}
-const vc=a.v>0?'sube':a.v<0?'baja':'neutro';
-ta+='<tr><td><strong>'+a.t+'</strong></td><td>$'+a.p.toLocaleString('es-AR')+'</td><td class="'+vc+'">'+(a.v>0?'+':'')+a.v+'%</td><td>'+a.usd+'</td><td style="font-size:0.72rem;color:#8b949e">'+a.s+'</td><td><span class="badge '+sc+'">'+st+'</span></td></tr>';
-});
-document.getElementById('ta').innerHTML=ta;
-
-// Crypto
+aacc.forEach(a=>{if(!a||a.p===undefined)return;let sc='be',st='Neutral';if(a.v<=-5){sc='bc';st='Compra!';alertas.push({tipo:'compra',t:'COMPRA AR: '+a.n,d:'Bajo '+a.v+'%'});}else if(a.v<=-2){sc='bc';st='Compra';}else if(a.v>=5){sc='bo';st='Ganancia';}const vc=a.v>0?'sube':a.v<0?'baja':'neutro';ta+='<tr><td><strong>'+a.t+'</strong></td><td>$'+Number(a.p).toLocaleString('es-AR')+'</td><td class="'+vc+'">'+(a.v>0?'+':'')+a.v+'%</td><td>'+a.usd+'</td><td style="font-size:0.72rem;color:#8b949e">'+a.s+'</td><td><span class="badge '+sc+'">'+st+'</span></td></tr>';});
+document.getElementById('ta').innerHTML=ta||'<tr><td colspan="6" style="text-align:center;padding:20px;color:#8b949e">Sin datos</td></tr>';
 const acry=Array.isArray(d.crypto)?d.crypto:[d.crypto];
 let tcy='';
-acry.forEach(c=>{
-if(!c||!c.p)return;
-const vc=c.v>0?'sube':c.v<0?'baja':'neutro';
-if(c.v<=-10)alertas.push({tipo:'compra',t:'CAIDA CRYPTO: '+c.n,d:'Bajo '+c.v+'% 24h - USD '+c.p.toLocaleString()});
-tcy+='<div class="crypto-card"><h3>'+c.n+' ('+c.s+')</h3><div class="precio">$'+c.p.toLocaleString('en-US',{maximumFractionDigits:2})+'</div><div class="'+vc+'" style="font-size:0.8rem">'+(c.v>0?'+':'')+c.v+'% 24h</div><div style="font-size:0.7rem;color:#8b949e;margin-top:3px">ARS $'+c.ars.toLocaleString('es-AR')+'</div></div>';
-});
-document.getElementById('tcy').innerHTML=tcy;
-
-// Alertas
+acry.forEach(c=>{if(!c||c.p===undefined)return;const vc=c.v>0?'sube':c.v<0?'baja':'neutro';if(c.v<=-10)alertas.push({tipo:'compra',t:'CAIDA CRYPTO: '+c.n,d:'Bajo '+c.v+'% 24h'});tcy+='<div class="crypto-card"><h3>'+c.n+' ('+c.s+')</h3><div class="precio">$'+Number(c.p).toLocaleString('en-US',{maximumFractionDigits:2})+'</div><div class="'+vc+'" style="font-size:0.8rem">'+(c.v>0?'+':'')+c.v+'% 24h</div><div style="font-size:0.7rem;color:#8b949e;margin-top:3px">ARS $'+Number(c.ars).toLocaleString('es-AR')+'</div></div>';});
+document.getElementById('tcy').innerHTML=tcy||'<div style="text-align:center;padding:20px;color:#8b949e">Sin datos</div>';
+if(d.ia){const ia=d.ia;document.getElementById('resumen-macro').textContent=ia.resumen_macro||'Sin analisis';document.getElementById('top-compra').textContent=ia.top_compra||'-';document.getElementById('top-venta').textContent=ia.top_venta||'-';let shtml='';const señales=Array.isArray(ia.señales)?ia.señales:(ia.señales?[ia.señales]:[]);if(señales.length>0){señales.forEach(s=>{const color=s.accion==='COMPRAR'?'#3fb950':s.accion==='VENDER'?'#f85149':'#d29922';const bg=s.accion==='COMPRAR'?'#1a4731':s.accion==='VENDER'?'#3d1a1a':'#2d2a1f';alertas.push({tipo:s.accion==='COMPRAR'?'compra':'venta',t:'IA '+s.accion+': '+s.ticker,d:s.razon+' ('+s.probabilidad+'%)'});shtml+='<div class="señal-card" style="border-left:4px solid '+color+'"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><div><strong>'+s.ticker+'</strong> <span style="color:#8b949e;font-size:0.75rem">'+s.tipo+'</span></div><div style="display:flex;gap:6px"><span style="background:'+bg+';color:'+color+';padding:3px 10px;border-radius:20px;font-size:0.72rem;font-weight:700">'+s.accion+'</span><span style="background:#21262d;color:#8b949e;padding:3px 8px;border-radius:20px;font-size:0.68rem">'+s.probabilidad+'%</span></div></div><div style="font-size:0.82rem;margin-bottom:8px">'+s.razon+'</div><div class="señal-niveles"><div class="nivel"><div style="color:#8b949e">Entrada</div><div style="font-weight:600">'+s.precio_entrada+'</div></div><div class="nivel"><div style="color:#3fb950">Objetivo</div><div style="font-weight:600;color:#3fb950">'+s.precio_objetivo+'</div></div><div class="nivel"><div style="color:#f85149">Stop</div><div style="font-weight:600;color:#f85149">'+s.stop_loss+'</div></div></div></div>';});}else{shtml='<div style="text-align:center;padding:20px;color:#8b949e">Sin señales claras. Ejecuta el script para actualizar.</div>';}document.getElementById('señales-ia').innerHTML=shtml;}else{document.getElementById('resumen-macro').textContent='Sin analisis IA. Ejecuta el script de actualizacion.';document.getElementById('señales-ia').innerHTML='<div style="text-align:center;padding:20px;color:#8b949e">Ejecuta: actualizar-netlify.ps1</div>';}
 const badge=document.getElementById('badge');
-if(alertas.length===0){
-document.getElementById('tal').innerHTML='<div class="alerta info"><div class="at">Sin alertas activas</div><div class="ad">Todos los activos en rangos normales</div></div>';
-badge.style.display='none';
-}else{
-document.getElementById('tal').innerHTML=alertas.map(a=>'<div class="alerta '+a.tipo+'"><div class="at">'+a.t+'</div><div class="ad">'+a.d+'</div></div>').join('');
-badge.textContent=alertas.length;
-badge.style.display='inline';
+if(alertas.length===0){document.getElementById('tal').innerHTML='<div class="alerta info"><div class="at">Sin alertas activas</div><div class="ad">Todos los activos en rangos normales</div></div>';badge.style.display='none';}else{document.getElementById('tal').innerHTML=alertas.map(a=>'<div class="alerta '+a.tipo+'"><div class="at">'+a.t+'</div><div class="ad">'+a.d+'</div></div>').join('');badge.textContent=alertas.length;badge.style.display='inline';}
+}catch(e){document.getElementById('estado').textContent='Error: '+e.message;}
 }
-}catch(e){document.getElementById('estado').textContent='Error cargando datos';}
-}
-tick();cargar();
-setInterval(cargar,300000);
-setInterval(tick,1000);
+tick();cargar();setInterval(cargar,300000);setInterval(tick,1000);
 </script>
 </body>
 </html>
