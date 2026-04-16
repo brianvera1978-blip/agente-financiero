@@ -1,0 +1,244 @@
+{
+    "brecha":  1.8,
+    "me":  1399.1,
+    "bl":  1410,
+    "cedears":  [
+                    {
+                        "stop":  170,
+                        "obj":  210,
+                        "div":  "Feb/May/Ago/Nov",
+                        "n":  "Apple",
+                        "p":  262.345,
+                        "t":  "AAPL",
+                        "v":  1.36,
+                        "ars":  38022,
+                        "dO":  -20.0
+                    },
+                    {
+                        "stop":  380,
+                        "obj":  460,
+                        "div":  "Mar/Jun/Sep/Dic",
+                        "n":  "Microsoft",
+                        "p":  413.295,
+                        "t":  "MSFT",
+                        "v":  5.13,
+                        "ars":  59899,
+                        "dO":  11.3
+                    },
+                    {
+                        "stop":  155,
+                        "obj":  200,
+                        "div":  "No paga",
+                        "n":  "Google",
+                        "p":  336.2,
+                        "t":  "GOOGL",
+                        "v":  0.99,
+                        "ars":  6091,
+                        "dO":  -40.5
+                    },
+                    {
+                        "stop":  185,
+                        "obj":  240,
+                        "div":  "No paga",
+                        "n":  "Amazon",
+                        "p":  244.67,
+                        "t":  "AMZN",
+                        "v":  -1.75,
+                        "ars":  13133,
+                        "dO":  -1.9
+                    },
+                    {
+                        "stop":  220,
+                        "obj":  300,
+                        "div":  "No paga",
+                        "n":  "Tesla",
+                        "p":  383.169,
+                        "t":  "TSLA",
+                        "v":  5.21,
+                        "ars":  55533,
+                        "dO":  -21.7
+                    },
+                    {
+                        "stop":  1600,
+                        "obj":  2200,
+                        "div":  "No paga",
+                        "n":  "MercadoLibre",
+                        "p":  1849.0,
+                        "t":  "MELI",
+                        "v":  0.45,
+                        "ars":  334969,
+                        "dO":  19.0
+                    },
+                    {
+                        "stop":  100,
+                        "obj":  160,
+                        "div":  "Mar/Jun/Sep/Dic",
+                        "n":  "NVIDIA",
+                        "p":  196.76,
+                        "t":  "NVDA",
+                        "v":  0.13,
+                        "ars":  28516,
+                        "dO":  -18.7
+                    },
+                    {
+                        "stop":  58,
+                        "obj":  75,
+                        "div":  "Abr/Jul/Oct/Ene",
+                        "n":  "Coca-Cola",
+                        "p":  75.805,
+                        "t":  "KO",
+                        "v":  -0.13,
+                        "ars":  21973,
+                        "dO":  -1.1
+                    },
+                    {
+                        "stop":  100,
+                        "obj":  130,
+                        "div":  "Mar/Jun/Sep/Dic",
+                        "n":  "ExxonMobil",
+                        "p":  151.63,
+                        "t":  "XOM",
+                        "v":  1.60,
+                        "ars":  43951,
+                        "dO":  -14.3
+                    },
+                    {
+                        "stop":  210,
+                        "obj":  270,
+                        "div":  "Abr/Jul/Oct/Ene",
+                        "n":  "JP Morgan",
+                        "p":  308.925,
+                        "t":  "JPM",
+                        "v":  -0.71,
+                        "ars":  89545,
+                        "dO":  -12.6
+                    }
+                ],
+    "fecha":  "16/04/2026 11:00",
+    "ccl":  1449.3,
+    "crypto":  [
+                   {
+                       "id":  "bitcoin",
+                       "v":  -0.39,
+                       "s":  "BTC",
+                       "n":  "Bitcoin",
+                       "ars":  106839497,
+                       "p":  73718
+                   },
+                   {
+                       "id":  "ethereum",
+                       "v":  -0.84,
+                       "s":  "ETH",
+                       "n":  "Ethereum",
+                       "ars":  3342738,
+                       "p":  2306.45
+                   },
+                   {
+                       "id":  "tether",
+                       "v":  0.00,
+                       "s":  "USDT",
+                       "n":  "Tether",
+                       "ars":  1449,
+                       "p":  1.0
+                   },
+                   {
+                       "id":  "solana",
+                       "v":  1.38,
+                       "s":  "SOL",
+                       "n":  "Solana",
+                       "ars":  122828,
+                       "p":  84.75
+                   },
+                   {
+                       "id":  "binancecoin",
+                       "v":  -0.24,
+                       "s":  "BNB",
+                       "n":  "BNB",
+                       "ars":  894870,
+                       "p":  617.45
+                   },
+                   {
+                       "id":  "ripple",
+                       "v":  2.99,
+                       "s":  "XRP",
+                       "n":  "XRP",
+                       "ars":  2044,
+                       "p":  1.41
+                   }
+               ],
+    "of":  1385,
+    "acciones":  [
+                     {
+                         "usd":  4.95,
+                         "v":  0.07,
+                         "s":  "Banco",
+                         "t":  "GGAL",
+                         "n":  "Galicia",
+                         "p":  7175
+                     },
+                     {
+                         "usd":  3.29,
+                         "v":  -2.65,
+                         "s":  "Energia",
+                         "t":  "PAMP",
+                         "n":  "Pampa",
+                         "p":  4770
+                     },
+                     {
+                         "usd":  41.66,
+                         "v":  -2.50,
+                         "s":  "Petroleo",
+                         "t":  "YPFD",
+                         "n":  "YPF",
+                         "p":  60375
+                     },
+                     {
+                         "usd":  0.50,
+                         "v":  1.32,
+                         "s":  "Acero",
+                         "t":  "TXAR",
+                         "n":  "Ternium",
+                         "p":  731
+                     },
+                     {
+                         "usd":  0.67,
+                         "v":  -1.48,
+                         "s":  "Aluminio",
+                         "t":  "ALUA",
+                         "n":  "Aluar",
+                         "p":  966
+                     },
+                     {
+                         "usd":  2.35,
+                         "v":  -0.66,
+                         "s":  "Telecom",
+                         "t":  "TECO2",
+                         "n":  "Telecom",
+                         "p":  3412
+                     },
+                     {
+                         "usd":  1.55,
+                         "v":  -1.23,
+                         "s":  "Energia",
+                         "t":  "CEPU",
+                         "n":  "Cent.Puerto",
+                         "p":  2246
+                     },
+                     {
+                         "usd":  1.94,
+                         "v":  0.36,
+                         "s":  "Banco",
+                         "t":  "SUPV",
+                         "n":  "Supervielle",
+                         "p":  2812
+                     },
+                     {
+                         "usd":  2.33,
+                         "v":  -2.66,
+                         "s":  "Cemento",
+                         "t":  "LOMA",
+                         "n":  "Loma Negra",
+                         "p":  3380
+                     }
+                 ]
+}
