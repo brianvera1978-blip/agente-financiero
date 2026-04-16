@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agente Financiero - Brian</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#e6edf3}
+header{background:linear-gradient(135deg,#1a1f2e,#0d1117);padding:16px 20px;border-bottom:1px solid #21262d;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+header h1{font-size:1.2rem;color:#58a6ff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;padding:14px}
+.card{background:#161b22;border:1px solid #21262d;border-radius:10px;padding:14px}
+.card h3{font-size:0.68rem;color:#8b949e;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.card .valor{font-size:1.4rem;font-weight:700}
+.tabs{display:flex;gap:8px;padding:0 14px 14px;flex-wrap:wrap}
+.tab{padding:7px 16px;border-radius:20px;border:1px solid #21262d;background:#161b22;color:#8b949e;cursor:pointer;font-size:0.8rem}
+.tab.active{background:#58a6ff;color:#0d1117;border-color:#58a6ff;font-weight:600}
+.seccion{padding:0 14px 20px;display:none}
+.seccion.visible{display:block}
+.seccion h2{font-size:0.78rem;color:#8b949e;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid #21262d;padding-bottom:8px}
+.overflow{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:#161b22;border-radius:10px;border:1px solid #21262d;min-width:480px}
+th{background:#1c2128;color:#8b949e;font-size:0.65rem;text-transform:uppercase;padding:9px 10px;text-align:left}
+td{padding:9px 10px;border-top:1px solid #21262d;font-size:0.8rem}
+tr:hover td{background:#1c2128}
+.sube{color:#3fb950}.baja{color:#f85149}.neutro{color:#8b949e}
+.badge{display:inline-block;padding:2px 7px;border-radius:20px;font-size:0.65rem;font-weight:600}
+.bc{background:#1a4731;color:#3fb950}.be{background:#2d2a1f;color:#d29922}.bo{background:#1b3a5c;color:#58a6ff}.bs{background:#3d1a1a;color:#f85149}
+.alerta{background:#161b22;border:1px solid #21262d;border-radius:10px;padding:12px;margin-bottom:10px}
+.alerta.compra{border-left:4px solid #3fb950}.alerta.venta{border-left:4px solid #f85149}.alerta.info{border-left:4px solid #58a6ff}
+.at{font-weight:600;font-size:0.82rem;margin-bottom:3px}.ad{font-size:0.75rem;color:#8b949e}
+.crypto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.crypto-card{background:#161b22;border:1px solid #21262d;border-radius:10px;padding:12px}
+.crypto-card h3{font-size:0.68rem;color:#8b949e;margin-bottom:5px}
+.crypto-card .precio{font-size:1.1rem;font-weight:700;margin-bottom:3px}
+footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:1px solid #21262d}
+</style>
+</head>
+<body>
+<header>
+<div>
+<h1>Agente Financiero AR</h1>
+<div style="font-size:0.72rem;color:#58a6ff;margin-top:2px">Brian - Panel de Control</div>
+</div>
+<div style="font-size:0.78rem;color:#8b949e;text-align:right">
+<div id="fecha">-</div>
+<div id="estado" style="font-size:0.68rem;color:#3fb950">-</div>
+</div>
+</header>
+<div class="grid">
+<div class="card"><h3>Oficial</h3><div class="valor" id="of">-</div></div>
+<div class="card"><h3>Blue</h3><div class="valor" id="bl">-</div></div>
+<div class="card"><h3>MEP</h3><div class="valor" id="me">-</div></div>
+<div class="card"><h3>CCL</h3><div class="valor" id="ccl">-</div></div>
+<div class="card"><h3>Brecha</h3><div class="valor" id="br">-</div><div id="sb" style="font-size:0.7rem;margin-top:3px"></div></div>
+</div>
+<div class="tabs">
+<div class="tab active" onclick="showTab('cedears',this)">CEDEARs</div>
+<div class="tab" onclick="showTab('acciones',this)">Acciones AR</div>
+<div class="tab" onclick="showTab('crypto',this)">Crypto</div>
+<div class="tab" onclick="showTab('alertas',this)">Alertas <span id="badge" style="background:#f85149;color:white;border-radius:10px;padding:1px 5px;font-size:0.65rem;display:none">0</span></div>
+</div>
+<div class="seccion visible" id="tab-cedears">
+<h2>CEDEARs</h2>
+<div class="overflow"><table>
+<thead><tr><th>Ticker</th><th>USD</th><th>Var%</th><th>ARS</th><th>Al Obj.</th><th>Dividendo</th><th>Senal</th></tr></thead>
+<tbody id="tc"></tbody>
+</table></div>
+</div>
+<div class="seccion" id="tab-acciones">
+<h2>Acciones BYMA</h2>
+<div class="overflow"><table>
+<thead><tr><th>Ticker</th><th>ARS</th><th>Var%</th><th>USD</th><th>Sector</th><th>Senal</th></tr></thead>
+<tbody id="ta"></tbody>
+</table></div>
+</div>
+<div class="seccion" id="tab-crypto">
+<h2>Crypto</h2>
+<div class="crypto-grid" id="tcy"></div>
+</div>
+<div class="seccion" id="tab-alertas">
+<h2>Alertas activas</h2>
+<div id="tal"></div>
+</div>
+<footer>Datos generados desde tu PC | Actualiza cada 30 min | <span id="pie">-</span></footer>
+<script>
+function showTab(n,el){
+document.querySelectorAll('.seccion').forEach(s=>s.classList.remove('visible'));
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+document.getElementById('tab-'+n).classList.add('visible');
+el.classList.add('active');
+}
+function tick(){document.getElementById('fecha').textContent=new Date().toLocaleString('es-AR');}
+async function cargar(){
+try{
+const r=await fetch('datos.json?t='+Date.now());
+const d=await r.json();
+document.getElementById('of').textContent='$'+d.of.toLocaleString('es-AR');
+document.getElementById('bl').textContent='$'+d.bl.toLocaleString('es-AR');
+document.getElementById('me').textContent='$'+d.me.toLocaleString('es-AR');
+document.getElementById('ccl').textContent='$'+d.ccl.toLocaleString('es-AR');
+document.getElementById('br').textContent=d.brecha+'%';
+const sb=document.getElementById('sb');
+if(d.brecha<5){sb.textContent='Estabilidad';sb.className='sube';}
+else if(d.brecha<20){sb.textContent='Moderada';sb.className='neutro';}
+else{sb.textContent='Alta tension';sb.className='baja';}
+document.getElementById('estado').textContent='Actualizado: '+d.fecha;
+document.getElementById('pie').textContent='Datos de: '+d.fecha;
+
+// CEDEARs
+const arr=Array.isArray(d.cedears)?d.cedears:[d.cedears];
+let alertas=[];
+let tc='';
+arr.forEach(c=>{
+if(!c||!c.p)return;
+let sc='be',st='Esperar';
+if(c.p>=c.obj){sc='bo';st='Ganancia';alertas.push({tipo:'venta',t:'OBJETIVO: '+c.n,d:'USD '+c.p.toFixed(2)+' supero obj USD '+c.obj});}
+else if(c.v<=-5){sc='bc';st='Compra!';alertas.push({tipo:'compra',t:'COMPRA FUERTE: '+c.n,d:'Bajo '+c.v+'% - USD '+c.p.toFixed(2)});}
+else if(c.v<=-2&&c.dO>10){sc='bc';st='Compra';}
+else if(c.p<=c.stop*1.03){sc='bs';st='Stop!';}
+const vc=c.v>0?'sube':c.v<0?'baja':'neutro';
+tc+='<tr><td><strong>'+c.t+'</strong></td><td>'+c.p.toFixed(2)+'</td><td class="'+vc+'">'+(c.v>0?'+':'')+c.v+'%</td><td>$'+c.ars.toLocaleString('es-AR')+'</td><td class="'+(c.dO<5&&c.dO>0?'sube':'neutro')+'">'+(c.dO>0?c.dO+'%':'OK')+'</td><td style="font-size:0.7rem;color:#8b949e">'+c.div+'</td><td><span class="badge '+sc+'">'+st+'</span></td></tr>';
+});
+document.getElementById('tc').innerHTML=tc;
+
+// Acciones
+const aacc=Array.isArray(d.acciones)?d.acciones:[d.acciones];
+let ta='';
+aacc.forEach(a=>{
+if(!a||!a.p)return;
+let sc='be',st='Neutral';
+if(a.v<=-5){sc='bc';st='Compra!';alertas.push({tipo:'compra',t:'COMPRA AR: '+a.n,d:'Bajo '+a.v+'% - ARS '+a.p.toLocaleString('es-AR')});}
+else if(a.v<=-2){sc='bc';st='Compra';}
+else if(a.v>=5){sc='bo';st='Ganancia';}
+const vc=a.v>0?'sube':a.v<0?'baja':'neutro';
+ta+='<tr><td><strong>'+a.t+'</strong></td><td>$'+a.p.toLocaleString('es-AR')+'</td><td class="'+vc+'">'+(a.v>0?'+':'')+a.v+'%</td><td>'+a.usd+'</td><td style="font-size:0.72rem;color:#8b949e">'+a.s+'</td><td><span class="badge '+sc+'">'+st+'</span></td></tr>';
+});
+document.getElementById('ta').innerHTML=ta;
+
+// Crypto
+const acry=Array.isArray(d.crypto)?d.crypto:[d.crypto];
+let tcy='';
+acry.forEach(c=>{
+if(!c||!c.p)return;
+const vc=c.v>0?'sube':c.v<0?'baja':'neutro';
+if(c.v<=-10)alertas.push({tipo:'compra',t:'CAIDA CRYPTO: '+c.n,d:'Bajo '+c.v+'% 24h - USD '+c.p.toLocaleString()});
+tcy+='<div class="crypto-card"><h3>'+c.n+' ('+c.s+')</h3><div class="precio">$'+c.p.toLocaleString('en-US',{maximumFractionDigits:2})+'</div><div class="'+vc+'" style="font-size:0.8rem">'+(c.v>0?'+':'')+c.v+'% 24h</div><div style="font-size:0.7rem;color:#8b949e;margin-top:3px">ARS $'+c.ars.toLocaleString('es-AR')+'</div></div>';
+});
+document.getElementById('tcy').innerHTML=tcy;
+
+// Alertas
+const badge=document.getElementById('badge');
+if(alertas.length===0){
+document.getElementById('tal').innerHTML='<div class="alerta info"><div class="at">Sin alertas activas</div><div class="ad">Todos los activos en rangos normales</div></div>';
+badge.style.display='none';
+}else{
+document.getElementById('tal').innerHTML=alertas.map(a=>'<div class="alerta '+a.tipo+'"><div class="at">'+a.t+'</div><div class="ad">'+a.d+'</div></div>').join('');
+badge.textContent=alertas.length;
+badge.style.display='inline';
+}
+}catch(e){document.getElementById('estado').textContent='Error cargando datos';}
+}
+tick();cargar();
+setInterval(cargar,300000);
+setInterval(tick,1000);
+</script>
+</body>
+</html>
