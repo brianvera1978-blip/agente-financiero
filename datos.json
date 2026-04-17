@@ -1,4 +1,4 @@
-﻿{
+{
     "brecha":  2.5,
     "me":  1400.4,
     "bl":  1415,
@@ -12,7 +12,10 @@
                         "t":  "AAPL",
                         "v":  1.73,
                         "ars":  38128,
-                        "dO":  -20.2
+                        "dO":  -20.2,
+                        "señal":  "TOMAR_GANANCIA",
+                        "conf":  72,
+                        "nota":  "Precio 20% sobre objetivo. Aprovechar momentum para reducir posición."
                     },
                     {
                         "stop":  380,
@@ -23,7 +26,10 @@
                         "t":  "MSFT",
                         "v":  6.61,
                         "ars":  60688,
-                        "dO":  9.8
+                        "dO":  9.8,
+                        "señal":  "COMPRAR",
+                        "conf":  78,
+                        "nota":  "Recorrido al objetivo +9.8%. Momentum fuerte +6.6%. Stop en $380."
                     },
                     {
                         "stop":  155,
@@ -34,7 +40,10 @@
                         "t":  "GOOGL",
                         "v":  1.30,
                         "ars":  6105,
-                        "dO":  -40.7
+                        "dO":  -40.7,
+                        "señal":  "MANTENER",
+                        "conf":  55,
+                        "nota":  "Objetivo desactualizado (-40.7%). Mantener con stop mental ajustado."
                     },
                     {
                         "stop":  185,
@@ -45,7 +54,10 @@
                         "t":  "AMZN",
                         "v":  -0.18,
                         "ars":  13331,
-                        "dO":  -3.4
+                        "dO":  -3.4,
+                        "señal":  "TOMAR_GANANCIA",
+                        "conf":  65,
+                        "nota":  "En zona de objetivo. Sin momentum. Reducir posicion parcialmente."
                     },
                     {
                         "stop":  220,
@@ -56,7 +68,10 @@
                         "t":  "TSLA",
                         "v":  6.66,
                         "ars":  56251,
-                        "dO":  -22.8
+                        "dO":  -22.8,
+                        "señal":  "TOMAR_GANANCIA",
+                        "conf":  75,
+                        "nota":  "22.8% sobre objetivo con fuerte momentum. Reducir exposicion en fuerza."
                     },
                     {
                         "stop":  1600,
@@ -67,7 +82,10 @@
                         "t":  "MELI",
                         "v":  0.03,
                         "ars":  333297,
-                        "dO":  19.5
+                        "dO":  19.5,
+                        "señal":  "COMPRAR",
+                        "conf":  82,
+                        "nota":  "Mayor potencial del portafolio: +19.5% al objetivo. Stop bien definido en $1600."
                     },
                     {
                         "stop":  100,
@@ -78,7 +96,10 @@
                         "t":  "NVDA",
                         "v":  0.95,
                         "ars":  28727,
-                        "dO":  -19.3
+                        "dO":  -19.3,
+                        "señal":  "MANTENER",
+                        "conf":  60,
+                        "nota":  "Objetivo desactualizado. Sector IA mantiene momentum. Ajustar target a $240."
                     },
                     {
                         "stop":  58,
@@ -89,7 +110,10 @@
                         "t":  "KO",
                         "v":  -1.26,
                         "ars":  21706,
-                        "dO":  0.1
+                        "dO":  0.1,
+                        "señal":  "MANTENER",
+                        "conf":  70,
+                        "nota":  "En objetivo exacto. Dividendo proximo en Abr. Mantener para cobrar renta."
                     },
                     {
                         "stop":  100,
@@ -100,7 +124,10 @@
                         "t":  "XOM",
                         "v":  2.04,
                         "ars":  44106,
-                        "dO":  -14.6
+                        "dO":  -14.6,
+                        "señal":  "MANTENER",
+                        "conf":  65,
+                        "nota":  "Supera objetivo pero paga dividendos trimestrales. Mantener como activo de renta."
                     },
                     {
                         "stop":  210,
@@ -111,7 +138,10 @@
                         "t":  "JPM",
                         "v":  -1.02,
                         "ars":  89186,
-                        "dO":  -12.3
+                        "dO":  -12.3,
+                        "señal":  "TOMAR_GANANCIA",
+                        "conf":  68,
+                        "nota":  "Supero objetivo 12.3%. Caida del dia sugiere toma institucional. Reducir."
                     }
                 ],
     "fecha":  "16/04/2026 14:04",
@@ -123,7 +153,10 @@
                        "s":  "BTC",
                        "n":  "Bitcoin",
                        "ars":  107360686,
-                       "p":  74139
+                       "p":  74139,
+                       "señal":  "MANTENER",
+                       "conf":  65,
+                       "nota":  "Sin direccion clara. Zona de acumulacion potencial bajo maximos historicos."
                    },
                    {
                        "id":  "ethereum",
@@ -131,7 +164,10 @@
                        "s":  "ETH",
                        "n":  "Ethereum",
                        "ars":  3352916,
-                       "p":  2315.39
+                       "p":  2315.39,
+                       "señal":  "MANTENER",
+                       "conf":  60,
+                       "nota":  "Correccion moderada. Ratio ETH/BTC comprimido. Sin catalizador inmediato."
                    },
                    {
                        "id":  "tether",
@@ -139,7 +175,10 @@
                        "s":  "USDT",
                        "n":  "Tether",
                        "ars":  1448,
-                       "p":  1.0
+                       "p":  1.0,
+                       "señal":  "REFUGIO",
+                       "conf":  90,
+                       "nota":  "Activo de refugio. Util para estacionar liquidez ante incertidumbre macro."
                    },
                    {
                        "id":  "solana",
@@ -147,7 +186,10 @@
                        "s":  "SOL",
                        "n":  "Solana",
                        "ars":  124450,
-                       "p":  85.94
+                       "p":  85.94,
+                       "señal":  "COMPRAR",
+                       "conf":  67,
+                       "nota":  "Mejor performance del dia entre cryptos. Momentum tecnico positivo."
                    },
                    {
                        "id":  "binancecoin",
@@ -155,7 +197,10 @@
                        "s":  "BNB",
                        "n":  "BNB",
                        "ars":  905917,
-                       "p":  625.59
+                       "p":  625.59,
+                       "señal":  "MANTENER",
+                       "conf":  62,
+                       "nota":  "Ecosistema Binance estable. Alza leve. Sin catalizadores fuertes."
                    },
                    {
                        "id":  "ripple",
@@ -163,7 +208,10 @@
                        "s":  "XRP",
                        "n":  "XRP",
                        "ars":  2056,
-                       "p":  1.42
+                       "p":  1.42,
+                       "señal":  "COMPRAR",
+                       "conf":  68,
+                       "nota":  "Mejor variacion del dia +2.95%. Expectativas regulatorias positivas en EE.UU."
                    }
                ],
     "of":  1380,
@@ -174,7 +222,10 @@
                          "s":  "Banco",
                          "t":  "GGAL",
                          "n":  "Galicia",
-                         "p":  7125
+                         "p":  7125,
+                         "señal":  "MANTENER",
+                         "conf":  65,
+                         "nota":  "Caida moderada en jornada bajista. Sector bancario con perspectiva positiva."
                      },
                      {
                          "usd":  3.34,
@@ -182,7 +233,10 @@
                          "s":  "Energia",
                          "t":  "PAMP",
                          "n":  "Pampa",
-                         "p":  4832
+                         "p":  4832,
+                         "señal":  "MANTENER",
+                         "conf":  60,
+                         "nota":  "Sector energetico con fundamentos solidos. Correccion normal de jornada."
                      },
                      {
                          "usd":  41.81,
@@ -190,7 +244,10 @@
                          "s":  "Petroleo",
                          "t":  "YPFD",
                          "n":  "YPF",
-                         "p":  60550
+                         "p":  60550,
+                         "señal":  "ESPERAR",
+                         "conf":  62,
+                         "nota":  "Mayor caida del sector. Esperar estabilizacion antes de sumar posicion."
                      },
                      {
                          "usd":  0.50,
@@ -198,7 +255,10 @@
                          "s":  "Acero",
                          "t":  "TXAR",
                          "n":  "Ternium",
-                         "p":  720
+                         "p":  720,
+                         "señal":  "MANTENER",
+                         "conf":  58,
+                         "nota":  "Variacion casi nula. Sector acero sin catalizadores locales claros."
                      },
                      {
                          "usd":  0.66,
@@ -206,7 +266,10 @@
                          "s":  "Aluminio",
                          "t":  "ALUA",
                          "n":  "Aluar",
-                         "p":  959
+                         "p":  959,
+                         "señal":  "ESPERAR",
+                         "conf":  60,
+                         "nota":  "Caida en linea con commodities globales. Esperar rebote tecnico."
                      },
                      {
                          "usd":  2.36,
@@ -214,7 +277,10 @@
                          "s":  "Telecom",
                          "t":  "TECO2",
                          "n":  "Telecom",
-                         "p":  3412
+                         "p":  3412,
+                         "señal":  "MANTENER",
+                         "conf":  63,
+                         "nota":  "Sector defensivo. Caida leve no modifica perspectiva de mediano plazo."
                      },
                      {
                          "usd":  1.56,
@@ -222,7 +288,10 @@
                          "s":  "Energia",
                          "t":  "CEPU",
                          "n":  "Cent.Puerto",
-                         "p":  2255
+                         "p":  2255,
+                         "señal":  "MANTENER",
+                         "conf":  65,
+                         "nota":  "Utility con flujo estable. Caida leve. Mantener posicion."
                      },
                      {
                          "usd":  1.98,
@@ -230,7 +299,10 @@
                          "s":  "Banco",
                          "t":  "SUPV",
                          "n":  "Supervielle",
-                         "p":  2870
+                         "p":  2870,
+                         "señal":  "MANTENER",
+                         "conf":  70,
+                         "nota":  "Unico activo en verde. Fortaleza relativa destacada. Evaluar toma parcial."
                      },
                      {
                          "usd":  2.31,
@@ -238,7 +310,22 @@
                          "s":  "Cemento",
                          "t":  "LOMA",
                          "n":  "Loma Negra",
-                         "p":  3350
+                         "p":  3350,
+                         "señal":  "ESPERAR",
+                         "conf":  68,
+                         "nota":  "Mayor caida del panel -3.53%. Sector cemento golpeado. Esperar soporte."
                      }
-                 ]
+                 ],
+    "ia":  {
+               "generado":  "17/04/2026",
+               "modelo":  "claude-sonnet-4-6",
+               "criterios":  ["distancia_objetivo", "variacion_diaria", "momentum", "dividendos", "stop_loss"],
+               "señales":  {
+                               "COMPRAR":  "Upside claro al objetivo con momentum positivo",
+                               "MANTENER":  "En posicion, sin señal de salida ni entrada nueva",
+                               "TOMAR_GANANCIA":  "Precio supero objetivo, reducir exposicion",
+                               "ESPERAR":  "Caida fuerte, aguardar estabilizacion antes de entrar",
+                               "REFUGIO":  "Activo de reserva de valor"
+                           }
+           }
 }
