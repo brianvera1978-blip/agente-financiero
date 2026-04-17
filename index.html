@@ -120,25 +120,22 @@ const acry=Array.isArray(d.crypto)?d.crypto:[d.crypto];
 let tcy='';
 acry.forEach(c=>{if(!c||c.p===undefined)return;const vc=c.v>0?'sube':c.v<0?'baja':'neutro';if(c.v<=-10)alertas.push({tipo:'compra',t:'CAIDA CRYPTO: '+c.n,d:'Bajo '+c.v+'% 24h'});tcy+='<div class="crypto-card"><h3>'+c.n+' ('+c.s+')</h3><div class="precio">$'+Number(c.p).toLocaleString('en-US',{maximumFractionDigits:2})+'</div><div class="'+vc+'" style="font-size:0.8rem">'+(c.v>0?'+':'')+c.v+'% 24h</div><div style="font-size:0.7rem;color:#8b949e;margin-top:3px">ARS $'+Number(c.ars).toLocaleString('es-AR')+'</div></div>';});
 document.getElementById('tcy').innerHTML=tcy||'<div style="text-align:center;padding:20px;color:#8b949e">Sin datos</div>';
-if(d.ia){
-  const ia=d.ia;
-  document.getElementById('resumen-macro').textContent=ia.resumen_macro||'Sin analisis';
-  const topC=Array.isArray(ia.top_compra)?ia.top_compra:[];
-  document.getElementById('top-compra').innerHTML=topC.length?topC.map(x=>'<div style="font-size:0.82rem;font-weight:700;color:#3fb950;margin:2px 0">'+x.ticker+' <span style="font-size:0.65rem;font-weight:400;color:#6ee7b7">'+x.tipo+'</span><div style="font-size:0.68rem;font-weight:400;color:#86efac;white-space:normal">'+x.motivo+'</div></div>').join(''):'<span style="color:#8b949e">-</span>';
-  const topV=Array.isArray(ia.top_venta)?ia.top_venta:[];
-  document.getElementById('top-venta').innerHTML=topV.length?topV.map(x=>'<div style="font-size:0.82rem;font-weight:700;color:#f85149;margin:2px 0">'+x.ticker+' <span style="font-size:0.65rem;font-weight:400;color:#fca5a5">'+x.tipo+'</span><div style="font-size:0.68rem;font-weight:400;color:#fca5a5;white-space:normal">'+x.motivo+'</div></div>').join(''):'<span style="color:#8b949e">-</span>';
-  const senales=Array.isArray(ia.senales)?ia.senales:[];
-  let shtml='';
-  if(senales.length>0){
-    senales.filter(s=>s.senal==='COMPRAR').forEach(s=>alertas.push({tipo:'compra',t:'IA COMPRAR: '+s.ticker,d:'Conf '+s.conf+'%'+(s.distancia_pct!=null?' | Dist +'+s.distancia_pct+'%':'')}));
-    senales.filter(s=>s.senal==='TOMAR_GANANCIA').forEach(s=>alertas.push({tipo:'venta',t:'IA TOMAR GANANCIA: '+s.ticker,d:'Conf '+s.conf+'%'}));
-    const bs=(s)=>{if(s==='COMPRAR')return '<span class="badge bc">COMPRAR</span>';if(s==='TOMAR_GANANCIA')return '<span class="badge bs">TOMAR GAN.</span>';if(s==='ESPERAR')return '<span class="badge be">ESPERAR</span>';if(s==='REFUGIO')return '<span class="badge bo">REFUGIO</span>';return '<span class="badge">'+s+'</span>';};
-    shtml='<div class="overflow"><table><thead><tr><th>Ticker</th><th>Tipo</th><th>Señal</th><th>Conf%</th><th>Precio</th><th>Objetivo</th><th>Dist%</th></tr></thead><tbody>';
-    senales.forEach(s=>{const vc=s.distancia_pct>0?'sube':s.distancia_pct<0?'baja':'neutro';shtml+='<tr><td><strong>'+s.ticker+'</strong></td><td style="color:#8b949e;font-size:0.72rem">'+s.tipo+'</td><td>'+bs(s.senal)+'</td><td style="color:#8b949e">'+s.conf+'%</td><td>'+Number(s.precio).toLocaleString('en-US',{maximumFractionDigits:2})+'</td><td>'+(s.objetivo!=null?s.objetivo:'-')+'</td><td class="'+vc+'">'+(s.distancia_pct!=null?(s.distancia_pct>0?'+':'')+s.distancia_pct+'%':'-')+'</td></tr>';});
-    shtml+='</tbody></table></div>';
-  }else{shtml='<div style="text-align:center;padding:20px;color:#8b949e">Sin señales. Ejecuta el script para actualizar.</div>';}
-  document.getElementById('señales-ia').innerHTML=shtml;
-}else{document.getElementById('resumen-macro').textContent='Sin analisis IA. Ejecuta el script de actualizacion.';document.getElementById('señales-ia').innerHTML='<div style="text-align:center;padding:20px;color:#8b949e">Ejecuta: actualizar-netlify.ps1</div>';}
+const senales=Array.isArray(d.senales_ia)?d.senales_ia:[];
+document.getElementById('resumen-macro').textContent=d.resumen_mercado||'Sin analisis macro disponible.';
+const topC=senales.filter(s=>s.tipo==='COMPRA').sort((a,b)=>b.confianza-a.confianza)[0];
+document.getElementById('top-compra').innerHTML=topC?'<div style="font-size:0.82rem;font-weight:700;color:#3fb950;margin:2px 0">'+topC.activo+' <span style="font-size:0.65rem;font-weight:400;color:#6ee7b7">'+topC.confianza+'%</span><div style="font-size:0.68rem;font-weight:400;color:#86efac;white-space:normal;margin-top:3px">'+topC.razon+'</div></div>':'<span style="color:#8b949e">-</span>';
+const topV=senales.filter(s=>s.tipo==='VENTA').sort((a,b)=>b.confianza-a.confianza)[0];
+document.getElementById('top-venta').innerHTML=topV?'<div style="font-size:0.82rem;font-weight:700;color:#f85149;margin:2px 0">'+topV.activo+' <span style="font-size:0.65rem;font-weight:400;color:#fca5a5">'+topV.confianza+'%</span><div style="font-size:0.68rem;font-weight:400;color:#fca5a5;white-space:normal;margin-top:3px">'+topV.razon+'</div></div>':'<span style="color:#8b949e">-</span>';
+let shtml='';
+if(senales.length>0){
+  senales.filter(s=>s.tipo==='COMPRA').forEach(s=>alertas.push({tipo:'compra',t:'IA COMPRA: '+s.activo,d:'Conf '+s.confianza+'%'}));
+  senales.filter(s=>s.tipo==='VENTA').forEach(s=>alertas.push({tipo:'venta',t:'IA VENTA: '+s.activo,d:'Conf '+s.confianza+'%'}));
+  const bs=(t)=>{if(t==='COMPRA')return '<span class="badge bc">COMPRA</span>';if(t==='VENTA')return '<span class="badge bs">VENTA</span>';if(t==='MANTENER')return '<span class="badge be">MANTENER</span>';return '<span class="badge">'+t+'</span>';};
+  shtml='<div class="overflow"><table><thead><tr><th>Activo</th><th>Señal</th><th>Confianza</th><th>Razón</th></tr></thead><tbody>';
+  senales.forEach(s=>{shtml+='<tr><td><strong>'+s.activo+'</strong></td><td>'+bs(s.tipo)+'</td><td style="color:#8b949e">'+s.confianza+'%</td><td style="font-size:0.75rem;color:#8b949e">'+s.razon+'</td></tr>';});
+  shtml+='</tbody></table></div>';
+}else{shtml='<div style="text-align:center;padding:20px;color:#8b949e">Sin señales IA disponibles.</div>';}
+document.getElementById('señales-ia').innerHTML=shtml;
 const badge=document.getElementById('badge');
 if(alertas.length===0){document.getElementById('tal').innerHTML='<div class="alerta info"><div class="at">Sin alertas activas</div><div class="ad">Todos los activos en rangos normales</div></div>';badge.style.display='none';}else{document.getElementById('tal').innerHTML=alertas.map(a=>'<div class="alerta '+a.tipo+'"><div class="at">'+a.t+'</div><div class="ad">'+a.d+'</div></div>').join('');badge.textContent=alertas.length;badge.style.display='inline';}
 }catch(e){document.getElementById('estado').textContent='Error: '+e.message;}
