@@ -326,6 +326,44 @@
                                "TOMAR_GANANCIA":  "Precio supero objetivo, reducir exposicion",
                                "ESPERAR":  "Caida fuerte, aguardar estabilizacion antes de entrar",
                                "REFUGIO":  "Activo de reserva de valor"
-                           }
+                           },
+               "resumen_macro":  "Mercado local en jornada bajista generalizada. Brecha cambiaria comprimida al 2.5% (CCL $1448 vs Oficial $1380). Panel de acciones argentinas en rojo con excepcion de SUPV. CEDEARs tech con momentum positivo (MSFT +6.6%, TSLA +6.7%). Crypto mixta: XRP lidera con +2.95%, BTC estable sin direccion. Contexto favorable para dolarizacion via CEDEARs y reduccion de exposicion en activos locales sobrecomprados.",
+               "top_compra":  [
+                   {"ticker": "MELI", "tipo": "cedear", "motivo": "Mayor potencial del portafolio +19.5% al objetivo. Conf 82%."},
+                   {"ticker": "MSFT", "tipo": "cedear", "motivo": "Recorrido +9.8% al objetivo con momentum fuerte +6.6%. Conf 78%."},
+                   {"ticker": "XRP", "tipo": "crypto", "motivo": "Mejor variacion del dia +2.95%. Expectativas regulatorias positivas. Conf 68%."},
+                   {"ticker": "SOL", "tipo": "crypto", "motivo": "Mejor performance crypto del dia. Momentum tecnico positivo. Conf 67%."}
+               ],
+               "top_venta":  [
+                   {"ticker": "TSLA", "tipo": "cedear", "motivo": "22.8% sobre objetivo con fuerte momentum. Reducir en fuerza. Conf 75%."},
+                   {"ticker": "AAPL", "tipo": "cedear", "motivo": "20.2% sobre objetivo. Tomar ganancia y reubicar capital. Conf 72%."},
+                   {"ticker": "JPM", "tipo": "cedear", "motivo": "Supero objetivo 12.3%. Caida del dia sugiere toma institucional. Conf 68%."},
+                   {"ticker": "AMZN", "tipo": "cedear", "motivo": "En zona de objetivo sin momentum. Reducir parcialmente. Conf 65%."}
+               ],
+               "alerta_especial":  "LOMA NEGRA cayo -3.53%, mayor baja del panel local. YPF retrocedio -2.22%. Sector cemento y petroleo bajo presion: ESPERAR estabilizacion antes de cualquier entrada. SUPV es el unico activo local en verde (+2.41%), evaluar toma de ganancia parcial aprovechando fortaleza relativa.",
+               "senales":  [
+                   {"ticker": "MELI", "tipo": "cedear", "señal": "COMPRAR", "conf": 82, "precio": 1841.29, "objetivo": 2200, "distancia_pct": 19.5},
+                   {"ticker": "MSFT", "tipo": "cedear", "señal": "COMPRAR", "conf": 78, "precio": 419.09, "objetivo": 460, "distancia_pct": 9.8},
+                   {"ticker": "XRP", "tipo": "crypto", "señal": "COMPRAR", "conf": 68, "precio": 1.42, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "SOL", "tipo": "crypto", "señal": "COMPRAR", "conf": 67, "precio": 85.94, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "TSLA", "tipo": "cedear", "señal": "TOMAR_GANANCIA", "conf": 75, "precio": 388.45, "objetivo": 300, "distancia_pct": -22.8},
+                   {"ticker": "AAPL", "tipo": "cedear", "señal": "TOMAR_GANANCIA", "conf": 72, "precio": 263.3, "objetivo": 210, "distancia_pct": -20.2},
+                   {"ticker": "JPM", "tipo": "cedear", "señal": "TOMAR_GANANCIA", "conf": 68, "precio": 307.94, "objetivo": 270, "distancia_pct": -12.3},
+                   {"ticker": "AMZN", "tipo": "cedear", "señal": "TOMAR_GANANCIA", "conf": 65, "precio": 248.56, "objetivo": 240, "distancia_pct": -3.4},
+                   {"ticker": "KO", "tipo": "cedear", "señal": "MANTENER", "conf": 70, "precio": 74.95, "objetivo": 75, "distancia_pct": 0.1},
+                   {"ticker": "GOOGL", "tipo": "cedear", "señal": "MANTENER", "conf": 55, "precio": 337.25, "objetivo": 200, "distancia_pct": -40.7},
+                   {"ticker": "NVDA", "tipo": "cedear", "señal": "MANTENER", "conf": 60, "precio": 198.38, "objetivo": 160, "distancia_pct": -19.3},
+                   {"ticker": "XOM", "tipo": "cedear", "señal": "MANTENER", "conf": 65, "precio": 152.29, "objetivo": 130, "distancia_pct": -14.6},
+                   {"ticker": "SUPV", "tipo": "accion", "señal": "MANTENER", "conf": 70, "precio": 2870, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "GGAL", "tipo": "accion", "señal": "MANTENER", "conf": 65, "precio": 7125, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "PAMP", "tipo": "accion", "señal": "MANTENER", "conf": 60, "precio": 4832, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "BTC", "tipo": "crypto", "señal": "MANTENER", "conf": 65, "precio": 74139, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "ETH", "tipo": "crypto", "señal": "MANTENER", "conf": 60, "precio": 2315.39, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "BNB", "tipo": "crypto", "señal": "MANTENER", "conf": 62, "precio": 625.59, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "USDT", "tipo": "crypto", "señal": "REFUGIO", "conf": 90, "precio": 1.0, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "YPFD", "tipo": "accion", "señal": "ESPERAR", "conf": 62, "precio": 60550, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "ALUA", "tipo": "accion", "señal": "ESPERAR", "conf": 60, "precio": 959, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "LOMA", "tipo": "accion", "señal": "ESPERAR", "conf": 68, "precio": 3350, "objetivo": null, "distancia_pct": null}
+               ]
            }
 }
