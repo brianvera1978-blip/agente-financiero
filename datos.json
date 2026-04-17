@@ -13,7 +13,7 @@
                         "v":  1.73,
                         "ars":  38128,
                         "dO":  -20.2,
-                        "señal":  "TOMAR_GANANCIA",
+                        "senal":  "TOMAR_GANANCIA",
                         "conf":  72,
                         "nota":  "Precio 20% sobre objetivo. Aprovechar momentum para reducir posición."
                     },
@@ -27,7 +27,7 @@
                         "v":  6.61,
                         "ars":  60688,
                         "dO":  9.8,
-                        "señal":  "COMPRAR",
+                        "senal":  "COMPRAR",
                         "conf":  78,
                         "nota":  "Recorrido al objetivo +9.8%. Momentum fuerte +6.6%. Stop en $380."
                     },
@@ -41,7 +41,7 @@
                         "v":  1.30,
                         "ars":  6105,
                         "dO":  -40.7,
-                        "señal":  "MANTENER",
+                        "senal":  "MANTENER",
                         "conf":  55,
                         "nota":  "Objetivo desactualizado (-40.7%). Mantener con stop mental ajustado."
                     },
@@ -55,7 +55,7 @@
                         "v":  -0.18,
                         "ars":  13331,
                         "dO":  -3.4,
-                        "señal":  "TOMAR_GANANCIA",
+                        "senal":  "TOMAR_GANANCIA",
                         "conf":  65,
                         "nota":  "En zona de objetivo. Sin momentum. Reducir posicion parcialmente."
                     },
@@ -69,7 +69,7 @@
                         "v":  6.66,
                         "ars":  56251,
                         "dO":  -22.8,
-                        "señal":  "TOMAR_GANANCIA",
+                        "senal":  "TOMAR_GANANCIA",
                         "conf":  75,
                         "nota":  "22.8% sobre objetivo con fuerte momentum. Reducir exposicion en fuerza."
                     },
@@ -83,7 +83,7 @@
                         "v":  0.03,
                         "ars":  333297,
                         "dO":  19.5,
-                        "señal":  "COMPRAR",
+                        "senal":  "COMPRAR",
                         "conf":  82,
                         "nota":  "Mayor potencial del portafolio: +19.5% al objetivo. Stop bien definido en $1600."
                     },
@@ -97,7 +97,7 @@
                         "v":  0.95,
                         "ars":  28727,
                         "dO":  -19.3,
-                        "señal":  "MANTENER",
+                        "senal":  "MANTENER",
                         "conf":  60,
                         "nota":  "Objetivo desactualizado. Sector IA mantiene momentum. Ajustar target a $240."
                     },
@@ -111,7 +111,7 @@
                         "v":  -1.26,
                         "ars":  21706,
                         "dO":  0.1,
-                        "señal":  "MANTENER",
+                        "senal":  "MANTENER",
                         "conf":  70,
                         "nota":  "En objetivo exacto. Dividendo proximo en Abr. Mantener para cobrar renta."
                     },
@@ -125,7 +125,7 @@
                         "v":  2.04,
                         "ars":  44106,
                         "dO":  -14.6,
-                        "señal":  "MANTENER",
+                        "senal":  "MANTENER",
                         "conf":  65,
                         "nota":  "Supera objetivo pero paga dividendos trimestrales. Mantener como activo de renta."
                     },
@@ -139,7 +139,7 @@
                         "v":  -1.02,
                         "ars":  89186,
                         "dO":  -12.3,
-                        "señal":  "TOMAR_GANANCIA",
+                        "senal":  "TOMAR_GANANCIA",
                         "conf":  68,
                         "nota":  "Supero objetivo 12.3%. Caida del dia sugiere toma institucional. Reducir."
                     }
@@ -154,7 +154,7 @@
                        "n":  "Bitcoin",
                        "ars":  107360686,
                        "p":  74139,
-                       "señal":  "MANTENER",
+                       "senal":  "MANTENER",
                        "conf":  65,
                        "nota":  "Sin direccion clara. Zona de acumulacion potencial bajo maximos historicos."
                    },
@@ -165,7 +165,7 @@
                        "n":  "Ethereum",
                        "ars":  3352916,
                        "p":  2315.39,
-                       "señal":  "MANTENER",
+                       "senal":  "MANTENER",
                        "conf":  60,
                        "nota":  "Correccion moderada. Ratio ETH/BTC comprimido. Sin catalizador inmediato."
                    },
@@ -176,7 +176,7 @@
                        "n":  "Tether",
                        "ars":  1448,
                        "p":  1.0,
-                       "señal":  "REFUGIO",
+                       "senal":  "REFUGIO",
                        "conf":  90,
                        "nota":  "Activo de refugio. Util para estacionar liquidez ante incertidumbre macro."
                    },
@@ -187,7 +187,7 @@
                        "n":  "Solana",
                        "ars":  124450,
                        "p":  85.94,
-                       "señal":  "COMPRAR",
+                       "senal":  "COMPRAR",
                        "conf":  67,
                        "nota":  "Mejor performance del dia entre cryptos. Momentum tecnico positivo."
                    },
@@ -198,7 +198,7 @@
                        "n":  "BNB",
                        "ars":  905917,
                        "p":  625.59,
-                       "señal":  "MANTENER",
+                       "senal":  "MANTENER",
                        "conf":  62,
                        "nota":  "Ecosistema Binance estable. Alza leve. Sin catalizadores fuertes."
                    },
@@ -209,7 +209,7 @@
                        "n":  "XRP",
                        "ars":  2056,
                        "p":  1.42,
-                       "señal":  "COMPRAR",
+                       "senal":  "COMPRAR",
                        "conf":  68,
                        "nota":  "Mejor variacion del dia +2.95%. Expectativas regulatorias positivas en EE.UU."
                    }
@@ -223,7 +223,7 @@
                          "t":  "GGAL",
                          "n":  "Galicia",
                          "p":  7125,
-                         "señal":  "MANTENER",
+                         "senal":  "MANTENER",
                          "conf":  65,
                          "nota":  "Caida moderada en jornada bajista. Sector bancario con perspectiva positiva."
                      },
@@ -234,7 +234,7 @@
                          "t":  "PAMP",
                          "n":  "Pampa",
                          "p":  4832,
-                         "señal":  "MANTENER",
+                         "senal":  "MANTENER",
                          "conf":  60,
                          "nota":  "Sector energetico con fundamentos solidos. Correccion normal de jornada."
                      },
@@ -245,7 +245,7 @@
                          "t":  "YPFD",
                          "n":  "YPF",
                          "p":  60550,
-                         "señal":  "ESPERAR",
+                         "senal":  "ESPERAR",
                          "conf":  62,
                          "nota":  "Mayor caida del sector. Esperar estabilizacion antes de sumar posicion."
                      },
@@ -256,7 +256,7 @@
                          "t":  "TXAR",
                          "n":  "Ternium",
                          "p":  720,
-                         "señal":  "MANTENER",
+                         "senal":  "MANTENER",
                          "conf":  58,
                          "nota":  "Variacion casi nula. Sector acero sin catalizadores locales claros."
                      },
@@ -267,7 +267,7 @@
                          "t":  "ALUA",
                          "n":  "Aluar",
                          "p":  959,
-                         "señal":  "ESPERAR",
+                         "senal":  "ESPERAR",
                          "conf":  60,
                          "nota":  "Caida en linea con commodities globales. Esperar rebote tecnico."
                      },
@@ -278,7 +278,7 @@
                          "t":  "TECO2",
                          "n":  "Telecom",
                          "p":  3412,
-                         "señal":  "MANTENER",
+                         "senal":  "MANTENER",
                          "conf":  63,
                          "nota":  "Sector defensivo. Caida leve no modifica perspectiva de mediano plazo."
                      },
@@ -289,7 +289,7 @@
                          "t":  "CEPU",
                          "n":  "Cent.Puerto",
                          "p":  2255,
-                         "señal":  "MANTENER",
+                         "senal":  "MANTENER",
                          "conf":  65,
                          "nota":  "Utility con flujo estable. Caida leve. Mantener posicion."
                      },
@@ -300,7 +300,7 @@
                          "t":  "SUPV",
                          "n":  "Supervielle",
                          "p":  2870,
-                         "señal":  "MANTENER",
+                         "senal":  "MANTENER",
                          "conf":  70,
                          "nota":  "Unico activo en verde. Fortaleza relativa destacada. Evaluar toma parcial."
                      },
@@ -311,7 +311,7 @@
                          "t":  "LOMA",
                          "n":  "Loma Negra",
                          "p":  3350,
-                         "señal":  "ESPERAR",
+                         "senal":  "ESPERAR",
                          "conf":  68,
                          "nota":  "Mayor caida del panel -3.53%. Sector cemento golpeado. Esperar soporte."
                      }
@@ -342,28 +342,28 @@
                ],
                "alerta_especial":  "LOMA NEGRA cayo -3.53%, mayor baja del panel local. YPF retrocedio -2.22%. Sector cemento y petroleo bajo presion: ESPERAR estabilizacion antes de cualquier entrada. SUPV es el unico activo local en verde (+2.41%), evaluar toma de ganancia parcial aprovechando fortaleza relativa.",
                "senales":  [
-                   {"ticker": "MELI", "tipo": "cedear", "señal": "COMPRAR", "conf": 82, "precio": 1841.29, "objetivo": 2200, "distancia_pct": 19.5},
-                   {"ticker": "MSFT", "tipo": "cedear", "señal": "COMPRAR", "conf": 78, "precio": 419.09, "objetivo": 460, "distancia_pct": 9.8},
-                   {"ticker": "XRP", "tipo": "crypto", "señal": "COMPRAR", "conf": 68, "precio": 1.42, "objetivo": null, "distancia_pct": null},
-                   {"ticker": "SOL", "tipo": "crypto", "señal": "COMPRAR", "conf": 67, "precio": 85.94, "objetivo": null, "distancia_pct": null},
-                   {"ticker": "TSLA", "tipo": "cedear", "señal": "TOMAR_GANANCIA", "conf": 75, "precio": 388.45, "objetivo": 300, "distancia_pct": -22.8},
-                   {"ticker": "AAPL", "tipo": "cedear", "señal": "TOMAR_GANANCIA", "conf": 72, "precio": 263.3, "objetivo": 210, "distancia_pct": -20.2},
-                   {"ticker": "JPM", "tipo": "cedear", "señal": "TOMAR_GANANCIA", "conf": 68, "precio": 307.94, "objetivo": 270, "distancia_pct": -12.3},
-                   {"ticker": "AMZN", "tipo": "cedear", "señal": "TOMAR_GANANCIA", "conf": 65, "precio": 248.56, "objetivo": 240, "distancia_pct": -3.4},
-                   {"ticker": "KO", "tipo": "cedear", "señal": "MANTENER", "conf": 70, "precio": 74.95, "objetivo": 75, "distancia_pct": 0.1},
-                   {"ticker": "GOOGL", "tipo": "cedear", "señal": "MANTENER", "conf": 55, "precio": 337.25, "objetivo": 200, "distancia_pct": -40.7},
-                   {"ticker": "NVDA", "tipo": "cedear", "señal": "MANTENER", "conf": 60, "precio": 198.38, "objetivo": 160, "distancia_pct": -19.3},
-                   {"ticker": "XOM", "tipo": "cedear", "señal": "MANTENER", "conf": 65, "precio": 152.29, "objetivo": 130, "distancia_pct": -14.6},
-                   {"ticker": "SUPV", "tipo": "accion", "señal": "MANTENER", "conf": 70, "precio": 2870, "objetivo": null, "distancia_pct": null},
-                   {"ticker": "GGAL", "tipo": "accion", "señal": "MANTENER", "conf": 65, "precio": 7125, "objetivo": null, "distancia_pct": null},
-                   {"ticker": "PAMP", "tipo": "accion", "señal": "MANTENER", "conf": 60, "precio": 4832, "objetivo": null, "distancia_pct": null},
-                   {"ticker": "BTC", "tipo": "crypto", "señal": "MANTENER", "conf": 65, "precio": 74139, "objetivo": null, "distancia_pct": null},
-                   {"ticker": "ETH", "tipo": "crypto", "señal": "MANTENER", "conf": 60, "precio": 2315.39, "objetivo": null, "distancia_pct": null},
-                   {"ticker": "BNB", "tipo": "crypto", "señal": "MANTENER", "conf": 62, "precio": 625.59, "objetivo": null, "distancia_pct": null},
-                   {"ticker": "USDT", "tipo": "crypto", "señal": "REFUGIO", "conf": 90, "precio": 1.0, "objetivo": null, "distancia_pct": null},
-                   {"ticker": "YPFD", "tipo": "accion", "señal": "ESPERAR", "conf": 62, "precio": 60550, "objetivo": null, "distancia_pct": null},
-                   {"ticker": "ALUA", "tipo": "accion", "señal": "ESPERAR", "conf": 60, "precio": 959, "objetivo": null, "distancia_pct": null},
-                   {"ticker": "LOMA", "tipo": "accion", "señal": "ESPERAR", "conf": 68, "precio": 3350, "objetivo": null, "distancia_pct": null}
+                   {"ticker": "MELI", "tipo": "cedear", "senal": "COMPRAR", "conf": 82, "precio": 1841.29, "objetivo": 2200, "distancia_pct": 19.5},
+                   {"ticker": "MSFT", "tipo": "cedear", "senal": "COMPRAR", "conf": 78, "precio": 419.09, "objetivo": 460, "distancia_pct": 9.8},
+                   {"ticker": "XRP", "tipo": "crypto", "senal": "COMPRAR", "conf": 68, "precio": 1.42, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "SOL", "tipo": "crypto", "senal": "COMPRAR", "conf": 67, "precio": 85.94, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "TSLA", "tipo": "cedear", "senal": "TOMAR_GANANCIA", "conf": 75, "precio": 388.45, "objetivo": 300, "distancia_pct": -22.8},
+                   {"ticker": "AAPL", "tipo": "cedear", "senal": "TOMAR_GANANCIA", "conf": 72, "precio": 263.3, "objetivo": 210, "distancia_pct": -20.2},
+                   {"ticker": "JPM", "tipo": "cedear", "senal": "TOMAR_GANANCIA", "conf": 68, "precio": 307.94, "objetivo": 270, "distancia_pct": -12.3},
+                   {"ticker": "AMZN", "tipo": "cedear", "senal": "TOMAR_GANANCIA", "conf": 65, "precio": 248.56, "objetivo": 240, "distancia_pct": -3.4},
+                   {"ticker": "KO", "tipo": "cedear", "senal": "MANTENER", "conf": 70, "precio": 74.95, "objetivo": 75, "distancia_pct": 0.1},
+                   {"ticker": "GOOGL", "tipo": "cedear", "senal": "MANTENER", "conf": 55, "precio": 337.25, "objetivo": 200, "distancia_pct": -40.7},
+                   {"ticker": "NVDA", "tipo": "cedear", "senal": "MANTENER", "conf": 60, "precio": 198.38, "objetivo": 160, "distancia_pct": -19.3},
+                   {"ticker": "XOM", "tipo": "cedear", "senal": "MANTENER", "conf": 65, "precio": 152.29, "objetivo": 130, "distancia_pct": -14.6},
+                   {"ticker": "SUPV", "tipo": "accion", "senal": "MANTENER", "conf": 70, "precio": 2870, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "GGAL", "tipo": "accion", "senal": "MANTENER", "conf": 65, "precio": 7125, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "PAMP", "tipo": "accion", "senal": "MANTENER", "conf": 60, "precio": 4832, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "BTC", "tipo": "crypto", "senal": "MANTENER", "conf": 65, "precio": 74139, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "ETH", "tipo": "crypto", "senal": "MANTENER", "conf": 60, "precio": 2315.39, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "BNB", "tipo": "crypto", "senal": "MANTENER", "conf": 62, "precio": 625.59, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "USDT", "tipo": "crypto", "senal": "REFUGIO", "conf": 90, "precio": 1.0, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "YPFD", "tipo": "accion", "senal": "ESPERAR", "conf": 62, "precio": 60550, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "ALUA", "tipo": "accion", "senal": "ESPERAR", "conf": 60, "precio": 959, "objetivo": null, "distancia_pct": null},
+                   {"ticker": "LOMA", "tipo": "accion", "senal": "ESPERAR", "conf": 68, "precio": 3350, "objetivo": null, "distancia_pct": null}
                ]
            }
 }
