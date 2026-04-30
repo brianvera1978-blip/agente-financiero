@@ -40,6 +40,9 @@ tr:hover td{background:#1c2128}
 .top-picks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
 .top-card{border-radius:10px;padding:14px;text-align:center}
 footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:1px solid #21262d}
+.port-input{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e6edf3;padding:4px 6px;width:90px;font-size:0.8rem;text-align:right}
+.port-input:focus{outline:none;border-color:#58a6ff}
+.spread-pos{color:#3fb950;font-weight:600}.spread-neg{color:#f85149;font-weight:600}
 </style>
 </head>
 <body>
@@ -59,6 +62,7 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 <div class="tab" onclick="showTab('acciones',this)">Acciones AR</div>
 <div class="tab" onclick="showTab('crypto',this)">Crypto</div>
 <div class="tab" onclick="showTab('ia',this)">Señales IA</div>
+<div class="tab" onclick="showTab('portafolio',this)">Mi Portafolio</div>
 <div class="tab" onclick="showTab('alertas',this)">Alertas <span id="badge" style="background:#f85149;color:white;border-radius:10px;padding:1px 5px;font-size:0.65rem;display:none">0</span></div>
 </div>
 <div class="seccion visible" id="tab-cedears">
@@ -86,6 +90,13 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 </div>
 <div id="señales-ia"><div style="text-align:center;padding:20px;color:#8b949e">Cargando señales...</div></div>
 </div>
+<div class="seccion" id="tab-portafolio">
+<h2>Mi Portafolio</h2>
+<div style="font-size:0.72rem;color:#8b949e;margin-bottom:12px">Ingresa tu precio de compra para calcular el spread. Los datos se guardan localmente en tu dispositivo.</div>
+<div class="overflow"><table>
+<thead><tr><th>Activo</th><th>Tipo</th><th>Precio Compra</th><th>Precio Actual</th><th>Spread</th></tr></thead>
+<tbody id="tp"><tr><td colspan="5" style="text-align:center;padding:20px;color:#8b949e">Cargando...</td></tr></tbody>
+</table></div></div>
 <div class="seccion" id="tab-alertas">
 <h2>Alertas activas</h2>
 <div id="tal"><div class="alerta info"><div class="at">Cargando...</div></div></div>
@@ -136,9 +147,54 @@ if(senales.length>0){
   shtml+='</tbody></table></div>';
 }else{shtml='<div style="text-align:center;padding:20px;color:#8b949e">Sin señales IA disponibles.</div>';}
 document.getElementById('señales-ia').innerHTML=shtml;
+buildPortfolio(d);
 const badge=document.getElementById('badge');
 if(alertas.length===0){document.getElementById('tal').innerHTML='<div class="alerta info"><div class="at">Sin alertas activas</div><div class="ad">Todos los activos en rangos normales</div></div>';badge.style.display='none';}else{document.getElementById('tal').innerHTML=alertas.map(a=>'<div class="alerta '+a.tipo+'"><div class="at">'+a.t+'</div><div class="ad">'+a.d+'</div></div>').join('');badge.textContent=alertas.length;badge.style.display='inline';}
 }catch(e){document.getElementById('estado').textContent='Error: '+e.message;}
+}
+function buildPortfolio(d){
+  const activos=[];
+  const arr=Array.isArray(d.cedears)?d.cedears:[d.cedears];
+  arr.forEach(c=>{if(c&&c.t)activos.push({id:'c_'+c.t,nombre:c.t+' — '+c.n,tipo:'CEDEAR',precio:c.p,moneda:'USD'});});
+  const aacc=Array.isArray(d.acciones)?d.acciones:[d.acciones];
+  aacc.forEach(a=>{if(a&&a.t)activos.push({id:'a_'+a.t,nombre:a.t+' — '+a.n,tipo:'Accion AR',precio:a.p,moneda:'ARS'});});
+  const acry=Array.isArray(d.crypto)?d.crypto:[d.crypto];
+  acry.forEach(c=>{if(c&&c.s)activos.push({id:'cr_'+c.s,nombre:c.n+' ('+c.s+')',tipo:'Crypto',precio:c.p,moneda:'USD'});});
+  let html='';
+  activos.forEach(a=>{
+    const stored=localStorage.getItem('port_'+a.id)||'';
+    const actual=Number(a.precio)||0;
+    let spreadHtml='<span style="color:#8b949e">—</span>';
+    if(stored!==''&&Number(stored)>0){
+      const spread=((actual-Number(stored))/Number(stored)*100);
+      const cls=spread>=0?'spread-pos':'spread-neg';
+      spreadHtml='<span class="'+cls+'">'+(spread>=0?'+':'')+spread.toFixed(2)+'%</span>';
+    }
+    html+='<tr>'
+      +'<td><strong>'+a.nombre+'</strong></td>'
+      +'<td style="font-size:0.72rem;color:#8b949e">'+a.tipo+'</td>'
+      +'<td><input class="port-input" type="number" step="any" min="0" placeholder="0.00" value="'+stored+'" data-id="'+a.id+'" data-actual="'+actual+'"></td>'
+      +'<td>'+a.moneda+' '+Number(actual).toLocaleString('en-US',{maximumFractionDigits:2})+'</td>'
+      +'<td id="sp_'+a.id+'">'+spreadHtml+'</td>'
+      +'</tr>';
+  });
+  document.getElementById('tp').innerHTML=html||'<tr><td colspan="5" style="text-align:center;padding:20px;color:#8b949e">Sin datos</td></tr>';
+  document.querySelectorAll('.port-input').forEach(inp=>{
+    inp.addEventListener('input',function(){
+      const id=this.dataset.id;
+      const val=this.value;
+      if(val!=='')localStorage.setItem('port_'+id,val);else localStorage.removeItem('port_'+id);
+      const actual=Number(this.dataset.actual)||0;
+      const el=document.getElementById('sp_'+id);
+      if(el){
+        if(val!==''&&Number(val)>0){
+          const spread=((actual-Number(val))/Number(val)*100);
+          const cls=spread>=0?'spread-pos':'spread-neg';
+          el.innerHTML='<span class="'+cls+'">'+(spread>=0?'+':'')+spread.toFixed(2)+'%</span>';
+        }else{el.innerHTML='<span style="color:#8b949e">—</span>';}
+      }
+    });
+  });
 }
 tick();cargar();setInterval(cargar,300000);setInterval(tick,1000);
 </script>
