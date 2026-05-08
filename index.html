@@ -43,6 +43,19 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 .port-input{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e6edf3;padding:4px 6px;width:90px;font-size:0.8rem;text-align:right}
 .port-input:focus{outline:none;border-color:#58a6ff}
 .spread-pos{color:#3fb950;font-weight:600}.spread-neg{color:#f85149;font-weight:600}
+.sim-box{background:#161b22;border:1px solid #21262d;border-radius:10px;padding:14px;margin-top:16px}
+.sim-box h2{font-size:0.78rem;color:#8b949e;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid #21262d;padding-bottom:8px}
+.sim-input{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e6edf3;padding:6px 8px;font-size:0.82rem;width:100%}
+.sim-input:focus{outline:none;border-color:#58a6ff}
+.sim-select{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e6edf3;padding:6px 8px;font-size:0.82rem;width:100%}
+.sim-select:focus{outline:none;border-color:#58a6ff}
+.sim-fields{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.sim-field{flex:1;min-width:130px}
+.sim-field label{display:block;font-size:0.72rem;color:#8b949e;margin-bottom:4px}
+.sim-resumen{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.sim-stat{background:#21262d;border-radius:6px;padding:10px;text-align:center}
+.sim-stat-label{font-size:0.65rem;color:#8b949e;text-transform:uppercase;margin-bottom:4px}
+.sim-stat-val{font-size:1rem;font-weight:700}
 </style>
 </head>
 <body>
@@ -96,7 +109,24 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 <div class="overflow"><table>
 <thead><tr><th>Activo</th><th>Tipo</th><th>Precio Compra</th><th>Precio Actual</th><th>Spread</th></tr></thead>
 <tbody id="tp"><tr><td colspan="5" style="text-align:center;padding:20px;color:#8b949e">Cargando...</td></tr></tbody>
-</table></div></div>
+</table></div>
+<div class="sim-box">
+<h2>Simulador de Compra</h2>
+<div style="margin-bottom:10px"><label style="font-size:0.72rem;color:#8b949e;display:block;margin-bottom:4px">Activo</label><select class="sim-select" id="sim-sel"><option value="">Seleccionar activo...</option></select></div>
+<div class="sim-fields">
+<div class="sim-field"><label>Unidades a comprar</label><input class="sim-input" type="number" id="sim-units" min="0" step="any" placeholder="0"></div>
+<div class="sim-field"><label>Precio de compra</label><input class="sim-input" type="number" id="sim-price" min="0" step="any" placeholder="0.00"><div style="font-size:0.65rem;color:#8b949e;margin-top:3px" id="sim-moneda"></div></div>
+</div>
+<div class="sim-resumen" id="sim-resumen" style="display:none">
+<div class="sim-stat"><div class="sim-stat-label">Capital necesario</div><div class="sim-stat-val" id="sim-capital">-</div></div>
+<div class="sim-stat"><div class="sim-stat-label">Precio objetivo +20%</div><div class="sim-stat-val sube" id="sim-obj20">-</div></div>
+</div>
+<div class="overflow" id="sim-tabla" style="display:none"><table>
+<thead><tr><th>Escenario</th><th>%</th><th>Precio venta</th><th>Ganancia / Pérdida</th></tr></thead>
+<tbody id="sim-tbody"></tbody>
+</table></div>
+</div>
+</div>
 <div class="seccion" id="tab-alertas">
 <h2>Alertas activas</h2>
 <div id="tal"><div class="alerta info"><div class="at">Cargando...</div></div></div>
@@ -179,6 +209,7 @@ function buildPortfolio(d){
       +'</tr>';
   });
   document.getElementById('tp').innerHTML=html||'<tr><td colspan="5" style="text-align:center;padding:20px;color:#8b949e">Sin datos</td></tr>';
+  buildSimulator(activos);
   document.querySelectorAll('.port-input').forEach(inp=>{
     inp.addEventListener('input',function(){
       const id=this.dataset.id;
@@ -195,6 +226,61 @@ function buildPortfolio(d){
       }
     });
   });
+}
+let _simActivos=[];
+function buildSimulator(activos){
+  _simActivos=activos;
+  const sel=document.getElementById('sim-sel');
+  const prev=sel.value;
+  sel.innerHTML='<option value="">Seleccionar activo...</option>';
+  activos.forEach((a,i)=>{const o=document.createElement('option');o.value=i;o.textContent=a.nombre+' ('+a.moneda+')';sel.appendChild(o);});
+  if(prev!=='')sel.value=prev;
+  sel.onchange=function(){
+    const a=_simActivos[this.value];
+    if(a){document.getElementById('sim-price').value=Number(a.precio).toFixed(a.moneda==='ARS'?0:2);document.getElementById('sim-moneda').textContent='Precio actual: '+a.moneda+' '+Number(a.precio).toLocaleString('en-US',{maximumFractionDigits:2});}
+    else{document.getElementById('sim-price').value='';document.getElementById('sim-moneda').textContent='';}
+    calcSim();
+  };
+  document.getElementById('sim-units').oninput=calcSim;
+  document.getElementById('sim-price').oninput=calcSim;
+}
+function calcSim(){
+  const idx=document.getElementById('sim-sel').value;
+  const units=parseFloat(document.getElementById('sim-units').value)||0;
+  const price=parseFloat(document.getElementById('sim-price').value)||0;
+  const resumen=document.getElementById('sim-resumen');
+  const tabla=document.getElementById('sim-tabla');
+  if(!idx||units<=0||price<=0){resumen.style.display='none';tabla.style.display='none';return;}
+  const a=_simActivos[idx];
+  const mon=a?a.moneda:'';
+  const capital=units*price;
+  const fmt=(v)=>Number(v).toLocaleString('en-US',{maximumFractionDigits:2});
+  document.getElementById('sim-capital').textContent=mon+' '+fmt(capital);
+  document.getElementById('sim-obj20').textContent=mon+' '+fmt(price*1.2);
+  resumen.style.display='grid';
+  const escenarios=[
+    {label:'Sube 30%',pct:30,sube:true},
+    {label:'Sube 20%',pct:20,sube:true},
+    {label:'Sube 10%',pct:10,sube:true},
+    {label:'Baja 10%',pct:-10,sube:false},
+    {label:'Baja 20%',pct:-20,sube:false},
+    {label:'Baja 30%',pct:-30,sube:false},
+  ];
+  let rows='';
+  escenarios.forEach(e=>{
+    const pv=price*(1+e.pct/100);
+    const gan=(pv-price)*units;
+    const cls=e.sube?'sube':'baja';
+    const sig=e.sube?'+':'';
+    rows+='<tr>'
+      +'<td><strong class="'+cls+'">'+e.label+'</strong></td>'
+      +'<td class="'+cls+'">'+sig+e.pct+'%</td>'
+      +'<td>'+mon+' '+fmt(pv)+'</td>'
+      +'<td class="'+cls+'">'+sig+mon+' '+fmt(gan)+'</td>'
+      +'</tr>';
+  });
+  document.getElementById('sim-tbody').innerHTML=rows;
+  tabla.style.display='block';
 }
 tick();cargar();setInterval(cargar,300000);setInterval(tick,1000);
 </script>
