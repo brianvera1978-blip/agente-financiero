@@ -114,24 +114,24 @@
                         "dO":  -10.6
                     }
                 ],
-    "fecha":  "08/05/2026 17:26",
+    "fecha":  "08/05/2026 17:47",
     "ccl":  1483.1,
     "crypto":  [
                    {
                        "id":  "bitcoin",
-                       "v":  0.13,
+                       "v":  0.35,
                        "s":  "BTC",
                        "n":  "Bitcoin",
-                       "ars":  119020258,
-                       "p":  80251
+                       "ars":  119021741,
+                       "p":  80252
                    },
                    {
                        "id":  "ethereum",
-                       "v":  0.79,
+                       "v":  0.86,
                        "s":  "ETH",
                        "n":  "Ethereum",
-                       "ars":  3429476,
-                       "p":  2312.37
+                       "ars":  3424433,
+                       "p":  2308.97
                    },
                    {
                        "id":  "tether",
@@ -139,31 +139,31 @@
                        "s":  "USDT",
                        "n":  "Tether",
                        "ars":  1483,
-                       "p":  0.999871
+                       "p":  0.999866
                    },
                    {
                        "id":  "solana",
-                       "v":  4.40,
+                       "v":  4.69,
                        "s":  "SOL",
                        "n":  "Solana",
-                       "ars":  137053,
-                       "p":  92.41
+                       "ars":  136920,
+                       "p":  92.32
                    },
                    {
                        "id":  "binancecoin",
-                       "v":  0.67,
+                       "v":  0.62,
                        "s":  "BNB",
                        "n":  "BNB",
-                       "ars":  961701,
-                       "p":  648.44
+                       "ars":  961227,
+                       "p":  648.12
                    },
                    {
                        "id":  "ripple",
-                       "v":  1.93,
+                       "v":  2.06,
                        "s":  "XRP",
                        "n":  "XRP",
-                       "ars":  2106,
-                       "p":  1.42
+                       "ars":  2091,
+                       "p":  1.41
                    }
                ],
     "of":  1420,
@@ -243,82 +243,64 @@
                  ],
     "senales_ia":  [
                        {
+                           "activo":  "MELI",
+                           "tipo":  "VENTA",
+                           "confianza":  85,
+                           "razon":  "Cay├│ 11.33% en el d├¡a. Precio (1632) a solo 2% del stop (1600). Riesgo de ruptura inminente."
+                       },
+                       {
                            "activo":  "MSFT",
                            "tipo":  "COMPRA",
                            "confianza":  72,
-                           "razon":  "Precio $415 entre stop $380 y objetivo $460. Upside 10.8%, momentum +0.28% en el d├¡a."
-                       },
-                       {
-                           "activo":  "AAPL",
-                           "tipo":  "VENTA",
-                           "confianza":  83,
-                           "razon":  "Precio $293 supera objetivo $210 en un 28.4%. Zona de toma de ganancias confirmada."
+                           "razon":  "├Ünico CEDEAR con upside real al objetivo (+10.8%). Stop alejado 8.7%. Variaci├│n diaria neutral."
                        },
                        {
                            "activo":  "TSLA",
-                           "tipo":  "VENTA",
-                           "confianza":  80,
-                           "razon":  "Precio $428 vs objetivo $300, superado en 30%. Sobreextendido respecto al target."
+                           "tipo":  "MANTENER",
+                           "confianza":  65,
+                           "razon":  "Momentum fuerte hoy (+7.43%) pero precio 30% por encima del objetivo original. Ajustar stop loss."
                        },
                        {
                            "activo":  "NVDA",
-                           "tipo":  "VENTA",
-                           "confianza":  76,
-                           "razon":  "Precio $215 vs objetivo $160, superado en 25.7%. Ganancia realizable del 34%."
-                       },
-                       {
-                           "activo":  "MELI",
-                           "tipo":  "VENTA",
-                           "confianza":  79,
-                           "razon":  "Cay├│ -11.33% hoy. Precio $1632 rozando stop en $1600. Riesgo de perforaci├│n inminente."
-                       },
-                       {
-                           "activo":  "GOOGL",
-                           "tipo":  "VENTA",
-                           "confianza":  85,
-                           "razon":  "Precio $400 vs objetivo $200, superado en 50%. La mayor divergencia precio/objetivo del panel."
-                       },
-                       {
-                           "activo":  "JPM",
-                           "tipo":  "VENTA",
-                           "confianza":  71,
-                           "razon":  "Precio $302 vs objetivo $270, superado en 10.6%. Ca├¡da -4.06% hoy suma presi├│n bajista."
-                       },
-                       {
-                           "activo":  "SUPV",
-                           "tipo":  "VENTA",
-                           "confianza":  73,
-                           "razon":  "Ca├¡da -7.46%, mayor baja del panel local. Presi├│n vendedora fuerte en banca."
-                       },
-                       {
-                           "activo":  "CEPU",
-                           "tipo":  "VENTA",
-                           "confianza":  70,
-                           "razon":  "Ca├¡da -7.27%. Sector energ├¡a local bajo presi├│n junto con el mercado general."
-                       },
-                       {
-                           "activo":  "ALUA",
                            "tipo":  "MANTENER",
                            "confianza":  62,
-                           "razon":  "├Ünica acci├│n local con ca├¡da m├¡nima -0.82% mientras el panel cae en promedio -4.5%. Fortaleza relativa."
+                           "razon":  "Sube +3.55% con momentum positivo. Precio 25.7% sobre objetivo. Mantener con trailing stop."
                        },
                        {
                            "activo":  "SOL",
                            "tipo":  "COMPRA",
-                           "confianza":  67,
-                           "razon":  "Mayor suba del panel crypto con +4.40%. Momentum positivo en contexto de ca├¡da de acciones locales."
+                           "confianza":  68,
+                           "razon":  "Mayor momentum del d├¡a en cripto (+4.69%). Crypto diverge al alza respecto al panel local."
                        },
                        {
                            "activo":  "XRP",
                            "tipo":  "COMPRA",
-                           "confianza":  63,
-                           "razon":  "Sube +1.93%. Segunda mejor performance crypto del d├¡a. Alternativa de corto plazo."
+                           "confianza":  60,
+                           "razon":  "Sube +2.06%. Flujo positivo en cripto mientras acciones argentinas caen con fuerza."
                        },
                        {
                            "activo":  "BTC",
                            "tipo":  "MANTENER",
-                           "confianza":  65,
-                           "razon":  "Estable $80,251 (+0.13%). Act├║a como refugio ante la ca├¡da generalizada del mercado local."
+                           "confianza":  58,
+                           "razon":  "Estable en USD 80.252 (+0.35%). Sin se├▒al clara de direcci├│n. Lejos de m├íximos hist├│ricos."
+                       },
+                       {
+                           "activo":  "ALUA",
+                           "tipo":  "COMPRA",
+                           "confianza":  55,
+                           "razon":  "La m├ís resiliente del panel argentino (-0.82%) en una jornada de ventas generalizadas."
+                       },
+                       {
+                           "activo":  "SUPV",
+                           "tipo":  "MANTENER",
+                           "confianza":  70,
+                           "razon":  "Mayor ca├¡da del d├¡a (-7.46%). Esperar estabilizaci├│n antes de cualquier entrada."
+                       },
+                       {
+                           "activo":  "CEPU",
+                           "tipo":  "MANTENER",
+                           "confianza":  68,
+                           "razon":  "Cae -7.27%. Sector energ├¡a bajo presi├│n. Sin se├▒al de piso confirmado."
                        }
                    ],
     "resumen_mercado":  null,
