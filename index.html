@@ -56,6 +56,14 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 .sim-stat{background:#21262d;border-radius:6px;padding:10px;text-align:center}
 .sim-stat-label{font-size:0.65rem;color:#8b949e;text-transform:uppercase;margin-bottom:4px}
 .sim-stat-val{font-size:1rem;font-weight:700}
+.señal-es-card{background:#161b22;border:1px solid #21262d;border-radius:10px;padding:12px;margin-bottom:8px;display:flex;align-items:center;gap:12px}
+.señal-es-icon{font-size:1.3rem;min-width:28px;text-align:center;font-weight:700}
+.señal-es-info{flex:1;min-width:0}
+.señal-es-nombre{font-size:0.82rem;font-weight:600;margin-bottom:3px}
+.señal-es-var{font-size:0.72rem;color:#8b949e}
+.señal-es-badge{padding:4px 10px;border-radius:20px;font-size:0.72rem;font-weight:700;white-space:nowrap}
+.ses-comprar{border-left:4px solid #3fb950}.ses-mantener{border-left:4px solid #d29922}.ses-vender{border-left:4px solid #f85149}
+.ses-badge-c{background:#1a4731;color:#3fb950}.ses-badge-m{background:#2d2a1f;color:#d29922}.ses-badge-v{background:#3d1a1a;color:#f85149}
 </style>
 </head>
 <body>
@@ -125,6 +133,11 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 <thead><tr><th>Escenario</th><th>%</th><th>Precio venta</th><th>Ganancia / Pérdida</th></tr></thead>
 <tbody id="sim-tbody"></tbody>
 </table></div>
+</div>
+<div class="sim-box" id="senales-box" style="display:none">
+<h2>Señales de Entrada / Salida</h2>
+<div style="font-size:0.72rem;color:#8b949e;margin-bottom:10px">Basado en variacion vs precio de compra cargado. Comprar &lt;-10% | Mantener -10% a +15% | Vender &gt;+15%</div>
+<div id="senales-es"></div>
 </div>
 </div>
 <div class="seccion" id="tab-alertas">
@@ -210,6 +223,7 @@ function buildPortfolio(d){
   });
   document.getElementById('tp').innerHTML=html||'<tr><td colspan="5" style="text-align:center;padding:20px;color:#8b949e">Sin datos</td></tr>';
   buildSimulator(activos);
+  buildSenales(activos);
   document.querySelectorAll('.port-input').forEach(inp=>{
     inp.addEventListener('input',function(){
       const id=this.dataset.id;
@@ -224,8 +238,37 @@ function buildPortfolio(d){
           el.innerHTML='<span class="'+cls+'">'+(spread>=0?'+':'')+spread.toFixed(2)+'%</span>';
         }else{el.innerHTML='<span style="color:#8b949e">—</span>';}
       }
+      buildSenales(_simActivos);
     });
   });
+}
+function buildSenales(activos){
+  const items=activos.filter(a=>{const s=localStorage.getItem('port_'+a.id);return s!==null&&s!==''&&Number(s)>0;});
+  const box=document.getElementById('senales-box');
+  if(items.length===0){box.style.display='none';return;}
+  box.style.display='block';
+  let html='';
+  items.forEach(a=>{
+    const compra=Number(localStorage.getItem('port_'+a.id));
+    const actual=Number(a.precio)||0;
+    const vp=((actual-compra)/compra*100);
+    let tipo,icon,badgeClass,cardClass;
+    if(vp<-10){tipo='COMPRAR';icon='↓';badgeClass='ses-badge-c';cardClass='ses-comprar';}
+    else if(vp>15){tipo='VENDER';icon='↑';badgeClass='ses-badge-v';cardClass='ses-vender';}
+    else{tipo='MANTENER';icon='→';badgeClass='ses-badge-m';cardClass='ses-mantener';}
+    const varStr=(vp>=0?'+':'')+vp.toFixed(2)+'%';
+    const varCls=vp>0?'sube':vp<0?'baja':'neutro';
+    const fmt=(v,m)=>m+' '+Number(v).toLocaleString('en-US',{maximumFractionDigits:2});
+    html+='<div class="señal-es-card '+cardClass+'">'
+      +'<div class="señal-es-icon '+badgeClass.replace('ses-badge-','señal-icon-')+'">'+icon+'</div>'
+      +'<div class="señal-es-info">'
+      +'<div class="señal-es-nombre">'+a.nombre+'</div>'
+      +'<div class="señal-es-var">Var: <span class="'+varCls+'">'+varStr+'</span> &nbsp;|&nbsp; Compra: '+fmt(compra,a.moneda)+' — Actual: '+fmt(actual,a.moneda)+'</div>'
+      +'</div>'
+      +'<span class="señal-es-badge '+badgeClass+'">'+icon+' '+tipo+'</span>'
+      +'</div>';
+  });
+  document.getElementById('senales-es').innerHTML=html;
 }
 let _simActivos=[];
 function buildSimulator(activos){
