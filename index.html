@@ -64,6 +64,22 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 .señal-es-badge{padding:4px 10px;border-radius:20px;font-size:0.72rem;font-weight:700;white-space:nowrap}
 .ses-comprar{border-left:4px solid #3fb950}.ses-mantener{border-left:4px solid #d29922}.ses-vender{border-left:4px solid #f85149}
 .ses-badge-c{background:#1a4731;color:#3fb950}.ses-badge-m{background:#2d2a1f;color:#d29922}.ses-badge-v{background:#3d1a1a;color:#f85149}
+.resumen-diario{margin:0 14px 14px;background:#161b22;border:1px solid #21262d;border-radius:10px;padding:14px;border-left:4px solid #58a6ff}
+.resumen-diario-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.resumen-diario-header h2{font-size:0.78rem;color:#58a6ff;text-transform:uppercase;letter-spacing:1px;margin:0}
+.resumen-diario-hora{font-size:0.65rem;color:#8b949e}
+.resumen-diario-macro{font-size:0.82rem;color:#e6edf3;margin-bottom:12px;line-height:1.5}
+.resumen-diario-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.rd-col{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:10px}
+.rd-col-title{font-size:0.65rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-weight:600}
+.rd-col-title.compra{color:#3fb950}.rd-col-title.venta{color:#f85149}
+.rd-item{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid #21262d;font-size:0.78rem}
+.rd-item:last-child{border-bottom:none}
+.rd-item-ticker{font-weight:700}
+.rd-item-var{font-size:0.72rem}
+.rd-item-razon{font-size:0.65rem;color:#8b949e;margin-top:1px}
+.resumen-diario-rec{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:10px;font-size:0.8rem;color:#e6edf3;line-height:1.5}
+.resumen-diario-rec-label{font-size:0.65rem;color:#8b949e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
 </style>
 </head>
 <body>
@@ -77,6 +93,25 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 <div class="card"><h3>MEP</h3><div class="valor" id="me">-</div></div>
 <div class="card"><h3>CCL</h3><div class="valor" id="ccl">-</div></div>
 <div class="card"><h3>Brecha</h3><div class="valor" id="br">-</div><div id="sb" style="font-size:0.7rem;margin-top:3px"></div></div>
+</div>
+<div class="resumen-diario" id="resumen-diario-box" style="display:none">
+<div class="resumen-diario-header">
+<h2>Resumen IA del Dia</h2>
+<span class="resumen-diario-hora" id="rd-hora"></span>
+</div>
+<div class="resumen-diario-macro" id="rd-macro">Cargando...</div>
+<div class="resumen-diario-cols">
+<div class="rd-col">
+<div class="rd-col-title compra">Top 3 Compra</div>
+<div id="rd-compra"></div>
+</div>
+<div class="rd-col">
+<div class="rd-col-title venta">Top 3 Venta</div>
+<div id="rd-venta"></div>
+</div>
+</div>
+<div class="resumen-diario-rec-label">Recomendacion del dia</div>
+<div class="resumen-diario-rec" id="rd-rec"></div>
 </div>
 <div class="tabs">
 <div class="tab active" onclick="showTab('cedears',this)">CEDEARs</div>
@@ -190,6 +225,7 @@ if(senales.length>0){
   shtml+='</tbody></table></div>';
 }else{shtml='<div style="text-align:center;padding:20px;color:#8b949e">Sin señales IA disponibles.</div>';}
 document.getElementById('señales-ia').innerHTML=shtml;
+buildResumenDiario(d);
 buildPortfolio(d);
 const badge=document.getElementById('badge');
 if(alertas.length===0){document.getElementById('tal').innerHTML='<div class="alerta info"><div class="at">Sin alertas activas</div><div class="ad">Todos los activos en rangos normales</div></div>';badge.style.display='none';}else{document.getElementById('tal').innerHTML=alertas.map(a=>'<div class="alerta '+a.tipo+'"><div class="at">'+a.t+'</div><div class="ad">'+a.d+'</div></div>').join('');badge.textContent=alertas.length;badge.style.display='inline';}
@@ -269,6 +305,30 @@ function buildSenales(activos){
       +'</div>';
   });
   document.getElementById('senales-es').innerHTML=html;
+}
+function buildResumenDiario(d){
+  const rd=d.resumen_diario;
+  const box=document.getElementById('resumen-diario-box');
+  if(!rd){box.style.display='none';return;}
+  box.style.display='block';
+  document.getElementById('rd-macro').textContent=rd.contexto_macro||'';
+  document.getElementById('rd-hora').textContent=d.fecha_senales?'Generado: '+d.fecha_senales:'';
+  const renderItems=(items,containerId,esCompra)=>{
+    const el=document.getElementById(containerId);
+    if(!items||!items.length){el.innerHTML='<div style="color:#8b949e;font-size:0.75rem">Sin datos</div>';return;}
+    el.innerHTML=items.map(i=>{
+      const v=Number(i.var)||0;
+      const cls=esCompra?'baja':'sube';
+      const sig=v>0?'+':'';
+      return '<div class="rd-item">'
+        +'<div><div class="rd-item-ticker">'+i.activo+'</div><div class="rd-item-razon">'+i.razon+'</div></div>'
+        +'<div class="rd-item-var '+cls+'">'+sig+v+'%</div>'
+        +'</div>';
+    }).join('');
+  };
+  renderItems(rd.top_compra,'rd-compra',true);
+  renderItems(rd.top_venta,'rd-venta',false);
+  document.getElementById('rd-rec').textContent=rd.recomendacion||'';
 }
 let _simActivos=[];
 function buildSimulator(activos){
