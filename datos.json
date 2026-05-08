@@ -1,50 +1,50 @@
 ﻿{
     "brecha":  -1.4,
-    "me":  1448.5,
-    "bl":  1405,
+    "me":  1431.5,
+    "bl":  1400,
     "cedears":  [
                     {
                         "stop":  170,
                         "obj":  210,
                         "div":  "Feb/May/Ago/Nov",
                         "n":  "Apple",
-                        "p":  276.83,
+                        "p":  292.755,
                         "t":  "AAPL",
-                        "v":  2.02,
-                        "ars":  41361,
-                        "dO":  -24.1
+                        "v":  1.82,
+                        "ars":  43518,
+                        "dO":  -28.3
                     },
                     {
                         "stop":  380,
                         "obj":  460,
                         "div":  "Mar/Jun/Sep/Dic",
                         "n":  "Microsoft",
-                        "p":  413.62,
+                        "p":  414.955,
                         "t":  "MSFT",
-                        "v":  1.43,
-                        "ars":  61799,
-                        "dO":  11.2
+                        "v":  0.24,
+                        "ars":  61683,
+                        "dO":  10.9
                     },
                     {
                         "stop":  155,
                         "obj":  200,
                         "div":  "No paga",
                         "n":  "Google",
-                        "p":  383.25,
+                        "p":  398.62,
                         "t":  "GOOGL",
-                        "v":  -0.40,
-                        "ars":  7158,
-                        "dO":  -47.8
+                        "v":  0.15,
+                        "ars":  7407,
+                        "dO":  -49.8
                     },
                     {
                         "stop":  185,
                         "obj":  240,
                         "div":  "No paga",
                         "n":  "Amazon",
-                        "p":  272.05,
+                        "p":  272.21,
                         "t":  "AMZN",
-                        "v":  2.64,
-                        "ars":  15054,
+                        "v":  -1.01,
+                        "ars":  14987,
                         "dO":  -11.8
                     },
                     {
@@ -52,43 +52,43 @@
                         "obj":  300,
                         "div":  "No paga",
                         "n":  "Tesla",
-                        "p":  392.51,
+                        "p":  426.65,
                         "t":  "TSLA",
-                        "v":  2.85,
-                        "ars":  58645,
-                        "dO":  -23.6
+                        "v":  7.00,
+                        "ars":  63422,
+                        "dO":  -29.7
                     },
                     {
                         "stop":  1600,
                         "obj":  2200,
                         "div":  "No paga",
                         "n":  "MercadoLibre",
-                        "p":  1813.53,
+                        "p":  1634.47,
                         "t":  "MELI",
-                        "v":  1.17,
-                        "ars":  338699,
-                        "dO":  21.3
+                        "v":  -11.23,
+                        "ars":  303705,
+                        "dO":  34.6
                     },
                     {
                         "stop":  100,
                         "obj":  160,
                         "div":  "Mar/Jun/Sep/Dic",
                         "n":  "NVIDIA",
-                        "p":  198.48,
+                        "p":  215.05,
                         "t":  "NVDA",
-                        "v":  -0.55,
-                        "ars":  29655,
-                        "dO":  -19.4
+                        "v":  3.47,
+                        "ars":  31967,
+                        "dO":  -25.6
                     },
                     {
                         "stop":  58,
                         "obj":  75,
                         "div":  "Abr/Jul/Oct/Ene",
                         "n":  "Coca-Cola",
-                        "p":  78.19,
+                        "p":  78.21,
                         "t":  "KO",
-                        "v":  -0.72,
-                        "ars":  23365,
+                        "v":  -1.29,
+                        "ars":  23252,
                         "dO":  -4.1
                     },
                     {
@@ -96,149 +96,273 @@
                         "obj":  130,
                         "div":  "Mar/Jun/Sep/Dic",
                         "n":  "ExxonMobil",
-                        "p":  153.69,
+                        "p":  144.66,
                         "t":  "XOM",
-                        "v":  -0.41,
-                        "ars":  45926,
-                        "dO":  -15.4
+                        "v":  -2.71,
+                        "ars":  43007,
+                        "dO":  -10.1
                     },
                     {
                         "stop":  210,
                         "obj":  270,
                         "div":  "Abr/Jul/Oct/Ene",
                         "n":  "JP Morgan",
-                        "p":  307.65,
+                        "p":  301.225,
                         "t":  "JPM",
-                        "v":  -1.78,
-                        "ars":  91932,
-                        "dO":  -12.2
+                        "v":  -4.34,
+                        "ars":  89554,
+                        "dO":  -10.4
                     }
                 ],
-    "fecha":  "05/05/2026 09:00",
-    "ccl":  1494.1,
+    "fecha":  "08/05/2026 15:55",
+    "ccl":  1486.5,
     "crypto":  [
                    {
                        "id":  "bitcoin",
-                       "v":  2.82,
+                       "v":  -0.03,
                        "s":  "BTC",
                        "n":  "Bitcoin",
-                       "ars":  121001183,
-                       "p":  80986
+                       "ars":  119196489,
+                       "p":  80186
                    },
                    {
                        "id":  "ethereum",
-                       "v":  1.88,
+                       "v":  1.00,
                        "s":  "ETH",
                        "n":  "Ethereum",
-                       "ars":  3554314,
-                       "p":  2378.9
+                       "ars":  3448189,
+                       "p":  2319.67
                    },
                    {
                        "id":  "tether",
-                       "v":  0.01,
+                       "v":  0.00,
                        "s":  "USDT",
                        "n":  "Tether",
-                       "ars":  1494,
-                       "p":  0.999812
+                       "ars":  1486,
+                       "p":  0.999904
                    },
                    {
                        "id":  "solana",
-                       "v":  1.16,
+                       "v":  4.61,
                        "s":  "SOL",
                        "n":  "Solana",
-                       "ars":  126894,
-                       "p":  84.93
+                       "ars":  137367,
+                       "p":  92.41
                    },
                    {
                        "id":  "binancecoin",
-                       "v":  0.96,
+                       "v":  0.76,
                        "s":  "BNB",
                        "n":  "BNB",
-                       "ars":  939087,
-                       "p":  628.53
+                       "ars":  963520,
+                       "p":  648.18
                    },
                    {
                        "id":  "ripple",
-                       "v":  0.94,
+                       "v":  2.33,
                        "s":  "XRP",
                        "n":  "XRP",
-                       "ars":  2107,
-                       "p":  1.41
+                       "ars":  2111,
+                       "p":  1.42
                    }
                ],
-    "of":  1425,
+    "of":  1420,
     "acciones":  [
                      {
-                         "usd":  4.07,
-                         "v":  -2.33,
+                         "usd":  4.15,
+                         "v":  -3.21,
                          "s":  "Banco",
                          "t":  "GGAL",
                          "n":  "Galicia",
-                         "p":  6075
+                         "p":  6175
                      },
                      {
-                         "usd":  3.22,
-                         "v":  -3.17,
+                         "usd":  3.17,
+                         "v":  -4.31,
                          "s":  "Energia",
                          "t":  "PAMP",
                          "n":  "Pampa",
-                         "p":  4815
+                         "p":  4712
                      },
                      {
-                         "usd":  44.49,
-                         "v":  -1.74,
+                         "usd":  42.38,
+                         "v":  -1.87,
                          "s":  "Petroleo",
                          "t":  "YPFD",
                          "n":  "YPF",
-                         "p":  66475
+                         "p":  63000
                      },
                      {
-                         "usd":  0.45,
-                         "v":  -0.59,
+                         "usd":  0.46,
+                         "v":  -3.07,
                          "s":  "Acero",
                          "t":  "TXAR",
                          "n":  "Ternium",
-                         "p":  670
+                         "p":  679
                      },
                      {
-                         "usd":  0.63,
-                         "v":  -3.61,
+                         "usd":  0.61,
+                         "v":  -1.36,
                          "s":  "Aluminio",
                          "t":  "ALUA",
                          "n":  "Aluar",
-                         "p":  935
+                         "p":  906
                      },
                      {
-                         "usd":  2.35,
-                         "v":  -2.36,
+                         "usd":  2.41,
+                         "v":  -2.39,
                          "s":  "Telecom",
                          "t":  "TECO2",
                          "n":  "Telecom",
-                         "p":  3510
+                         "p":  3580
                      },
                      {
-                         "usd":  1.44,
-                         "v":  0.47,
+                         "usd":  1.42,
+                         "v":  -7.31,
                          "s":  "Energia",
                          "t":  "CEPU",
                          "n":  "Cent.Puerto",
-                         "p":  2149
+                         "p":  2105
                      },
                      {
-                         "usd":  1.60,
-                         "v":  -3.72,
+                         "usd":  1.63,
+                         "v":  -6.81,
                          "s":  "Banco",
                          "t":  "SUPV",
                          "n":  "Supervielle",
-                         "p":  2384
+                         "p":  2416
                      },
                      {
-                         "usd":  2.09,
-                         "v":  -5.86,
+                         "usd":  2.17,
+                         "v":  -7.34,
                          "s":  "Cemento",
                          "t":  "LOMA",
                          "n":  "Loma Negra",
-                         "p":  3130
+                         "p":  3220
                      }
-                 ]
+                 ],
+    "senales_ia":  [
+                       {
+                           "activo":  "AAPL",
+                           "tipo":  "VENTA",
+                           "confianza":  72,
+                           "razon":  "Precio $292.75 supera objetivo $210 en 28.3%. Sin upside t├®cnico. Tomar ganancias."
+                       },
+                       {
+                           "activo":  "MSFT",
+                           "tipo":  "COMPRA",
+                           "confianza":  74,
+                           "razon":  "10.9% de upside hasta objetivo $460. Precio sobre stop $380. Variaci├│n diaria neutral +0.24%."
+                       },
+                       {
+                           "activo":  "GOOGL",
+                           "tipo":  "VENTA",
+                           "confianza":  78,
+                           "razon":  "Precio $398 casi duplica el objetivo $200. Objetivos desactualizados o sobrevaluado. Reducir exposici├│n."
+                       },
+                       {
+                           "activo":  "AMZN",
+                           "tipo":  "VENTA",
+                           "confianza":  65,
+                           "razon":  "Precio $272 supera objetivo $240 en 11.8%. Ca├¡da leve diaria -1.01% confirma presi├│n vendedora."
+                       },
+                       {
+                           "activo":  "TSLA",
+                           "tipo":  "MANTENER",
+                           "confianza":  62,
+                           "razon":  "Precio super├│ objetivo pero con fuerte impulso diario +7%. Momentum alcista justifica esperar nuevo nivel."
+                       },
+                       {
+                           "activo":  "MELI",
+                           "tipo":  "VENTA",
+                           "confianza":  76,
+                           "razon":  "Ca├¡da brutal -11.23% en el d├¡a. Precio $1634 rozando stop $1600. Alto riesgo de ruptura del soporte."
+                       },
+                       {
+                           "activo":  "NVDA",
+                           "tipo":  "MANTENER",
+                           "confianza":  63,
+                           "razon":  "Precio 34% sobre objetivo, pero momentum diario +3.47%. Mantener con stop ajustado."
+                       },
+                       {
+                           "activo":  "KO",
+                           "tipo":  "MANTENER",
+                           "confianza":  68,
+                           "razon":  "Precio apenas sobre objetivo (-4.1%). Defensivo con dividendo trimestral. Ca├¡da -1.29% no es se├▒al de salida."
+                       },
+                       {
+                           "activo":  "XOM",
+                           "tipo":  "VENTA",
+                           "confianza":  70,
+                           "razon":  "Precio $144 supera objetivo $130 en 10.1%. Ca├¡da diaria -2.71% con petr├│leo d├®bil. Realizar ganancias."
+                       },
+                       {
+                           "activo":  "JPM",
+                           "tipo":  "VENTA",
+                           "confianza":  71,
+                           "razon":  "Precio $301 supera objetivo $270 en 10.4%. Ca├¡da diaria -4.34% con sector financiero bajo presi├│n."
+                       },
+                       {
+                           "activo":  "GGAL",
+                           "tipo":  "MANTENER",
+                           "confianza":  60,
+                           "razon":  "Ca├¡da moderada -3.21%. Sector bancario argentino bajo presi├│n general hoy. Sin se├▒al de salida clara."
+                       },
+                       {
+                           "activo":  "PAMP",
+                           "tipo":  "MANTENER",
+                           "confianza":  58,
+                           "razon":  "Ca├¡da -4.31% dentro del contexto bajista del mercado local. Energ├¡a con fundamentos s├│lidos en Argentina."
+                       },
+                       {
+                           "activo":  "YPFD",
+                           "tipo":  "MANTENER",
+                           "confianza":  62,
+                           "razon":  "Ca├¡da moderada -1.87%. YPF es el de menor baja en el panel hoy. Vaca Muerta como soporte fundamental."
+                       },
+                       {
+                           "activo":  "CEPU",
+                           "tipo":  "VENTA",
+                           "confianza":  73,
+                           "razon":  "Ca├¡da -7.31%, una de las mayores del panel. Se├▒al de debilidad relativa. Cortar posici├│n."
+                       },
+                       {
+                           "activo":  "SUPV",
+                           "tipo":  "VENTA",
+                           "confianza":  71,
+                           "razon":  "Ca├¡da -6.81%. Supervielle muestra debilidad dentro del sector bancario. Salir ante ca├¡da sostenida."
+                       },
+                       {
+                           "activo":  "LOMA",
+                           "tipo":  "VENTA",
+                           "confianza":  74,
+                           "razon":  "Peor baja del panel -7.34%. Cemento y construcci├│n sin catalizadores en el corto plazo. Cerrar posici├│n."
+                       },
+                       {
+                           "activo":  "BTC",
+                           "tipo":  "MANTENER",
+                           "confianza":  65,
+                           "razon":  "Variaci├│n -0.03%, lateral en $80,186. Sin direcci├│n clara. Esperar confirmaci├│n de ruptura."
+                       },
+                       {
+                           "activo":  "ETH",
+                           "tipo":  "COMPRA",
+                           "confianza":  63,
+                           "razon":  "Rebote +1.0% en $2319. Potencial recuperaci├│n respecto a BTC. Entrada t├íctica de corto plazo."
+                       },
+                       {
+                           "activo":  "SOL",
+                           "tipo":  "COMPRA",
+                           "confianza":  69,
+                           "razon":  "Mejor performance del panel crypto +4.61%. Momentum alcista claro. Entrada con stop en $80."
+                       },
+                       {
+                           "activo":  "XRP",
+                           "tipo":  "MANTENER",
+                           "confianza":  61,
+                           "razon":  "Subida moderada +2.33% en $1.42. Tendencia positiva pero sin catalizador espec├¡fico hoy."
+                       }
+                   ],
+    "resumen_mercado":  null,
+    "fecha_senales":  null
 }
