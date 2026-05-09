@@ -80,6 +80,38 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 .rd-item-razon{font-size:0.65rem;color:#8b949e;margin-top:1px}
 .resumen-diario-rec{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:10px;font-size:0.8rem;color:#e6edf3;line-height:1.5}
 .resumen-diario-rec-label{font-size:0.65rem;color:#8b949e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.tb-panel{background:#161b22;border:1px solid #21262d;border-radius:10px;padding:14px;margin-bottom:14px}
+.tb-panel-title{font-size:0.65rem;color:#8b949e;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #21262d;display:flex;justify-content:space-between;align-items:center}
+.tb-scan-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #21262d}
+.tb-scan-item:last-child{border-bottom:none}
+.tb-scan-rank{font-size:1.4rem;font-weight:700;min-width:32px;text-align:center}
+.tb-scan-info{flex:1}
+.tb-scan-ticker{font-size:0.88rem;font-weight:700;margin-bottom:2px}
+.tb-scan-anomalia{font-size:0.72rem;color:#8b949e}
+.tb-scan-badge{padding:4px 10px;border-radius:20px;font-size:0.72rem;font-weight:700;white-space:nowrap}
+.tb-senal-card{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:12px;margin-bottom:10px}
+.tb-senal-card:last-child{margin-bottom:0}
+.tb-senal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.tb-senal-ticker{font-size:0.85rem;font-weight:700}
+.tb-signal-buy{background:#1a4731;color:#3fb950;padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700}
+.tb-signal-sell{background:#3d1a1a;color:#f85149;padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700}
+.tb-signal-neutral{background:#2d2a1f;color:#d29922;padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700}
+.tb-senal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tb-senal-stat{background:#161b22;border-radius:6px;padding:8px}
+.tb-senal-stat-label{font-size:0.62rem;color:#8b949e;text-transform:uppercase;margin-bottom:4px}
+.tb-senal-stat-val{font-size:1rem;font-weight:700;margin-bottom:6px}
+.tb-senal-bar{height:4px;background:#21262d;border-radius:2px;overflow:hidden}
+.tb-senal-bar-fill{height:100%;border-radius:2px;transition:width 0.3s}
+.tb-riesgo-card{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:12px;margin-bottom:10px}
+.tb-riesgo-card:last-child{margin-bottom:0}
+.tb-riesgo-ticker{font-size:0.85rem;font-weight:700;margin-bottom:10px;color:#8b949e}
+.tb-riesgo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.tb-riesgo-item{background:#161b22;border-radius:6px;padding:8px}
+.tb-riesgo-label{font-size:0.62rem;color:#8b949e;text-transform:uppercase;margin-bottom:4px}
+.tb-riesgo-val{font-size:0.95rem;font-weight:700;margin-bottom:2px}
+.tb-capital-row{display:flex;align-items:center;gap:8px}
+.tb-capital-input{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e6edf3;padding:4px 8px;font-size:0.82rem;width:130px;text-align:right}
+.tb-capital-input:focus{outline:none;border-color:#58a6ff}
 </style>
 </head>
 <body>
@@ -120,6 +152,7 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 <div class="tab" onclick="showTab('ia',this)">Señales IA</div>
 <div class="tab" onclick="showTab('portafolio',this)">Mi Portafolio</div>
 <div class="tab" onclick="showTab('alertas',this)">Alertas <span id="badge" style="background:#f85149;color:white;border-radius:10px;padding:1px 5px;font-size:0.65rem;display:none">0</span></div>
+<div class="tab" onclick="showTab('tradingbot',this)">Trading Bot</div>
 </div>
 <div class="seccion visible" id="tab-cedears">
 <h2>CEDEARs</h2>
@@ -179,6 +212,24 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 <h2>Alertas activas</h2>
 <div id="tal"><div class="alerta info"><div class="at">Cargando...</div></div></div>
 </div>
+<div class="seccion" id="tab-tradingbot">
+<h2>Trading Bot — Anomalias del dia</h2>
+<div class="tb-panel">
+<div class="tb-panel-title"><span>Scan — Top 3 Anomalias de Precio</span></div>
+<div id="tb-scan"><div style="text-align:center;padding:20px;color:#8b949e">Cargando...</div></div>
+</div>
+<div class="tb-panel">
+<div class="tb-panel-title"><span>Señal — Probabilidad y Edge</span></div>
+<div id="tb-senal"><div style="text-align:center;padding:20px;color:#8b949e">Cargando...</div></div>
+</div>
+<div class="tb-panel">
+<div class="tb-panel-title">
+<span>Riesgo — Gestion de Capital</span>
+<div class="tb-capital-row"><span style="font-size:0.72rem;color:#8b949e">Capital (USD):</span><input class="tb-capital-input" type="number" id="tb-capital" value="1000" min="0" step="100"></div>
+</div>
+<div id="tb-riesgo"><div style="text-align:center;padding:20px;color:#8b949e">Cargando...</div></div>
+</div>
+</div>
 <footer>Yahoo Finance + DolarAPI + CoinGecko + Claude AI | Datos generados desde PC cada 30 min | <span id="pie">-</span></footer>
 <script>
 function showTab(n,el){document.querySelectorAll('.seccion').forEach(s=>s.classList.remove('visible'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById('tab-'+n).classList.add('visible');el.classList.add('active');}
@@ -227,6 +278,7 @@ if(senales.length>0){
 document.getElementById('señales-ia').innerHTML=shtml;
 buildResumenDiario(d);
 buildPortfolio(d);
+_tbData=d;buildTradingBot(d);
 const badge=document.getElementById('badge');
 if(alertas.length===0){document.getElementById('tal').innerHTML='<div class="alerta info"><div class="at">Sin alertas activas</div><div class="ad">Todos los activos en rangos normales</div></div>';badge.style.display='none';}else{document.getElementById('tal').innerHTML=alertas.map(a=>'<div class="alerta '+a.tipo+'"><div class="at">'+a.t+'</div><div class="ad">'+a.d+'</div></div>').join('');badge.textContent=alertas.length;badge.style.display='inline';}
 }catch(e){document.getElementById('estado').textContent='Error: '+e.message;}
@@ -385,6 +437,78 @@ function calcSim(){
   document.getElementById('sim-tbody').innerHTML=rows;
   tabla.style.display='block';
 }
+let _tbData=null;
+function buildTradingBot(d){
+  if(!d)return;
+  const todos=[];
+  const cedears=Array.isArray(d.cedears)?d.cedears:[];
+  cedears.forEach(c=>{if(c&&c.p!==undefined)todos.push({t:c.t,n:c.n,p:c.p,v:c.v||0,stop:c.stop,obj:c.obj,moneda:'USD',anomalia:Math.abs(c.v||0)});});
+  const aacc=Array.isArray(d.acciones)?d.acciones:[];
+  aacc.forEach(a=>{if(a&&a.p!==undefined)todos.push({t:a.t,n:a.n,p:a.p,v:a.v||0,stop:a.p*0.90,obj:a.p*1.15,moneda:'ARS',anomalia:Math.abs(a.v||0)});});
+  const acry=Array.isArray(d.crypto)?d.crypto:[];
+  acry.forEach(c=>{if(c&&c.p!==undefined)todos.push({t:c.s,n:c.n,p:c.p,v:c.v||0,stop:c.p*0.85,obj:c.p*1.25,moneda:'USD',anomalia:Math.abs(c.v||0)});});
+  const top3=[...todos].sort((a,b)=>b.anomalia-a.anomalia).slice(0,3);
+  // SCAN
+  let scanHtml='';
+  const rankColors=['#f85149','#d29922','#58a6ff'];
+  top3.forEach((a,i)=>{
+    const vc=a.v>0?'sube':a.v<0?'baja':'neutro';
+    const badgeBg=a.anomalia>7?'#3d1a1a':a.anomalia>3?'#2d2a1f':'#1b3a5c';
+    const badgeClr=a.anomalia>7?'#f85149':a.anomalia>3?'#d29922':'#58a6ff';
+    scanHtml+='<div class="tb-scan-item">'
+      +'<div class="tb-scan-rank" style="color:'+rankColors[i]+'">#'+(i+1)+'</div>'
+      +'<div class="tb-scan-info">'
+        +'<div class="tb-scan-ticker">'+a.t+' <span style="color:#8b949e;font-weight:400;font-size:0.72rem">'+a.n+'</span></div>'
+        +'<div class="tb-scan-anomalia">Variacion: <span class="'+vc+'">'+(a.v>0?'+':'')+a.v.toFixed(2)+'%</span> &nbsp;|&nbsp; Precio: '+Number(a.p).toLocaleString('en-US',{maximumFractionDigits:2})+' '+a.moneda+'</div>'
+      +'</div>'
+      +'<div class="tb-scan-badge" style="background:'+badgeBg+';color:'+badgeClr+'">'+a.anomalia.toFixed(1)+'% desv.</div>'
+    +'</div>';
+  });
+  document.getElementById('tb-scan').innerHTML=scanHtml||'<div style="color:#8b949e;padding:10px">Sin datos</div>';
+  // SEÑAL y RIESGO
+  const capital=parseFloat(document.getElementById('tb-capital').value)||1000;
+  let senalHtml='',riesgoHtml='';
+  top3.forEach(a=>{
+    const upside=a.obj>a.p?(a.obj-a.p)/a.p:0;
+    const downside=a.p>a.stop?(a.p-a.stop)/a.p:0.01;
+    const b=downside>0?upside/downside:0;
+    let prob=50+(upside>0&&downside>0?(upside/(upside+downside)-0.5)*40:0);
+    prob+=Math.max(-10,Math.min(10,-a.v*1.2));
+    prob=Math.max(10,Math.min(90,prob));
+    const edge=(prob/100*upside*100)-((1-prob/100)*downside*100);
+    let kelly=b>0?(prob/100*b-(1-prob/100))/b:0;
+    kelly=Math.max(0,Math.min(0.25,kelly));
+    let signal,signalClass;
+    if(kelly>0.05&&prob>55&&edge>0){signal='COMPRAR';signalClass='tb-signal-buy';}
+    else if(kelly<0.01||prob<45||edge<-2){signal='VENDER';signalClass='tb-signal-sell';}
+    else{signal='NEUTRAL';signalClass='tb-signal-neutral';}
+    const edgeClr=edge>0?'#3fb950':'#f85149';
+    const barClr=prob>55?'#3fb950':prob<45?'#f85149':'#d29922';
+    senalHtml+='<div class="tb-senal-card">'
+      +'<div class="tb-senal-header"><div class="tb-senal-ticker">'+a.t+' — '+a.n+'</div><span class="'+signalClass+'">'+signal+'</span></div>'
+      +'<div class="tb-senal-grid">'
+        +'<div class="tb-senal-stat"><div class="tb-senal-stat-label">Prob. Subida</div><div class="tb-senal-stat-val">'+prob.toFixed(0)+'%</div><div class="tb-senal-bar"><div class="tb-senal-bar-fill" style="width:'+prob+'%;background:'+barClr+'"></div></div></div>'
+        +'<div class="tb-senal-stat"><div class="tb-senal-stat-label">Edge vs Mercado</div><div class="tb-senal-stat-val" style="color:'+edgeClr+'">'+(edge>0?'+':'')+edge.toFixed(1)+'%</div></div>'
+        +'<div class="tb-senal-stat"><div class="tb-senal-stat-label">Kelly (posicion)</div><div class="tb-senal-stat-val">'+(kelly*100).toFixed(1)+'%</div></div>'
+      +'</div></div>';
+    const maxRiesgo=capital*0.02;
+    const posSize=capital*kelly;
+    riesgoHtml+='<div class="tb-riesgo-card">'
+      +'<div class="tb-riesgo-ticker">'+a.t+' — '+a.n+'</div>'
+      +'<div class="tb-riesgo-grid">'
+        +'<div class="tb-riesgo-item"><div class="tb-riesgo-label">Capital max. a arriesgar</div><div class="tb-riesgo-val" style="color:#d29922">USD '+Number(maxRiesgo).toLocaleString('en-US',{maximumFractionDigits:2})+'</div><div style="font-size:0.65rem;color:#8b949e">Regla 2% del capital</div></div>'
+        +'<div class="tb-riesgo-item"><div class="tb-riesgo-label">Posicion por Kelly</div><div class="tb-riesgo-val" style="color:#58a6ff">USD '+Number(posSize).toLocaleString('en-US',{maximumFractionDigits:2})+'</div><div style="font-size:0.65rem;color:#8b949e">'+(kelly*100).toFixed(1)+'% del capital</div></div>'
+        +'<div class="tb-riesgo-item"><div class="tb-riesgo-label">Stop Loss</div><div class="tb-riesgo-val baja">'+a.moneda+' '+Number(a.stop).toLocaleString('en-US',{maximumFractionDigits:2})+'</div><div style="font-size:0.65rem;color:#8b949e">-'+(downside*100).toFixed(1)+'% desde precio actual</div></div>'
+        +'<div class="tb-riesgo-item"><div class="tb-riesgo-label">Precio Objetivo</div><div class="tb-riesgo-val sube">'+a.moneda+' '+Number(a.obj).toLocaleString('en-US',{maximumFractionDigits:2})+'</div><div style="font-size:0.65rem;color:#8b949e">+'+(upside*100).toFixed(1)+'% desde precio actual</div></div>'
+      +'</div></div>';
+  });
+  document.getElementById('tb-senal').innerHTML=senalHtml||'<div style="color:#8b949e;padding:10px">Sin datos</div>';
+  document.getElementById('tb-riesgo').innerHTML=riesgoHtml||'<div style="color:#8b949e;padding:10px">Sin datos</div>';
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const ci=document.getElementById('tb-capital');
+  if(ci)ci.addEventListener('input',()=>{if(_tbData)buildTradingBot(_tbData);});
+});
 tick();cargar();setInterval(cargar,300000);setInterval(tick,1000);
 </script>
 </body>
