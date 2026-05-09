@@ -114,24 +114,24 @@
                         "dO":  -10.6
                     }
                 ],
-    "fecha":  "08/05/2026 18:12",
+    "fecha":  "09/05/2026 09:03",
     "ccl":  1483.1,
     "crypto":  [
                    {
                        "id":  "bitcoin",
-                       "v":  0.44,
+                       "v":  0.15,
                        "s":  "BTC",
                        "n":  "Bitcoin",
-                       "ars":  118812624,
-                       "p":  80111
+                       "ars":  119149288,
+                       "p":  80338
                    },
                    {
                        "id":  "ethereum",
-                       "v":  0.81,
+                       "v":  0.86,
                        "s":  "ETH",
                        "n":  "Ethereum",
-                       "ars":  3418397,
-                       "p":  2304.9
+                       "ars":  3433688,
+                       "p":  2315.21
                    },
                    {
                        "id":  "tether",
@@ -139,31 +139,31 @@
                        "s":  "USDT",
                        "n":  "Tether",
                        "ars":  1483,
-                       "p":  0.999859
+                       "p":  0.999852
                    },
                    {
                        "id":  "solana",
-                       "v":  4.56,
+                       "v":  5.63,
                        "s":  "SOL",
                        "n":  "Solana",
-                       "ars":  136223,
-                       "p":  91.85
+                       "ars":  138877,
+                       "p":  93.64
                    },
                    {
                        "id":  "binancecoin",
-                       "v":  0.69,
+                       "v":  1.41,
                        "s":  "BNB",
                        "n":  "BNB",
-                       "ars":  958513,
-                       "p":  646.29
+                       "ars":  964193,
+                       "p":  650.12
                    },
                    {
                        "id":  "ripple",
-                       "v":  2.22,
+                       "v":  2.23,
                        "s":  "XRP",
                        "n":  "XRP",
-                       "ars":  2091,
-                       "p":  1.41
+                       "ars":  2106,
+                       "p":  1.42
                    }
                ],
     "of":  1420,
@@ -243,148 +243,82 @@
                  ],
     "senales_ia":  [
                        {
-                           "activo":  "MSFT",
-                           "tipo":  "COMPRA",
-                           "confianza":  72,
-                           "razon":  "├Ünico CEDEAR bajo el objetivo (10.8% de upside). Variaci├│n diaria neutral +0.28%. Precio sobre stop con margen."
-                       },
-                       {
                            "activo":  "MELI",
                            "tipo":  "COMPRA",
-                           "confianza":  60,
-                           "razon":  "Ca├¡da violenta -11.33% genera entrada oportunista con 34.8% de upside. Riesgo: est├í cerca del stop (1632 vs 1600). Requiere confirmaci├│n."
+                           "confianza":  75,
+                           "razon":  "Ca├¡da intraday de -11.33% con 34.8% de upside al objetivo ($2200). La mayor oportunidad del d├¡a. Stop sugerido: $1600."
                        },
                        {
-                           "activo":  "TSLA",
-                           "tipo":  "VENTA",
-                           "confianza":  82,
-                           "razon":  "Precio 30% por encima del objetivo. Sube +7.43% hoy: momento ideal para toma de ganancias."
-                       },
-                       {
-                           "activo":  "GOOGL",
-                           "tipo":  "VENTA",
-                           "confianza":  78,
-                           "razon":  "50% sobre el objetivo definido. Sin catalizador claro para sostener el nivel."
+                           "activo":  "MSFT",
+                           "tipo":  "MANTENER",
+                           "confianza":  62,
+                           "razon":  "├Ünico CEDEAR tech con precio bajo objetivo (+10.8% hasta $460). Variaci├│n casi nula (+0.28%). Acumular en baja."
                        },
                        {
                            "activo":  "AAPL",
                            "tipo":  "VENTA",
-                           "confianza":  74,
-                           "razon":  "28.4% sobre el objetivo. Precio actual (293) muy alejado del target (210)."
+                           "confianza":  68,
+                           "razon":  "Precio 28.4% por encima del objetivo ($210). Toma de ganancias recomendada pese al rebote diario de +2%."
                        },
                        {
                            "activo":  "NVDA",
                            "tipo":  "VENTA",
-                           "confianza":  70,
-                           "razon":  "25.7% sobre objetivo con momentum alcista hoy +3.55%. Buena ventana para parcial."
+                           "confianza":  65,
+                           "razon":  "25.7% sobre objetivo, rebote de +3.55% hoy es oportunidad para salir con ganancia."
                        },
                        {
                            "activo":  "JPM",
                            "tipo":  "VENTA",
-                           "confianza":  68,
-                           "razon":  "10.6% sobre objetivo y cayendo -4.06% en el d├¡a. Presi├│n vendedora activa."
+                           "confianza":  65,
+                           "razon":  "Ca├¡da de -4.06% hoy, ya 10.6% sobre objetivo. Sector financiero bajo presi├│n global."
                        },
                        {
-                           "activo":  "XOM",
+                           "activo":  "GOOGL",
                            "tipo":  "VENTA",
-                           "confianza":  65,
-                           "razon":  "10.1% sobre objetivo con ca├¡da -2.77%. Petr├│leo bajo presi├│n."
+                           "confianza":  70,
+                           "razon":  "50.1% por encima del objetivo. Precio muy extendido, recomendable reducir exposici├│n."
                        },
                        {
-                           "activo":  "AMZN",
+                           "activo":  "TSLA",
                            "tipo":  "MANTENER",
-                           "confianza":  58,
-                           "razon":  "12% sobre objetivo pero sin presi├│n vendedora fuerte. Esperar se├▒al clara."
-                       },
-                       {
-                           "activo":  "KO",
-                           "tipo":  "MANTENER",
-                           "confianza":  65,
-                           "razon":  "Defensivo. Levemente sobre objetivo (-4.4%). Protecci├│n ante volatilidad local."
-                       },
-                       {
-                           "activo":  "GGAL",
-                           "tipo":  "COMPRA",
-                           "confianza":  68,
-                           "razon":  "Banco s├│lido con correcci├│n del -3.06% en ca├¡da sectorial generalizada. Rebote t├®cnico probable."
-                       },
-                       {
-                           "activo":  "YPFD",
-                           "tipo":  "COMPRA",
-                           "confianza":  65,
-                           "razon":  "YPF cae solo -2.14%, menor que el sector. Exposici├│n a petr├│leo en USD (42.36)."
-                       },
-                       {
-                           "activo":  "CEPU",
-                           "tipo":  "COMPRA",
-                           "confianza":  62,
-                           "razon":  "Sobrevendido en el d├¡a -7.27%. Potencial rebote t├®cnico ma├▒ana. Energ├¡a con fundamentos estables."
+                           "confianza":  52,
+                           "razon":  "Rebote fuerte +7.43% pero ya 30% sobre objetivo. Alta volatilidad, no sumar posici├│n."
                        },
                        {
                            "activo":  "SUPV",
-                           "tipo":  "MANTENER",
-                           "confianza":  50,
-                           "razon":  "Ca├¡da -7.46% muy fuerte. Esperar estabilizaci├│n antes de entrar. Sector bancario vol├ítil."
+                           "tipo":  "VENTA",
+                           "confianza":  70,
+                           "razon":  "Mayor ca├¡da del d├¡a en acciones locales (-7.46%). Sector bancario bajo fuerte presi├│n vendedora."
                        },
                        {
-                           "activo":  "PAMP",
+                           "activo":  "CEPU",
                            "tipo":  "MANTENER",
                            "confianza":  55,
-                           "razon":  "Energ├¡a bajo presi├│n -4.52%. Sin se├▒al de reversi├│n clara."
+                           "razon":  "Ca├¡da de -7.27% puede ser sobrevendido, pero contexto bajista generalizado no valida compra a├║n."
                        },
                        {
-                           "activo":  "LOMA",
+                           "activo":  "GGAL",
                            "tipo":  "MANTENER",
-                           "confianza":  50,
-                           "razon":  "Cemento cae -5.9%. Sector sensible a actividad econ├│mica interna. Esperar."
-                       },
-                       {
-                           "activo":  "ALUA",
-                           "tipo":  "MANTENER",
-                           "confianza":  62,
-                           "razon":  "Menor ca├¡da del sector -0.82%. Aluminio defensivo en contexto bajista local."
-                       },
-                       {
-                           "activo":  "TECO2",
-                           "tipo":  "MANTENER",
-                           "confianza":  52,
-                           "razon":  "Telecom -4.36%. Sin catalizador positivo a corto plazo."
-                       },
-                       {
-                           "activo":  "TXAR",
-                           "tipo":  "MANTENER",
-                           "confianza":  50,
-                           "razon":  "Acero cae -4.78%. Sector afectado por contexto global. Sin se├▒al de entrada."
+                           "confianza":  57,
+                           "razon":  "Baja moderada -3.06% en sector bancario. Esperar estabilizaci├│n antes de sumar."
                        },
                        {
                            "activo":  "SOL",
                            "tipo":  "COMPRA",
-                           "confianza":  74,
-                           "razon":  "Mejor performance crypto del d├¡a +4.56%. Momentum alcista, posible continuaci├│n."
-                       },
-                       {
-                           "activo":  "XRP",
-                           "tipo":  "COMPRA",
-                           "confianza":  63,
-                           "razon":  "+2.22% con momentum sostenido. Segunda mejor crypto del d├¡a."
+                           "confianza":  65,
+                           "razon":  "Suba de +5.63% lidera el mercado crypto hoy. Momentum positivo, entrar con stop en $80."
                        },
                        {
                            "activo":  "BTC",
                            "tipo":  "MANTENER",
-                           "confianza":  65,
-                           "razon":  "Consolida sobre $80k con +0.44%. Sin ruptura de rango. Esperar direcci├│n."
+                           "confianza":  60,
+                           "razon":  "Lateral a $80.338 con variaci├│n casi nula (+0.15%). Zona de acumulaci├│n, no hay se├▒al clara."
                        },
                        {
-                           "activo":  "ETH",
-                           "tipo":  "MANTENER",
-                           "confianza":  62,
-                           "razon":  "+0.81%, movimiento marginal. Acompa├▒a al mercado sin liderarlo."
-                       },
-                       {
-                           "activo":  "BNB",
+                           "activo":  "CCL",
                            "tipo":  "MANTENER",
                            "confianza":  58,
-                           "razon":  "+0.69%. Sin catalizador espec├¡fico. Movimiento de baja convicci├│n."
+                           "razon":  "Brecha negativa (-1.4%, blue \u003c oficial) es an├│mala. Monitorear: puede haber correcci├│n del blue al alza o intervenci├│n."
                        }
                    ],
     "resumen_mercado":  null,
