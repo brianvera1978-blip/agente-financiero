@@ -116,6 +116,15 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 .tb-sent-pos{background:#1a4731;color:#3fb950}
 .tb-sent-neg{background:#3d1a1a;color:#f85149}
 .tb-sent-neutral{background:#2d2a1f;color:#d29922}
+.bt-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:14px}
+.bt-stat{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:10px;text-align:center}
+.bt-stat-label{font-size:0.62rem;color:#8b949e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.bt-stat-val{font-size:1.05rem;font-weight:700}
+.bt-highlights{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.bt-highlight{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:10px}
+.bt-highlight-label{font-size:0.62rem;color:#8b949e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.bt-highlight-val{font-size:0.88rem;font-weight:700;margin-bottom:2px}
+.bt-highlight-sub{font-size:0.68rem;color:#8b949e}
 </style>
 </head>
 <body>
@@ -232,6 +241,10 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 <div class="tb-capital-row"><span style="font-size:0.72rem;color:#8b949e">Capital (USD):</span><input class="tb-capital-input" type="number" id="tb-capital" value="1000" min="0" step="100"></div>
 </div>
 <div id="tb-riesgo"><div style="text-align:center;padding:20px;color:#8b949e">Cargando...</div></div>
+</div>
+<div class="tb-panel" id="tb-backtesting">
+<div class="tb-panel-title"><span>Backtesting — Precisión del Bot</span></div>
+<div id="tb-bt-content"><div style="text-align:center;padding:20px;color:#8b949e">Cargando...</div></div>
 </div>
 <div class="tb-panel">
 <div class="tb-panel-title"><span>Historial de Señales — últimos 30 días</span></div>
@@ -484,7 +497,103 @@ async function loadHistorial(d){
         +'</tr>';
     });
     el.innerHTML=rows;
+    renderBacktesting(h,d);
   }catch(e){el.innerHTML='<tr><td colspan="6" style="text-align:center;padding:20px;color:#8b949e">Error cargando historial</td></tr>';}
+}
+function renderBacktesting(h,d){
+  const el=document.getElementById('tb-bt-content');
+  if(!el)return;
+  const vm={};
+  if(d){
+    (Array.isArray(d.cedears)?d.cedears:[]).forEach(c=>{if(c&&c.t)vm[c.t]={v:c.v||0,p:c.p};});
+    (Array.isArray(d.acciones)?d.acciones:[]).forEach(a=>{if(a&&a.t)vm[a.t]={v:a.v||0,p:a.p};});
+    (Array.isArray(d.crypto)?d.crypto:[]).forEach(c=>{if(c&&c.s)vm[c.s]={v:c.v||0,p:c.p};});
+  }
+  const actionSigs=h.filter(s=>s.tipo==='COMPRA'||s.tipo==='VENTA');
+  const total=actionSigs.length;
+  if(total===0){el.innerHTML='<div style="text-align:center;padding:20px;color:#8b949e">Sin datos suficientes para backtesting</div>';return;}
+  const evaluated=actionSigs.map(s=>{
+    const info=vm[s.activo];
+    if(!info)return null;
+    const v=info.v;
+    const acerto=s.tipo==='COMPRA'?v>0:v<0;
+    const retorno=s.tipo==='COMPRA'?v:-v;
+    return{...s,v,acerto,retorno};
+  }).filter(Boolean);
+  if(evaluated.length===0){el.innerHTML='<div style="text-align:center;padding:20px;color:#8b949e">Sin precios disponibles para calcular precisión</div>';return;}
+  const compras=evaluated.filter(s=>s.tipo==='COMPRA');
+  const ventas=evaluated.filter(s=>s.tipo==='VENTA');
+  const pctCompra=compras.length>0?(compras.filter(s=>s.acerto).length/compras.length*100):0;
+  const pctVenta=ventas.length>0?(ventas.filter(s=>s.acerto).length/ventas.length*100):0;
+  const returns=evaluated.map(s=>s.retorno);
+  const meanR=returns.reduce((a,b)=>a+b,0)/returns.length;
+  const stdR=returns.length>1?Math.sqrt(returns.reduce((a,b)=>a+(b-meanR)**2,0)/(returns.length-1)):0;
+  const sharpe=stdR>0?(meanR/stdR).toFixed(2):'N/D';
+  const sharpeNum=parseFloat(sharpe)||0;
+  const acertadas=evaluated.filter(s=>s.acerto);
+  const fallidas=evaluated.filter(s=>!s.acerto);
+  const mejor=acertadas.length>0?acertadas.reduce((a,b)=>a.retorno>b.retorno?a:b):null;
+  const peor=fallidas.length>0?fallidas.reduce((a,b)=>a.retorno<b.retorno?a:b):null;
+  const hoy=new Date();
+  const dias=[];
+  for(let i=6;i>=0;i--){
+    const d2=new Date(hoy);d2.setDate(hoy.getDate()-i);
+    const iso=d2.toISOString().slice(0,10);
+    const label=d2.toLocaleDateString('es-AR',{weekday:'short',day:'numeric'});
+    const daySigs=evaluated.filter(s=>s.fecha_iso===iso);
+    dias.push({label,acertadas:daySigs.filter(s=>s.acerto).length,fallidas:daySigs.filter(s=>!s.acerto).length});
+  }
+  const sharpeClr=sharpeNum>1?'#3fb950':sharpeNum>0?'#d29922':'#f85149';
+  const mejorHtml=mejor
+    ?'<div class="bt-highlight-val sube">+'+mejor.retorno.toFixed(2)+'%</div><div class="bt-highlight-sub">'+mejor.activo+' &middot; '+mejor.tipo+' &middot; '+(mejor.fecha||'')+'</div>'
+    :'<div class="bt-highlight-val" style="color:#8b949e">Sin datos</div>';
+  const peorHtml=peor
+    ?'<div class="bt-highlight-val baja">'+peor.retorno.toFixed(2)+'%</div><div class="bt-highlight-sub">'+peor.activo+' &middot; '+peor.tipo+' &middot; '+(peor.fecha||'')+'</div>'
+    :'<div class="bt-highlight-val" style="color:#8b949e">Sin datos</div>';
+  el.innerHTML=
+    '<div class="bt-stats">'
+      +'<div class="bt-stat"><div class="bt-stat-label">Total señales</div><div class="bt-stat-val">'+total+'</div></div>'
+      +'<div class="bt-stat"><div class="bt-stat-label">Aciertos COMPRA</div><div class="bt-stat-val" style="color:'+(pctCompra>=50?'#3fb950':'#f85149')+'">'+pctCompra.toFixed(0)+'%</div></div>'
+      +'<div class="bt-stat"><div class="bt-stat-label">Aciertos VENTA</div><div class="bt-stat-val" style="color:'+(pctVenta>=50?'#3fb950':'#f85149')+'">'+pctVenta.toFixed(0)+'%</div></div>'
+      +'<div class="bt-stat"><div class="bt-stat-label">Sharpe Ratio</div><div class="bt-stat-val" style="color:'+sharpeClr+'">'+sharpe+'</div></div>'
+    +'</div>'
+    +'<div class="bt-highlights">'
+      +'<div class="bt-highlight" style="border-left:4px solid #3fb950"><div class="bt-highlight-label">Mejor señal acertada</div>'+mejorHtml+'</div>'
+      +'<div class="bt-highlight" style="border-left:4px solid #f85149"><div class="bt-highlight-label">Peor señal fallida</div>'+peorHtml+'</div>'
+    +'</div>'
+    +'<canvas id="bt-chart" height="120" style="width:100%;display:block;margin-top:4px"></canvas>'
+    +'<div style="display:flex;gap:14px;margin-top:6px;justify-content:flex-end;font-size:0.65rem;color:#8b949e">'
+      +'<span><span style="display:inline-block;width:10px;height:10px;background:#3fb950;border-radius:2px;margin-right:3px;vertical-align:middle"></span>Acertadas</span>'
+      +'<span><span style="display:inline-block;width:10px;height:10px;background:#f85149;border-radius:2px;margin-right:3px;vertical-align:middle"></span>Fallidas</span>'
+    +'</div>';
+  requestAnimationFrame(()=>{
+    const canvas=document.getElementById('bt-chart');
+    if(!canvas)return;
+    const ctx=canvas.getContext('2d');
+    const dpr=window.devicePixelRatio||1;
+    const w=canvas.offsetWidth;
+    const ch=120;
+    canvas.width=w*dpr;canvas.height=ch*dpr;
+    ctx.scale(dpr,dpr);
+    ctx.fillStyle='#0d1117';ctx.fillRect(0,0,w,ch);
+    const maxVal=Math.max(...dias.map(d=>d.acertadas+d.fallidas),1);
+    const pl=30,pr=10,pt=10,pb=24;
+    const cw=w-pl-pr,cvh=ch-pt-pb;
+    const grp=cw/dias.length;
+    const bw=Math.min(grp*0.3,14);
+    ctx.strokeStyle='#21262d';ctx.lineWidth=0.5;
+    for(let i=0;i<=4;i++){
+      const y=pt+cvh-(cvh*i/4);
+      ctx.beginPath();ctx.moveTo(pl,y);ctx.lineTo(w-pr,y);ctx.stroke();
+      if(i>0){ctx.fillStyle='#8b949e';ctx.font='9px Segoe UI,sans-serif';ctx.textAlign='right';ctx.fillText(Math.round(maxVal*i/4),pl-3,y+3);}
+    }
+    dias.forEach((dia,i)=>{
+      const cx=pl+grp*i+grp/2;
+      if(dia.acertadas>0){const bh=(dia.acertadas/maxVal)*cvh;ctx.fillStyle='#3fb950';ctx.fillRect(cx-bw-1,pt+cvh-bh,bw,bh);}
+      if(dia.fallidas>0){const bh=(dia.fallidas/maxVal)*cvh;ctx.fillStyle='#f85149';ctx.fillRect(cx+1,pt+cvh-bh,bw,bh);}
+      ctx.fillStyle='#8b949e';ctx.font='9px Segoe UI,sans-serif';ctx.textAlign='center';ctx.fillText(dia.label,cx,ch-6);
+    });
+  });
 }
 let _tbData=null;
 function buildTradingBot(d){
