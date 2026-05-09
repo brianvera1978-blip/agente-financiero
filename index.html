@@ -112,6 +112,10 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 .tb-capital-row{display:flex;align-items:center;gap:8px}
 .tb-capital-input{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e6edf3;padding:4px 8px;font-size:0.82rem;width:130px;text-align:right}
 .tb-capital-input:focus{outline:none;border-color:#58a6ff}
+.tb-sentimiento{padding:3px 8px;border-radius:20px;font-size:0.65rem;font-weight:700;margin-left:6px;cursor:default}
+.tb-sent-pos{background:#1a4731;color:#3fb950}
+.tb-sent-neg{background:#3d1a1a;color:#f85149}
+.tb-sent-neutral{background:#2d2a1f;color:#d29922}
 </style>
 </head>
 <body>
@@ -467,8 +471,12 @@ function buildTradingBot(d){
   document.getElementById('tb-scan').innerHTML=scanHtml||'<div style="color:#8b949e;padding:10px">Sin datos</div>';
   // SEÑAL y RIESGO
   const capital=parseFloat(document.getElementById('tb-capital').value)||1000;
+  const senalesIa=Array.isArray(d.senales_ia)?d.senales_ia:[];
   let senalHtml='',riesgoHtml='';
   top3.forEach(a=>{
+    const iaMatch=senalesIa.find(s=>s.activo===a.t||s.activo===a.n);
+    const sentClsMap={'POSITIVO':'tb-sent-pos','NEGATIVO':'tb-sent-neg','NEUTRAL':'tb-sent-neutral'};
+    const sentBadge=iaMatch?'<span class="tb-sentimiento '+(sentClsMap[iaMatch.sentimiento]||'tb-sent-neutral')+'" title="'+(iaMatch.sentimiento_razon||'')+'">'+iaMatch.sentimiento+'</span>':'';
     const upside=a.obj>a.p?(a.obj-a.p)/a.p:0;
     const downside=a.p>a.stop?(a.p-a.stop)/a.p:0.01;
     const b=downside>0?upside/downside:0;
@@ -485,7 +493,7 @@ function buildTradingBot(d){
     const edgeClr=edge>0?'#3fb950':'#f85149';
     const barClr=prob>55?'#3fb950':prob<45?'#f85149':'#d29922';
     senalHtml+='<div class="tb-senal-card">'
-      +'<div class="tb-senal-header"><div class="tb-senal-ticker">'+a.t+' — '+a.n+'</div><span class="'+signalClass+'">'+signal+'</span></div>'
+      +'<div class="tb-senal-header"><div class="tb-senal-ticker">'+a.t+' — '+a.n+'</div><div style="display:flex;align-items:center;gap:4px"><span class="'+signalClass+'">'+signal+'</span>'+sentBadge+'</div></div>'
       +'<div class="tb-senal-grid">'
         +'<div class="tb-senal-stat"><div class="tb-senal-stat-label">Prob. Subida</div><div class="tb-senal-stat-val">'+prob.toFixed(0)+'%</div><div class="tb-senal-bar"><div class="tb-senal-bar-fill" style="width:'+prob+'%;background:'+barClr+'"></div></div></div>'
         +'<div class="tb-senal-stat"><div class="tb-senal-stat-label">Edge vs Mercado</div><div class="tb-senal-stat-val" style="color:'+edgeClr+'">'+(edge>0?'+':'')+edge.toFixed(1)+'%</div></div>'
