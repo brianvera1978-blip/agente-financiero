@@ -233,6 +233,13 @@ footer{text-align:center;padding:14px;color:#8b949e;font-size:0.7rem;border-top:
 </div>
 <div id="tb-riesgo"><div style="text-align:center;padding:20px;color:#8b949e">Cargando...</div></div>
 </div>
+<div class="tb-panel">
+<div class="tb-panel-title"><span>Historial de Señales — últimos 30 días</span></div>
+<div class="overflow"><table>
+<thead><tr><th>Fecha / Hora</th><th>Activo</th><th>Señal</th><th>Prob.</th><th>Precio señal</th><th>Resultado</th></tr></thead>
+<tbody id="tb-historial"><tr><td colspan="6" style="text-align:center;padding:20px;color:#8b949e">Cargando...</td></tr></tbody>
+</table></div>
+</div>
 </div>
 <footer>Yahoo Finance + DolarAPI + CoinGecko + Claude AI | Datos generados desde PC cada 30 min | <span id="pie">-</span></footer>
 <script>
@@ -282,7 +289,7 @@ if(senales.length>0){
 document.getElementById('señales-ia').innerHTML=shtml;
 buildResumenDiario(d);
 buildPortfolio(d);
-_tbData=d;buildTradingBot(d);
+_tbData=d;buildTradingBot(d);loadHistorial(d);
 const badge=document.getElementById('badge');
 if(alertas.length===0){document.getElementById('tal').innerHTML='<div class="alerta info"><div class="at">Sin alertas activas</div><div class="ad">Todos los activos en rangos normales</div></div>';badge.style.display='none';}else{document.getElementById('tal').innerHTML=alertas.map(a=>'<div class="alerta '+a.tipo+'"><div class="at">'+a.t+'</div><div class="ad">'+a.d+'</div></div>').join('');badge.textContent=alertas.length;badge.style.display='inline';}
 }catch(e){document.getElementById('estado').textContent='Error: '+e.message;}
@@ -440,6 +447,44 @@ function calcSim(){
   });
   document.getElementById('sim-tbody').innerHTML=rows;
   tabla.style.display='block';
+}
+async function loadHistorial(d){
+  const el=document.getElementById('tb-historial');
+  try{
+    const r=await fetch('historial-senales.json?t='+Date.now());
+    if(!r.ok){el.innerHTML='<tr><td colspan="6" style="text-align:center;padding:20px;color:#8b949e">Sin historial disponible aún</td></tr>';return;}
+    const h=await r.json();
+    if(!h||!h.length){el.innerHTML='<tr><td colspan="6" style="text-align:center;padding:20px;color:#8b949e">Sin historial aún</td></tr>';return;}
+    const pm={};
+    if(d){
+      (Array.isArray(d.cedears)?d.cedears:[]).forEach(c=>{if(c.t)pm[c.t]=c.p;if(c.n)pm[c.n]=c.p;});
+      (Array.isArray(d.acciones)?d.acciones:[]).forEach(a=>{if(a.t)pm[a.t]=a.p;if(a.n)pm[a.n]=a.p;});
+      (Array.isArray(d.crypto)?d.crypto:[]).forEach(c=>{if(c.s)pm[c.s]=c.p;if(c.n)pm[c.n]=c.p;});
+    }
+    const sorted=[...h].sort((a,b)=>b.fecha_iso!==a.fecha_iso?b.fecha_iso.localeCompare(a.fecha_iso):(b.hora||'').localeCompare(a.hora||''));
+    const bs=t=>t==='COMPRA'?'<span class="badge bc">COMPRA</span>':t==='VENTA'?'<span class="badge bs">VENTA</span>':'<span class="badge be">MANTENER</span>';
+    let rows='';
+    sorted.forEach(s=>{
+      const pe=Number(s.precio_entrada)||0;
+      const cp=pm[s.activo]||0;
+      let res='<span style="color:#8b949e">—</span>';
+      if(cp>0&&pe>0){
+        const pct=((cp-pe)/pe*100);
+        const acerto=s.tipo==='COMPRA'?cp>pe:s.tipo==='VENTA'?cp<pe:Math.abs(pct)<5;
+        const cls=acerto?'sube':'baja';
+        res='<span class="'+cls+'">'+(acerto?'✓':'✗')+' '+(pct>=0?'+':'')+pct.toFixed(1)+'%</span>';
+      }
+      rows+='<tr>'
+        +'<td style="font-size:0.72rem;white-space:nowrap">'+(s.fecha||'')+' '+(s.hora||'')+'</td>'
+        +'<td><strong>'+(s.activo||'')+'</strong></td>'
+        +'<td>'+bs(s.tipo)+'</td>'
+        +'<td style="color:#8b949e">'+(s.confianza||'-')+'%</td>'
+        +'<td style="font-size:0.75rem">'+(pe>0?Number(pe).toLocaleString('en-US',{maximumFractionDigits:2}):'-')+'</td>'
+        +'<td>'+res+'</td>'
+        +'</tr>';
+    });
+    el.innerHTML=rows;
+  }catch(e){el.innerHTML='<tr><td colspan="6" style="text-align:center;padding:20px;color:#8b949e">Error cargando historial</td></tr>';}
 }
 let _tbData=null;
 function buildTradingBot(d){

@@ -114,24 +114,24 @@
                         "dO":  -10.6
                     }
                 ],
-    "fecha":  "09/05/2026 11:47",
+    "fecha":  "09/05/2026 12:12",
     "ccl":  1483.1,
     "crypto":  [
                    {
                        "id":  "bitcoin",
-                       "v":  0.13,
+                       "v":  0.44,
                        "s":  "BTC",
                        "n":  "Bitcoin",
-                       "ars":  119128524,
-                       "p":  80324
+                       "ars":  119011360,
+                       "p":  80245
                    },
                    {
                        "id":  "ethereum",
-                       "v":  0.94,
+                       "v":  0.93,
                        "s":  "ETH",
                        "n":  "Ethereum",
-                       "ars":  3423974,
-                       "p":  2308.66
+                       "ars":  3414037,
+                       "p":  2301.96
                    },
                    {
                        "id":  "tether",
@@ -139,31 +139,31 @@
                        "s":  "USDT",
                        "n":  "Tether",
                        "ars":  1483,
-                       "p":  0.999884
+                       "p":  0.999879
                    },
                    {
                        "id":  "solana",
-                       "v":  4.30,
+                       "v":  4.18,
                        "s":  "SOL",
                        "n":  "Solana",
-                       "ars":  137899,
-                       "p":  92.98
+                       "ars":  137424,
+                       "p":  92.66
                    },
                    {
                        "id":  "binancecoin",
-                       "v":  0.84,
+                       "v":  0.83,
                        "s":  "BNB",
                        "n":  "BNB",
-                       "ars":  960500,
-                       "p":  647.63
+                       "ars":  958661,
+                       "p":  646.39
                    },
                    {
                        "id":  "ripple",
-                       "v":  1.55,
+                       "v":  1.63,
                        "s":  "XRP",
                        "n":  "XRP",
-                       "ars":  2106,
-                       "p":  1.42
+                       "ars":  2091,
+                       "p":  1.41
                    }
                ],
     "of":  1420,
@@ -243,209 +243,212 @@
                  ],
     "senales_ia":  [
                        {
-                           "activo":  "NVDA",
+                           "activo":  "AAPL",
                            "tipo":  "COMPRA",
-                           "confianza":  72,
-                           "razon":  "Chips IA con demanda estructural fuerte. Sube 3.55% hoy. Pricing power compensa tariffs.",
-                           "sentimiento_macro":  "POSITIVO"
+                           "confianza":  68,
+                           "razon":  "Sube +2% hoy. 28% de upside al objetivo. Fundamentals s├│lidos y estabilidad cambiaria local favorece CEDEARs.",
+                           "sentimiento_macro":  "NEUTRAL"
                        },
                        {
                            "activo":  "MSFT",
+                           "tipo":  "MANTENER",
+                           "confianza":  62,
+                           "razon":  "Ya cotiza 10.8% por encima del objetivo. Upside agotado seg├║n precio objetivo. Sin catalizador nuevo inmediato.",
+                           "sentimiento_macro":  "NEUTRAL"
+                       },
+                       {
+                           "activo":  "GOOGL",
                            "tipo":  "COMPRA",
-                           "confianza":  70,
-                           "razon":  "├Ünico CEDEAR tech con dO positivo (+10.8%). Cloud/IA menos expuesto a tariffs que hardware.",
+                           "confianza":  72,
+                           "razon":  "50% de upside al objetivo. Muy castigado por riesgos antimonopolio pero IA en cloud y buscadores en expansi├│n.",
                            "sentimiento_macro":  "POSITIVO"
                        },
                        {
-                           "activo":  "YPFD",
+                           "activo":  "AMZN",
                            "tipo":  "COMPRA",
-                           "confianza":  68,
-                           "razon":  "Vaca Muerta como catalizador estructural. Baja del 2.14% = pullback en tendencia alcista. Horizonte 3-6 meses.",
-                           "sentimiento_macro":  "POSITIVO"
-                       },
-                       {
-                           "activo":  "XRP",
-                           "tipo":  "COMPRA",
-                           "confianza":  60,
-                           "razon":  "Regulatorio favorable post-SEC en USA. Sube 1.55% con momentum sostenido.",
-                           "sentimiento_macro":  "POSITIVO"
-                       },
-                       {
-                           "activo":  "SOL",
-                           "tipo":  "COMPRA",
-                           "confianza":  55,
-                           "razon":  "Mayor ganador crypto del d├¡a (+4.3%). DeFi activo. Posici├│n especulativa con stop bajo 80 USD.",
-                           "sentimiento_macro":  "POSITIVO"
+                           "confianza":  65,
+                           "razon":  "12% de upside al objetivo. Leve baja hoy. AWS y publicidad digital sostienen crecimiento estructural.",
+                           "sentimiento_macro":  "NEUTRAL"
                        },
                        {
                            "activo":  "TSLA",
                            "tipo":  "COMPRA",
-                           "confianza":  52,
-                           "razon":  "Sube 7.43%. Momentum de corto plazo. Especulativo: no perseguir si se agota. Stop ajustado.",
+                           "confianza":  58,
+                           "razon":  "Sube +7.43% con momentum fuerte. 30% de upside al objetivo. Solo para perfil agresivo por alta volatilidad.",
                            "sentimiento_macro":  "NEUTRAL"
                        },
                        {
-                           "activo":  "USDT",
-                           "tipo":  "MANTENER",
-                           "confianza":  90,
-                           "razon":  "Refugio de liquidez. Con brecha negativa en Argentina, mantener d├│lares es estrategia defensiva v├ílida.",
+                           "activo":  "MELI",
+                           "tipo":  "VENTA",
+                           "confianza":  82,
+                           "razon":  "Cae -11.33% hoy. Cotiza 34.8% por encima del objetivo: sobrecomprado. Toma de ganancias agresiva con se├▒al de reversi├│n.",
+                           "sentimiento_macro":  "NEGATIVO"
+                       },
+                       {
+                           "activo":  "NVDA",
+                           "tipo":  "COMPRA",
+                           "confianza":  75,
+                           "razon":  "Sube +3.55%. 25.7% de upside al objetivo. Demanda de chips IA sigue acelerando. Mejor oportunidad del sector tech.",
                            "sentimiento_macro":  "POSITIVO"
                        },
                        {
                            "activo":  "KO",
                            "tipo":  "MANTENER",
-                           "confianza":  62,
-                           "razon":  "Defensivo con dividendo trimestral. Ca├¡da del 1% sin catalizador negativo espec├¡fico.",
+                           "confianza":  65,
+                           "razon":  "Defensivo con dividendos trimestrales. A solo 4.4% del objetivo. ├Ütil como cobertura en contexto vol├ítil.",
+                           "sentimiento_macro":  "NEUTRAL"
+                       },
+                       {
+                           "activo":  "XOM",
+                           "tipo":  "MANTENER",
+                           "confianza":  58,
+                           "razon":  "Petr├│leo global bajo presi├│n. Cae -2.77% hoy. Commodity headwinds limitan upside inmediato.",
+                           "sentimiento_macro":  "NEGATIVO"
+                       },
+                       {
+                           "activo":  "JPM",
+                           "tipo":  "MANTENER",
+                           "confianza":  55,
+                           "razon":  "Bancos en correcci├│n, cae -4.06%. Esperar estabilizaci├│n de pol├¡tica Fed antes de sumar posici├│n.",
                            "sentimiento_macro":  "NEUTRAL"
                        },
                        {
                            "activo":  "GGAL",
                            "tipo":  "MANTENER",
                            "confianza":  60,
-                           "razon":  "Baja 3% por toma de ganancias. Normalizaci├│n financiera argentina favorece el sector en 3-6 meses.",
-                           "sentimiento_macro":  "POSITIVO"
-                       },
-                       {
-                           "activo":  "BTC",
-                           "tipo":  "MANTENER",
-                           "confianza":  58,
-                           "razon":  "Lateral (+0.13%). Hedge en contexto de incertidumbre global. Sin catalizador alcista inmediato.",
+                           "razon":  "Cae -3.06% en jornada bajista general. Potencial en normalizaci├│n macro argentina pero presi├│n de corto plazo.",
                            "sentimiento_macro":  "NEUTRAL"
                        },
                        {
                            "activo":  "PAMP",
                            "tipo":  "MANTENER",
-                           "confianza":  58,
-                           "razon":  "Reforma tarifaria energ├®tica = catalizador mediano plazo. Baja del 4.5% puede ser entrada escalonada.",
-                           "sentimiento_macro":  "POSITIVO"
-                       },
-                       {
-                           "activo":  "AAPL",
-                           "tipo":  "MANTENER",
                            "confianza":  55,
-                           "razon":  "Rebota 2% pero sigue 28.4% bajo referencia. Supply chain en China expuesta a tariffs. Esperar confirmaci├│n.",
+                           "razon":  "Baja -4.52%. Sector energ├¡a local penalizado. Esperar definici├│n de piso antes de sumar.",
                            "sentimiento_macro":  "NEGATIVO"
                        },
                        {
-                           "activo":  "AMZN",
-                           "tipo":  "MANTENER",
-                           "confianza":  55,
-                           "razon":  "AWS compensa presi├│n en retail. Se├▒al mixta: cloud positivo, e-commerce bajo presi├│n de tariffs.",
-                           "sentimiento_macro":  "NEUTRAL"
+                           "activo":  "YPFD",
+                           "tipo":  "COMPRA",
+                           "confianza":  62,
+                           "razon":  "Baja moderada -2.14% vs el resto del panel. Vaca Muerta y potencial suba del Brent sostienen tesis. Mejor relaci├│n riesgo/retorno del panel local.",
+                           "sentimiento_macro":  "POSITIVO"
+                       },
+                       {
+                           "activo":  "TXAR",
+                           "tipo":  "VENTA",
+                           "confianza":  65,
+                           "razon":  "Cae -4.78%. Acero global bajo presi├│n por desaceleraci├│n China. Sin catalizador local de corto plazo.",
+                           "sentimiento_macro":  "NEGATIVO"
                        },
                        {
                            "activo":  "ALUA",
                            "tipo":  "MANTENER",
-                           "confianza":  55,
-                           "razon":  "Aluminio m├ís defensivo que acero en guerra comercial. Ca├¡da m├¡nima del 0.82%.",
-                           "sentimiento_macro":  "NEUTRAL"
-                       },
-                       {
-                           "activo":  "ETH",
-                           "tipo":  "MANTENER",
-                           "confianza":  52,
-                           "razon":  "Sube 0.94%. DeFi y staking activos. Monitorear BTC como referencia de direcci├│n.",
-                           "sentimiento_macro":  "NEUTRAL"
-                       },
-                       {
-                           "activo":  "BNB",
-                           "tipo":  "MANTENER",
-                           "confianza":  52,
-                           "razon":  "Sube 0.84% acompa├▒ando al mercado. Ecosistema Binance estable sin catalizador espec├¡fico.",
-                           "sentimiento_macro":  "NEUTRAL"
-                       },
-                       {
-                           "activo":  "LOMA",
-                           "tipo":  "MANTENER",
-                           "confianza":  50,
-                           "razon":  "Cemento con se├▒al mixta: construcci├│n privada crece pero obra p├║blica limitada por austeridad fiscal.",
+                           "confianza":  60,
+                           "razon":  "La m├ís resiliente del panel con solo -0.82%. Demanda de aluminio estable. Mantener posici├│n.",
                            "sentimiento_macro":  "NEUTRAL"
                        },
                        {
                            "activo":  "TECO2",
                            "tipo":  "MANTENER",
-                           "confianza":  50,
-                           "razon":  "Sector regulado sin catalizador. Baja del 4.36% inusual para un defensivo. Investigar antes de actuar.",
+                           "confianza":  55,
+                           "razon":  "Cae -4.36%. Sin catalizadores inmediatos en telecom local. Esperar.",
                            "sentimiento_macro":  "NEUTRAL"
                        },
                        {
                            "activo":  "CEPU",
-                           "tipo":  "MANTENER",
-                           "confianza":  48,
-                           "razon":  "Ca├¡da del 7.27% exagerada para el sector. Macro favorece pero esperar piso antes de entrar.",
-                           "sentimiento_macro":  "POSITIVO"
-                       },
-                       {
-                           "activo":  "GOOGL",
-                           "tipo":  "MANTENER",
-                           "confianza":  42,
-                           "razon":  "Ca├¡da del 50% desde referencia. Publicidad digital sensible a desaceleraci├│n. Alto riesgo.",
-                           "sentimiento_macro":  "NEGATIVO"
-                       },
-                       {
-                           "activo":  "MELI",
                            "tipo":  "VENTA",
-                           "confianza":  65,
-                           "razon":  "Ca├¡da del 11.33% en un d├¡a = se├▒al de alarma. Probable resultado trimestral negativo. Evaluar re-entrada m├ís abajo.",
-                           "sentimiento_macro":  "NEGATIVO"
-                       },
-                       {
-                           "activo":  "TXAR",
-                           "tipo":  "VENTA",
-                           "confianza":  63,
-                           "razon":  "Acero bajo doble presi├│n: tariffs reducen demanda global y China compite con sobreproducci├│n. Baja 4.78%.",
-                           "sentimiento_macro":  "NEGATIVO"
-                       },
-                       {
-                           "activo":  "XOM",
-                           "tipo":  "VENTA",
-                           "confianza":  60,
-                           "razon":  "Petr├│leo bajo presi├│n por menor demanda China + OPEC+ aumenta oferta. Sin catalizador positivo.",
+                           "confianza":  70,
+                           "razon":  "Cae -7.27%, una de las mayores bajas del d├¡a. Se├▒al de debilidad t├®cnica clara. Salir y esperar piso.",
                            "sentimiento_macro":  "NEGATIVO"
                        },
                        {
                            "activo":  "SUPV",
                            "tipo":  "VENTA",
-                           "confianza":  58,
-                           "razon":  "Baja 7.46%, peor ca├¡da del d├¡a. Banco mediano con mayor riesgo idiosincr├ítico que GGAL. Rotar si se quiere banca.",
+                           "confianza":  72,
+                           "razon":  "Cae -7.46%, peor performance bancaria del d├¡a. Alta presi├│n vendedora. Evitar hasta estabilizaci├│n.",
                            "sentimiento_macro":  "NEGATIVO"
                        },
                        {
-                           "activo":  "JPM",
+                           "activo":  "LOMA",
                            "tipo":  "VENTA",
-                           "confianza":  58,
-                           "razon":  "Baja 4.06%. Banca USA presionada por tasas altas + posible deterioro de cr├®dito en desaceleraci├│n.",
+                           "confianza":  65,
+                           "razon":  "Cae -5.90%. Cemento afectado por menor actividad en construcci├│n. Sin rebote t├®cnico visible.",
                            "sentimiento_macro":  "NEGATIVO"
+                       },
+                       {
+                           "activo":  "BTC",
+                           "tipo":  "MANTENER",
+                           "confianza":  62,
+                           "razon":  "Sube leve +0.44%, consolidando en $80,245. Sin momentum claro. Esperar ruptura de resistencia para sumar.",
+                           "sentimiento_macro":  "NEUTRAL"
+                       },
+                       {
+                           "activo":  "ETH",
+                           "tipo":  "MANTENER",
+                           "confianza":  60,
+                           "razon":  "Sube +0.93%. Recuperaci├│n moderada sin catalizador macro fuerte. Mantener.",
+                           "sentimiento_macro":  "NEUTRAL"
+                       },
+                       {
+                           "activo":  "SOL",
+                           "tipo":  "COMPRA",
+                           "confianza":  70,
+                           "razon":  "Lidera el panel crypto con +4.18%. Momentum t├®cnico positivo y ecosistema en expansi├│n.",
+                           "sentimiento_macro":  "POSITIVO"
+                       },
+                       {
+                           "activo":  "XRP",
+                           "tipo":  "MANTENER",
+                           "confianza":  58,
+                           "razon":  "Sube +1.63%. Regulaci├│n m├ís clara post-SEC pero upside limitado en el corto plazo.",
+                           "sentimiento_macro":  "NEUTRAL"
+                       },
+                       {
+                           "activo":  "BNB",
+                           "tipo":  "MANTENER",
+                           "confianza":  60,
+                           "razon":  "Sube +0.83%. Ecosistema Binance estable. Mantener posici├│n existente.",
+                           "sentimiento_macro":  "NEUTRAL"
                        }
                    ],
     "resumen_mercado":  null,
     "fecha_senales":  null,
     "resumen_diario":  {
-                           "contexto_macro":  "El mercado argentino muestra una sesi├│n mixta con alta volatilidad sectorial. Las acciones financieras como GGAL lideran las ganancias (+7.43%) mientras que las energ├®ticas sufren fuertes bajas, con PAMP cayendo -11.33%. Esta divergencia refleja la expectativa de beneficios del sector bancario por el carry trade en pesos, contrastando con presiones sobre utilities por temas regulatorios.",
+                           "contexto_macro":  "El mercado argentino muestra una sesi├│n mixta con fuerte volatilidad sectorial. Los bancos lideran las bajas con ca├¡das superiores al 7%, reflejando presiones sobre el sistema financiero local, mientras que las acciones vinculadas al agro y exportaci├│n muestran comportamiento m├ís resiliente en un contexto de expectativas inflacionarias y pol├¡tica monetaria restrictiva.",
                            "top_compra":  [
                                               {
-                                                  "activo":  "PAMP",
+                                                  "activo":  "SUPV",
                                                   "variacion":  -11.33,
-                                                  "razon":  "Sobreventa t├®cnica en utility con fundamentos s├│lidos y potencial recuperaci├│n"
+                                                  "razon":  "Oversold t├®cnico con potencial rebote, sector retail con fundamentals s├│lidos"
                                               },
                                               {
-                                                  "activo":  "TECO2",
+                                                  "activo":  "BMA",
                                                   "variacion":  -7.46,
-                                                  "razon":  "Correcci├│n exagerada en telecom l├¡der con flujos dolarizados estables"
+                                                  "razon":  "Valuaci├│n atractiva post-correcci├│n, exposici├│n a recuperaci├│n del cr├®dito"
+                                              },
+                                              {
+                                                  "activo":  "GGAL",
+                                                  "variacion":  -7.27,
+                                                  "razon":  "L├¡der bancario en m├¡nimos t├®cnicos, oportunidad de acumulaci├│n"
                                               }
                                           ],
                            "top_venta":  [
                                              {
-                                                 "activo":  "GGAL",
+                                                 "activo":  "CEPU",
                                                  "variacion":  7.43,
-                                                 "razon":  "Toma de ganancias tras fuerte rally bancario, posible consolidaci├│n t├®cnica"
+                                                 "razon":  "Sobrecomprado tras rally, sector energ├®tico con resistencias t├®cnicas"
                                              },
                                              {
-                                                 "activo":  "COME",
-                                                 "variacion":  4.30,
-                                                 "razon":  "Realizaci├│n de beneficios en consumo ante incertidumbre sobre poder adquisitivo"
+                                                 "activo":  "TXAR",
+                                                 "variacion":  4.18,
+                                                 "razon":  "Realizaci├│n de ganancias en m├íximos relativos del sector telecom"
+                                             },
+                                             {
+                                                 "activo":  "TECO2",
+                                                 "variacion":  3.55,
+                                                 "razon":  "Profit taking despu├®s de subas recientes, consolidaci├│n esperada"
                                              }
                                          ],
-                           "recomendacion":  "Aprovechar las correcciones en utilities y telecoms para posiciones de mediano plazo, manteniendo cautela en financieras tras el rally reciente. Diversificar con exposici├│n d├│lar ante volatilidad cambiaria esperada."
+                           "recomendacion":  "Mantener cautela ante la volatilidad sectorial, priorizando oportunidades de compra en bancos oversold con horizonte de mediano plazo. Evitar perseguir momentum alcista en sectores ya extendidos como energ├¡a y telecomunicaciones."
                        }
 }
