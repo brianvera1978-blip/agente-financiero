@@ -503,22 +503,43 @@ async function loadHistorial(d){
 function renderBacktesting(h,d){
   const el=document.getElementById('tb-bt-content');
   if(!el)return;
-  const vm={};
-  if(d){
-    (Array.isArray(d.cedears)?d.cedears:[]).forEach(c=>{if(c&&c.t)vm[c.t]={v:c.v||0,p:c.p};});
-    (Array.isArray(d.acciones)?d.acciones:[]).forEach(a=>{if(a&&a.t)vm[a.t]={v:a.v||0,p:a.p};});
-    (Array.isArray(d.crypto)?d.crypto:[]).forEach(c=>{if(c&&c.s)vm[c.s]={v:c.v||0,p:c.p};});
-  }
   const actionSigs=h.filter(s=>s.tipo==='COMPRA'||s.tipo==='VENTA');
   const total=actionSigs.length;
-  if(total===0){el.innerHTML='<div style="text-align:center;padding:20px;color:#8b949e">Sin datos suficientes para backtesting</div>';return;}
+  const distinctDays=new Set(actionSigs.map(s=>s.fecha_iso).filter(Boolean)).size;
+  const hasPriceEntrada=actionSigs.some(s=>s.precio_entrada!==null&&s.precio_entrada!==undefined&&Number(s.precio_entrada)>0);
+  if(total===0||(!hasPriceEntrada&&distinctDays<2)){
+    el.innerHTML='<div style="text-align:center;padding:24px 20px;color:#8b949e;line-height:1.7;font-size:0.82rem">Acumulando datos — se necesitan al menos 2 días de historial para backtesting</div>';
+    return;
+  }
+  const vm={};
+  if(d){
+    (Array.isArray(d.cedears)?d.cedears:[]).forEach(c=>{if(c&&c.t){vm[c.t]={v:c.v||0,p:c.p};if(c.n)vm[c.n]={v:c.v||0,p:c.p};}});
+    (Array.isArray(d.acciones)?d.acciones:[]).forEach(a=>{if(a&&a.t){vm[a.t]={v:a.v||0,p:a.p};if(a.n)vm[a.n]={v:a.v||0,p:a.p};}});
+    (Array.isArray(d.crypto)?d.crypto:[]).forEach(c=>{if(c&&c.s){vm[c.s]={v:c.v||0,p:c.p};if(c.n)vm[c.n]={v:c.v||0,p:c.p};}});
+  }
+  const getInfo=s=>{
+    if(vm[s.activo])return vm[s.activo];
+    const m=s.activo.match(/\(([^)]+)\)/);
+    if(m&&vm[m[1]])return vm[m[1]];
+    const name=s.activo.replace(/\s*\([^)]+\)/,'').trim();
+    if(vm[name])return vm[name];
+    return null;
+  };
   const evaluated=actionSigs.map(s=>{
-    const info=vm[s.activo];
+    const pe=Number(s.precio_entrada)||0;
+    const info=getInfo(s);
     if(!info)return null;
-    const v=info.v;
-    const acerto=s.tipo==='COMPRA'?v>0:v<0;
-    const retorno=s.tipo==='COMPRA'?v:-v;
-    return{...s,v,acerto,retorno};
+    let pct,acerto,retorno;
+    if(pe>0&&info.p>0){
+      pct=((info.p-pe)/pe*100);
+      acerto=s.tipo==='COMPRA'?pct>0:pct<0;
+      retorno=s.tipo==='COMPRA'?pct:-pct;
+    }else{
+      pct=info.v;
+      acerto=s.tipo==='COMPRA'?pct>0:pct<0;
+      retorno=s.tipo==='COMPRA'?pct:-pct;
+    }
+    return{...s,pct,acerto,retorno};
   }).filter(Boolean);
   if(evaluated.length===0){el.innerHTML='<div style="text-align:center;padding:20px;color:#8b949e">Sin precios disponibles para calcular precisión</div>';return;}
   const compras=evaluated.filter(s=>s.tipo==='COMPRA');
