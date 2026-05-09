@@ -114,24 +114,24 @@
                         "dO":  -10.6
                     }
                 ],
-    "fecha":  "09/05/2026 09:59",
+    "fecha":  "09/05/2026 10:03",
     "ccl":  1483.1,
     "crypto":  [
                    {
                        "id":  "bitcoin",
-                       "v":  0.41,
+                       "v":  0.43,
                        "s":  "BTC",
                        "n":  "Bitcoin",
-                       "ars":  119211578,
-                       "p":  80380
+                       "ars":  119224926,
+                       "p":  80389
                    },
                    {
                        "id":  "ethereum",
-                       "v":  1.34,
+                       "v":  1.36,
                        "s":  "ETH",
                        "n":  "Ethereum",
-                       "ars":  3434815,
-                       "p":  2315.97
+                       "ars":  3435052,
+                       "p":  2316.13
                    },
                    {
                        "id":  "tether",
@@ -139,11 +139,11 @@
                        "s":  "USDT",
                        "n":  "Tether",
                        "ars":  1483,
-                       "p":  0.999887
+                       "p":  0.999853
                    },
                    {
                        "id":  "solana",
-                       "v":  5.63,
+                       "v":  5.58,
                        "s":  "SOL",
                        "n":  "Solana",
                        "ars":  138566,
@@ -151,15 +151,15 @@
                    },
                    {
                        "id":  "binancecoin",
-                       "v":  1.58,
+                       "v":  1.57,
                        "s":  "BNB",
                        "n":  "BNB",
-                       "ars":  963837,
-                       "p":  649.88
+                       "ars":  963659,
+                       "p":  649.76
                    },
                    {
                        "id":  "ripple",
-                       "v":  2.25,
+                       "v":  2.36,
                        "s":  "XRP",
                        "n":  "XRP",
                        "ars":  2106,
@@ -244,66 +244,109 @@
     "senales_ia":  [
                        {
                            "activo":  "MELI",
-                           "tipo":  "VENTA",
-                           "confianza":  85,
-                           "razon":  "Cae 11.33% tocando zona de stop ($1600 vs precio $1632). Riesgo de ruptura bajista inminente."
+                           "tipo":  "COMPRA",
+                           "confianza":  72,
+                           "razon":  "Ca├¡da de 11.3% genera entrada con 34.8% de upside hasta objetivo USD 2200. Stop en 1600."
                        },
                        {
                            "activo":  "MSFT",
                            "tipo":  "COMPRA",
-                           "confianza":  72,
-                           "razon":  "Upside del 10.8% al objetivo ($460). Precio sobre stop ($380). Momentum leve pero positivo."
-                       },
-                       {
-                           "activo":  "TSLA",
-                           "tipo":  "MANTENER",
-                           "confianza":  63,
-                           "razon":  "Sube 7.43% hoy pero ya supero ampliamente el objetivo ($300 vs precio $428). No escalar posicion."
-                       },
-                       {
-                           "activo":  "NVDA",
-                           "tipo":  "MANTENER",
-                           "confianza":  60,
-                           "razon":  "Momentum positivo +3.55% pero precio 25.7% sobre objetivo. Mantener sin agregar."
+                           "confianza":  65,
+                           "razon":  "10.8% de upside hasta objetivo USD 460. Baja volatilidad diaria +0.28%."
                        },
                        {
                            "activo":  "SOL",
                            "tipo":  "COMPRA",
-                           "confianza":  68,
-                           "razon":  "Lider en crypto hoy con +5.63%. BTC estable da soporte. Momentum alcista confirmado."
+                           "confianza":  70,
+                           "razon":  "Suba diaria +5.58%. Crypto diverge al alza respecto al mercado local."
                        },
                        {
-                           "activo":  "BTC",
+                           "activo":  "XRP",
+                           "tipo":  "COMPRA",
+                           "confianza":  62,
+                           "razon":  "Momentum positivo +2.36%. Bajo precio permite entrada con poco capital."
+                       },
+                       {
+                           "activo":  "TSLA",
                            "tipo":  "MANTENER",
                            "confianza":  58,
-                           "razon":  "Movimiento neutro +0.41%. Sin se├▒al clara. Base solida pero sin catalizador inmediato."
+                           "razon":  "Sube +7.43% pero cotiza 30% por encima del objetivo. No agregar posici├│n."
                        },
                        {
-                           "activo":  "SUPV",
-                           "tipo":  "VENTA",
-                           "confianza":  78,
-                           "razon":  "Cae 7.46%. Peor baja del panel bancario. Salir para limitar perdidas mientras el sector no rebote."
-                       },
-                       {
-                           "activo":  "CEPU",
-                           "tipo":  "VENTA",
-                           "confianza":  75,
-                           "razon":  "Cae 7.27%. Energia electrica bajo presion junto a PAMP. Patron bajista coordinado en el sector."
-                       },
-                       {
-                           "activo":  "YPFD",
+                           "activo":  "NVDA",
                            "tipo":  "MANTENER",
-                           "confianza":  58,
-                           "razon":  "Caida moderada 2.14% vs sector. Valor fundamental solido. Esperar confirmacion de piso."
+                           "confianza":  57,
+                           "razon":  "Momentum positivo +3.55% pero precio excede objetivo en 25.7%. Esperar correcci├│n."
                        },
                        {
                            "activo":  "GGAL",
                            "tipo":  "MANTENER",
                            "confianza":  55,
-                           "razon":  "Baja 3.06%, resistiendo mejor que SUPV. Esperar definicion del mercado local antes de mover."
+                           "razon":  "Baja 3.06% pero es el banco local m├ís s├│lido. Esperar estabilizaci├│n."
+                       },
+                       {
+                           "activo":  "BTC",
+                           "tipo":  "MANTENER",
+                           "confianza":  60,
+                           "razon":  "Variaci├│n m├¡nima +0.43%. Sin se├▒al clara, mantener exposici├│n existente."
+                       },
+                       {
+                           "activo":  "XOM",
+                           "tipo":  "VENTA",
+                           "confianza":  63,
+                           "razon":  "Baja 2.77% y cotiza 10.1% por encima del objetivo. Toma de ganancias recomendada."
+                       },
+                       {
+                           "activo":  "JPM",
+                           "tipo":  "VENTA",
+                           "confianza":  65,
+                           "razon":  "Baja 4.06% y excede objetivo en 10.6%. Presi├│n bajista en sector financiero."
+                       },
+                       {
+                           "activo":  "SUPV",
+                           "tipo":  "VENTA",
+                           "confianza":  71,
+                           "razon":  "Mayor ca├¡da del panel -7.46%. Sector bancario local bajo presi├│n severa."
+                       },
+                       {
+                           "activo":  "CEPU",
+                           "tipo":  "VENTA",
+                           "confianza":  68,
+                           "razon":  "Baja 7.27%. Sector energ├¡a con ventas fuertes. Esperar piso antes de re-entrar."
                        }
                    ],
-    "resumen_mercado":  "Mercado local en rojo generalizado (-3% a -7.5%). Crypto en verde liderado por SOL (+5.6%). CEDEARs mixtos: MELI en zona critica de stop. Brecha blue/oficial invertida (-1.4%) se├▒al macro atipica que merece monitoreo.",
+    "resumen_mercado":  {
+                            "sesgo":  "MIXTO ÔÇö Acciones ARG en baja fuerte, CEDEARs tech mixtos, crypto al alza",
+                            "alerta":  "Brecha cambiaria invertida -1.4% (blue \u003c oficial). Se├▒al inusual, vigilar evoluci├│n.",
+                            "fecha":  "09/05/2026 10:03"
+                        },
     "fecha_senales":  null,
-    "resumen_diario":  null
+    "resumen_diario":  {
+                           "contexto_macro":  "El mercado argentino muestra una sesi├│n mixta con divergencias sectoriales significativas. Mientras los papeles financieros como GGAL lideran las ganancias aprovechando expectativas de tasas, el sector energ├®tico sufre con YPF cayendo m├ís del 11% en l├¡nea con la debilidad del petr├│leo global y presiones regulatorias locales.",
+                           "top_compra":  [
+                                              {
+                                                  "activo":  "YPF",
+                                                  "variacion":  -11.33,
+                                                  "razon":  "Sobreventa t├®cnica en nivel clave de soporte, oportunidad de rebote en energ├®tica l├¡der"
+                                              },
+                                              {
+                                                  "activo":  "TECO2",
+                                                  "variacion":  -7.46,
+                                                  "razon":  "Correcci├│n exagerada en telecom con fundamentals s├│lidos y potencial de recuperaci├│n"
+                                              }
+                                          ],
+                           "top_venta":  [
+                                             {
+                                                 "activo":  "GGAL",
+                                                 "variacion":  7.43,
+                                                 "razon":  "Toma de ganancias tras fuerte rally, posible consolidaci├│n en zona de resistencia"
+                                             },
+                                             {
+                                                 "activo":  "CEPU",
+                                                 "variacion":  5.58,
+                                                 "razon":  "Realizaci├│n de utilidades en papel que alcanz├│ objetivos t├®cnicos de mediano plazo"
+                                             }
+                                         ],
+                           "recomendacion":  "Sesi├│n de consolidaci├│n con oportunidades contrarian en energ├¡a y telecos que muestran sobreventa. Mantener cautela en financieras tras rally y considerar rotaci├│n hacia sectores castigados con fundamentos intactos."
+                       }
 }
