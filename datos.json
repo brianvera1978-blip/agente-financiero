@@ -1,99 +1,99 @@
 {
-    "fecha": "17/06/2026 13:00",
-    "me": 1456.7,
-    "ccl": 1497.4,
-    "bl": 1480,
-    "of": 1450,
-    "brecha": 2.1,
+    "fecha": "19/06/2026 09:01",
+    "me": 1468.5,
+    "ccl": 1508.9,
+    "bl": 1485,
+    "of": 1470.01,
+    "brecha": 1.0,
     "acciones": [
         {
             "t": "GGAL",
             "n": "Galicia",
             "s": "Banco",
-            "p": 8315.0,
-            "v": 1.9,
-            "usd": 5.55
+            "p": 8500.0,
+            "v": 1.61,
+            "usd": 5.63
         },
         {
             "t": "YPFD",
             "n": "YPF",
             "s": "Petroleo",
-            "p": 76675.0,
-            "v": -0.1,
-            "usd": 51.21
+            "p": 76125.0,
+            "v": -0.72,
+            "usd": 50.45
         },
         {
             "t": "PAMP",
             "n": "Pampa",
             "s": "Energia",
-            "p": 5135.0,
-            "v": 0.49,
-            "usd": 3.43
+            "p": 5220.0,
+            "v": 1.26,
+            "usd": 3.46
         },
         {
             "t": "TXAR",
             "n": "Ternium",
             "s": "Acero",
-            "p": 678.0,
-            "v": -0.88,
+            "p": 680.5,
+            "v": 0.22,
             "usd": 0.45
         },
         {
             "t": "ALUA",
             "n": "Aluar",
             "s": "Aluminio",
-            "p": 992.5,
-            "v": 0.76,
-            "usd": 0.66
+            "p": 1010.0,
+            "v": 0.9,
+            "usd": 0.67
         },
         {
             "t": "CRES",
             "n": "Cresud",
             "s": "Agro",
-            "p": 1798.0,
-            "v": -0.33,
-            "usd": 1.2
+            "p": 1747.0,
+            "v": -0.46,
+            "usd": 1.16
         },
         {
             "t": "SUPV",
             "n": "Supervielle",
             "s": "Banco",
-            "p": 3402.5,
-            "v": 4.13,
-            "usd": 2.27
+            "p": 3457.5,
+            "v": 3.06,
+            "usd": 2.29
         },
         {
             "t": "BMA",
             "n": "Macro",
             "s": "Banco",
-            "p": 14710.0,
-            "v": 1.45,
-            "usd": 9.82
+            "p": 15360.0,
+            "v": 3.85,
+            "usd": 10.18
         },
         {
             "t": "TECO2",
             "n": "Telecom",
             "s": "Telecom",
-            "p": 4497.5,
-            "v": 2.27,
-            "usd": 3.0
+            "p": 4197.5,
+            "v": -4.06,
+            "usd": 2.78
         },
         {
             "t": "MIRG",
             "n": "Mirgor",
             "s": "Tecnologia",
-            "p": 16900.0,
-            "v": -0.29,
-            "usd": 11.29
+            "p": 16825.0,
+            "v": -0.15,
+            "usd": 11.15
         }
     ],
     "cedears": [
         {
             "t": "AAPL",
             "n": "Apple",
-            "p": 298.665,
-            "v": -0.19,
-            "ars": 447221,
+            "p": 298.01,
+            "v": 0.7,
+            "ars": 449667,
             "div": "Feb/May/Ago/Nov",
             "stop": 0,
             "obj": 0,
@@ -102,9 +102,9 @@
         {
             "t": "MSFT",
             "n": "Microsoft",
-            "p": 385.55,
-            "v": -2.1,
-            "ars": 577323,
+            "p": 379.4,
+            "v": 0.13,
+            "ars": 572477,
             "div": "Mar/Jun/Sep/Dic",
             "stop": 0,
             "obj": 0,
@@ -113,9 +113,9 @@
         {
             "t": "GOOGL",
             "n": "Google",
-            "p": 364.93,
-            "v": -2.23,
-            "ars": 546446,
+            "p": 368.03,
+            "v": 1.17,
+            "ars": 555320,
             "div": "No paga",
             "stop": 0,
             "obj": 0,
@@ -124,9 +124,9 @@
         {
             "t": "AMZN",
             "n": "Amazon",
-            "p": 240.2,
-            "v": -2.36,
-            "ars": 359675,
+            "p": 244.39,
+            "v": 2.9,
+            "ars": 368760,
             "div": "No paga",
             "stop": 0,
             "obj": 0,
@@ -135,9 +135,9 @@
         {
             "t": "NVDA",
             "n": "NVIDIA",
-            "p": 206.74,
-            "v": -0.32,
-            "ars": 309572,
+            "p": 210.69,
+            "v": 2.95,
+            "ars": 317910,
             "div": "Mar/Jun/Sep/Dic",
             "stop": 0,
             "obj": 0,
@@ -146,9 +146,9 @@
         {
             "t": "MELI",
             "n": "MercadoLibre",
-            "p": 1681.0,
-            "v": 0.41,
-            "ars": 2517129,
+            "p": 1635.15,
+            "v": 0.2,
+            "ars": 2467278,
             "div": "No paga",
             "stop": 0,
             "obj": 0,
@@ -157,9 +157,9 @@
         {
             "t": "META",
             "n": "Meta",
-            "p": 580.685,
-            "v": -3.25,
-            "ars": 869518,
+            "p": 577.22,
+            "v": 1.7,
+            "ars": 870967,
             "div": "Mar/Jun/Sep/Dic",
             "stop": 0,
             "obj": 0,
@@ -168,9 +168,9 @@
         {
             "t": "TSLA",
             "n": "Tesla",
-            "p": 401.32,
-            "v": -0.83,
-            "ars": 600937,
+            "p": 400.49,
+            "v": 1.04,
+            "ars": 604299,
             "div": "No paga",
             "stop": 0,
             "obj": 0,
@@ -182,276 +182,276 @@
             "id": "bitcoin",
             "s": "BTC",
             "n": "Bitcoin",
-            "p": 65704,
-            "ars": 94384007,
-            "v": -0.24
+            "p": 62579,
+            "ars": 90801939,
+            "v": -2.15
         },
         {
             "id": "ethereum",
             "s": "ETH",
             "n": "Ethereum",
-            "p": 1771.82,
-            "ars": 2545227,
-            "v": -0.59
+            "p": 1690.52,
+            "ars": 2452950,
+            "v": -3.02
         },
         {
             "id": "tether",
             "s": "USDT",
             "n": "Tether",
-            "p": 0.999117,
-            "ars": 1435,
-            "v": -0.01
+            "p": 0.999127,
+            "ars": 1449,
+            "v": 0.01
         },
         {
             "id": "solana",
             "s": "SOL",
             "n": "Solana",
-            "p": 73.68,
-            "ars": 105835,
-            "v": 0.44
+            "p": 68.2,
+            "ars": 98961,
+            "v": -3.75
         },
         {
             "id": "binancecoin",
             "s": "BNB",
             "n": "BNB",
-            "p": 605.13,
-            "ars": 869277,
-            "v": -0.32
+            "p": 572.58,
+            "ars": 830810,
+            "v": -2.82
         },
         {
             "id": "ripple",
             "s": "XRP",
             "n": "XRP",
-            "p": 1.21,
-            "ars": 1740,
-            "v": 0.04
+            "p": 1.13,
+            "ars": 1634,
+            "v": -3.16
         }
     ],
     "bonos": [
         {
             "t": "AL30",
             "n": "Bono USD Ley Local 2030",
-            "p": 78100.0,
-            "v": -1.26,
-            "usd": 67.48
+            "p": 78930.0,
+            "v": 0.68,
+            "usd": 67.72
         },
         {
             "t": "GD30",
             "n": "Bono USD Ley NY 2030",
-            "p": 80400.0,
-            "v": -1.46,
-            "usd": 69.61
+            "p": 81100.0,
+            "v": 1.37,
+            "usd": 69.1
         },
         {
             "t": "AL35",
             "n": "Bono USD Ley Local 2035",
-            "p": 78580.0,
-            "v": -1.71,
-            "usd": 68.21
+            "p": 79150.0,
+            "v": 0.7,
+            "usd": 67.89
         },
         {
             "t": "GD35",
             "n": "Bono USD Ley NY 2035",
-            "p": 78750.0,
-            "v": -1.32,
-            "usd": 68.08
+            "p": 79700.0,
+            "v": 1.21,
+            "usd": 68.02
         }
     ],
     "senales_ia": [
         {
             "activo": "Galicia (GGAL)",
             "tipo": "COMPRA",
-            "confianza": 68,
-            "razon": "Momentum alcista +1.90%, sector bancario lidera, soporte en 8100 consolidado",
+            "confianza": 65,
+            "razon": "Momentum positivo en bancos, brecha mínima favorece flujo a equity. Soporte en 8200 firme.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "YPF (YPFD)",
             "tipo": "MANTENER",
             "confianza": 52,
-            "razon": "Variación neutra -0.10%, sin catalizador claro, esperar definición de rango 74000-80000",
+            "razon": "Leve corrección tras rally. Sin señal clara, esperar quiebre de 77000 para compra.",
             "sentimiento_macro": "NEUTRAL"
         },
         {
             "activo": "Pampa (PAMP)",
             "tipo": "COMPRA",
-            "confianza": 62,
-            "razon": "Leve impulso +0.49%, valuación atractiva en USD 3.43, soporte firme en 5000",
+            "confianza": 63,
+            "razon": "Energética con momentum alcista, brecha casi nula favorece posicionamiento local.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "Ternium (TXAR)",
-            "tipo": "VENTA",
-            "confianza": 60,
-            "razon": "Debilidad persistente -0.88%, sector industrial sin tracción, riesgo de quiebre de 670",
-            "sentimiento_macro": "NEGATIVO"
+            "tipo": "MANTENER",
+            "confianza": 50,
+            "razon": "Lateral sin volumen. Sector industrial sin catalizador. Esperar definición.",
+            "sentimiento_macro": "NEUTRAL"
         },
         {
             "activo": "Aluar (ALUA)",
             "tipo": "MANTENER",
-            "confianza": 55,
-            "razon": "Leve recuperación +0.76% pero aluminio sin fuerza global, zona de consolidación",
+            "confianza": 53,
+            "razon": "Leve recuperación pero aluminio global débil. Sin convicción para compra agresiva.",
             "sentimiento_macro": "NEUTRAL"
         },
         {
             "activo": "Cresud (CRES)",
-            "tipo": "VENTA",
-            "confianza": 58,
-            "razon": "Presión vendedora -0.33%, commodities agrícolas débiles, soporte en 1750 amenazado",
-            "sentimiento_macro": "NEGATIVO"
+            "tipo": "MANTENER",
+            "confianza": 48,
+            "razon": "Corrección leve, agro sin driver. Commodities agrícolas laterales, sin edge claro.",
+            "sentimiento_macro": "NEUTRAL"
         },
         {
             "activo": "Supervielle (SUPV)",
             "tipo": "COMPRA",
-            "confianza": 72,
-            "razon": "Fuerte impulso +4.13%, lidera sector bancario, breakout con volumen, objetivo 3700",
+            "confianza": 68,
+            "razon": "Lidera suba bancaria +3%. Flujo rotando a bancos medianos. Objetivo técnico en 3750.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "Macro (BMA)",
             "tipo": "COMPRA",
-            "confianza": 67,
-            "razon": "Suba +1.45% acompaña sector bancario, brecha mínima favorece carry, soporte 14200",
+            "confianza": 70,
+            "razon": "Mayor suba del panel +3.85%. Sector bancario líder, brecha 1% impulsa carry trade.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "Telecom (TECO2)",
-            "tipo": "COMPRA",
-            "confianza": 65,
-            "razon": "Rally +2.27%, quiebre de resistencia en 4400, flujo comprador sostenido",
-            "sentimiento_macro": "POSITIVO"
+            "tipo": "VENTA",
+            "confianza": 62,
+            "razon": "Caída fuerte -4%. Quiebre de soporte técnico, riesgo regulatorio. Stop en 4350.",
+            "sentimiento_macro": "NEGATIVO"
         },
         {
             "activo": "Mirgor (MIRG)",
             "tipo": "MANTENER",
             "confianza": 50,
-            "razon": "Sin dirección clara -0.29%, precio elevado en USD, esperar catalizador sectorial",
+            "razon": "Neutral, sin tendencia definida. Electrónica con incertidumbre arancelaria.",
             "sentimiento_macro": "NEUTRAL"
         },
         {
             "activo": "Apple (AAPL)",
-            "tipo": "MANTENER",
-            "confianza": 55,
-            "razon": "Variación mínima -0.19%, cerca de máximos, soporte USD 290, esperar pullback para entry",
-            "sentimiento_macro": "NEUTRAL"
+            "tipo": "COMPRA",
+            "confianza": 62,
+            "razon": "Tendencia alcista sostenida. Cerca de máximos, momentum positivo post-WWDC.",
+            "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "Microsoft (MSFT)",
             "tipo": "COMPRA",
-            "confianza": 64,
-            "razon": "Caída -2.10% genera oportunidad, soporte fuerte en USD 380, reversión probable",
+            "confianza": 60,
+            "razon": "Cloud + AI como drivers. Consolidando cerca de resistencia, quiebre de 385 habilita 400.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "Google (GOOGL)",
             "tipo": "COMPRA",
-            "confianza": 63,
-            "razon": "Retroceso -2.23% desde máximos, soporte en USD 360, ratio riesgo/retorno favorable",
+            "confianza": 64,
+            "razon": "AI y búsqueda impulsan. Suba +1.17% confirma tendencia, soporte sólido en 355.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "Amazon (AMZN)",
             "tipo": "COMPRA",
-            "confianza": 62,
-            "razon": "Corrección -2.36% ofrece entrada, soporte clave USD 235, fundamentals sólidos",
+            "confianza": 66,
+            "razon": "Momentum fuerte +2.9%. AWS y retail sólidos. Quiebre alcista confirmado.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "NVIDIA (NVDA)",
-            "tipo": "MANTENER",
-            "confianza": 56,
-            "razon": "Leve baja -0.32%, consolidación post-rally IA, esperar quiebre de USD 210 para sumar",
-            "sentimiento_macro": "NEUTRAL"
+            "tipo": "COMPRA",
+            "confianza": 67,
+            "razon": "Líder AI con +2.95%. Demanda de GPUs insaciable. Soporte en 195, objetivo 230.",
+            "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "MercadoLibre (MELI)",
             "tipo": "COMPRA",
-            "confianza": 66,
-            "razon": "Positiva +0.41% contra mercado rojo, fortaleza relativa, exposición LatAm premium",
+            "confianza": 63,
+            "razon": "Fintech + ecommerce LatAm. Consolidando en máximos, brecha mínima favorece CEDEAR.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "Meta (META)",
             "tipo": "COMPRA",
-            "confianza": 65,
-            "razon": "Caída fuerte -3.25% genera sobreventa intradiaria, soporte USD 570, rebote técnico",
+            "confianza": 64,
+            "razon": "AI y publicidad digital fuertes. Tendencia alcista intacta, soporte en 555.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "Tesla (TSLA)",
             "tipo": "MANTENER",
-            "confianza": 50,
-            "razon": "Baja -0.83%, alta volatilidad, riesgo político/reputacional, esperar definición",
+            "confianza": 52,
+            "razon": "Sobrevaluada por fundamentals. Volatilidad alta, riesgo político de Musk. Cautela.",
             "sentimiento_macro": "NEUTRAL"
         },
         {
             "activo": "Bitcoin (BTC)",
             "tipo": "MANTENER",
-            "confianza": 57,
-            "razon": "Consolidando en USD 65700, soporte USD 63000, resistencia USD 68000, sin definición",
+            "confianza": 55,
+            "razon": "Corrección -2.15% dentro de rango. Soporte clave en 60000, resistencia en 68000.",
             "sentimiento_macro": "NEUTRAL"
         },
         {
             "activo": "Ethereum (ETH)",
-            "tipo": "COMPRA",
-            "confianza": 60,
-            "razon": "Subvaluado en ratio ETH/BTC, soporte USD 1700, potencial recuperación hacia 1950",
-            "sentimiento_macro": "POSITIVO"
+            "tipo": "VENTA",
+            "confianza": 58,
+            "razon": "Debilidad relativa vs BTC, -3%. Pérdida de soporte de 1700, riesgo de caída a 1550.",
+            "sentimiento_macro": "NEGATIVO"
         },
         {
             "activo": "Tether (USDT)",
             "tipo": "MANTENER",
             "confianza": 50,
-            "razon": "Stablecoin, peg estable en 0.999, sin señal de trading, útil como reserva de liquidez",
+            "razon": "Stablecoin, peg estable. Sin señal de trading, útil como refugio de liquidez.",
             "sentimiento_macro": "NEUTRAL"
         },
         {
             "activo": "Solana (SOL)",
-            "tipo": "COMPRA",
-            "confianza": 61,
-            "razon": "Positiva +0.44% vs mercado, ecosistema en crecimiento, soporte USD 70, objetivo 82",
-            "sentimiento_macro": "POSITIVO"
+            "tipo": "VENTA",
+            "confianza": 60,
+            "razon": "Mayor caída del panel cripto -3.75%. Quiebre bajista, siguiente soporte en 60 USD.",
+            "sentimiento_macro": "NEGATIVO"
         },
         {
             "activo": "BNB",
             "tipo": "MANTENER",
-            "confianza": 54,
-            "razon": "Leve baja -0.32%, rango lateral USD 580-630, sin catalizador, esperar quiebre",
+            "confianza": 50,
+            "razon": "Corrección general cripto. Soporte en 550, sin catalizador propio. Esperar señal.",
             "sentimiento_macro": "NEUTRAL"
         },
         {
             "activo": "XRP",
-            "tipo": "MANTENER",
-            "confianza": 53,
-            "razon": "Estable +0.04%, lateraliza entre USD 1.10-1.30, depende de resolución regulatoria",
-            "sentimiento_macro": "NEUTRAL"
+            "tipo": "VENTA",
+            "confianza": 58,
+            "razon": "Debilidad persistente -3.16%. Riesgo regulatorio latente, soporte en 1.05 vulnerable.",
+            "sentimiento_macro": "NEGATIVO"
         },
         {
             "activo": "AL30",
             "tipo": "COMPRA",
-            "confianza": 66,
-            "razon": "Corrección -1.26% con brecha 2.1%, yield atractivo, riesgo país comprimido",
+            "confianza": 68,
+            "razon": "Brecha 1% y carry atractivo. Riesgo país comprimiendo, upside en paridad hacia 70 USD.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "GD30",
             "tipo": "COMPRA",
-            "confianza": 65,
-            "razon": "Retroceso -1.46% ofrece entrada, ley NY protege, paridad USD 69.6 atractiva",
+            "confianza": 70,
+            "razon": "Ley NY preferible. Suba +1.37% confirma demanda. Convergencia a paridad 72-73 USD.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "AL35",
             "tipo": "COMPRA",
-            "confianza": 64,
-            "razon": "Baja -1.71% mayor del tramo, mayor duration captura upside si riesgo país baja",
+            "confianza": 66,
+            "razon": "Duration más larga ofrece mayor upside si riesgo país sigue bajando. Carry sólido.",
             "sentimiento_macro": "POSITIVO"
         },
         {
             "activo": "GD35",
             "tipo": "COMPRA",
-            "confianza": 65,
-            "razon": "Caída -1.32%, ley extranjera + duration larga, mejor risk/reward de la curva",
+            "confianza": 69,
+            "razon": "Mejor jurisdicción + duration. Flujo favorable con brecha mínima, objetivo paridad 72.",
             "sentimiento_macro": "POSITIVO"
         }
     ],
@@ -459,182 +459,182 @@
         {
             "activo": "Galicia (GGAL)",
             "tipo": "COMPRA",
-            "probabilidad": 68,
-            "edge": 0.1,
-            "kelly": 0.04,
-            "precio_objetivo": 8900,
-            "razon": "Momentum alcista +1.90%, sector bancario lidera, soporte en 8100 consolidado"
+            "probabilidad": 65,
+            "edge": 0.08,
+            "kelly": 0.03,
+            "precio_objetivo": 9100,
+            "razon": "Momentum positivo en bancos, brecha mínima favorece flujo a equity. Soporte en 8200 firme."
         },
         {
             "activo": "YPF (YPFD)",
             "tipo": "MANTENER",
             "probabilidad": 52,
-            "edge": 0.02,
+            "edge": 0.03,
             "kelly": 0.01,
-            "precio_objetivo": 78000,
-            "razon": "Variación neutra -0.10%, sin catalizador claro, esperar definición de rango 74000-80000"
+            "precio_objetivo": 78500,
+            "razon": "Leve corrección tras rally. Sin señal clara, esperar quiebre de 77000 para compra."
         },
         {
             "activo": "Pampa (PAMP)",
             "tipo": "COMPRA",
-            "probabilidad": 62,
+            "probabilidad": 63,
             "edge": 0.07,
             "kelly": 0.03,
-            "precio_objetivo": 5500,
-            "razon": "Leve impulso +0.49%, valuación atractiva en USD 3.43, soporte firme en 5000"
+            "precio_objetivo": 5600,
+            "razon": "Energética con momentum alcista, brecha casi nula favorece posicionamiento local."
         },
         {
             "activo": "Ternium (TXAR)",
-            "tipo": "VENTA",
-            "probabilidad": 60,
-            "edge": 0.06,
-            "kelly": 0.02,
-            "precio_objetivo": 640,
-            "razon": "Debilidad persistente -0.88%, sector industrial sin tracción, riesgo de quiebre de 670"
+            "tipo": "MANTENER",
+            "probabilidad": 50,
+            "edge": 0.02,
+            "kelly": 0.01,
+            "precio_objetivo": 710,
+            "razon": "Lateral sin volumen. Sector industrial sin catalizador. Esperar definición."
         },
         {
             "activo": "Aluar (ALUA)",
             "tipo": "MANTENER",
-            "probabilidad": 55,
-            "edge": 0.04,
-            "kelly": 0.02,
-            "precio_objetivo": 1050,
-            "razon": "Leve recuperación +0.76% pero aluminio sin fuerza global, zona de consolidación"
+            "probabilidad": 53,
+            "edge": 0.03,
+            "kelly": 0.01,
+            "precio_objetivo": 1060,
+            "razon": "Leve recuperación pero aluminio global débil. Sin convicción para compra agresiva."
         },
         {
             "activo": "Cresud (CRES)",
-            "tipo": "VENTA",
-            "probabilidad": 58,
-            "edge": 0.05,
-            "kelly": 0.02,
-            "precio_objetivo": 1720,
-            "razon": "Presión vendedora -0.33%, commodities agrícolas débiles, soporte en 1750 amenazado"
+            "tipo": "MANTENER",
+            "probabilidad": 48,
+            "edge": 0.01,
+            "kelly": 0.005,
+            "precio_objetivo": 1750,
+            "razon": "Corrección leve, agro sin driver. Commodities agrícolas laterales, sin edge claro."
         },
         {
             "activo": "Supervielle (SUPV)",
             "tipo": "COMPRA",
-            "probabilidad": 72,
-            "edge": 0.14,
-            "kelly": 0.06,
-            "precio_objetivo": 3700,
-            "razon": "Fuerte impulso +4.13%, lidera sector bancario, breakout con volumen, objetivo 3700"
+            "probabilidad": 68,
+            "edge": 0.11,
+            "kelly": 0.04,
+            "precio_objetivo": 3750,
+            "razon": "Lidera suba bancaria +3%. Flujo rotando a bancos medianos. Objetivo técnico en 3750."
         },
         {
             "activo": "Macro (BMA)",
             "tipo": "COMPRA",
-            "probabilidad": 67,
-            "edge": 0.09,
-            "kelly": 0.04,
-            "precio_objetivo": 15600,
-            "razon": "Suba +1.45% acompaña sector bancario, brecha mínima favorece carry, soporte 14200"
+            "probabilidad": 70,
+            "edge": 0.12,
+            "kelly": 0.05,
+            "precio_objetivo": 16500,
+            "razon": "Mayor suba del panel +3.85%. Sector bancario líder, brecha 1% impulsa carry trade."
         },
         {
             "activo": "Telecom (TECO2)",
-            "tipo": "COMPRA",
-            "probabilidad": 65,
+            "tipo": "VENTA",
+            "probabilidad": 62,
             "edge": 0.08,
             "kelly": 0.03,
-            "precio_objetivo": 4850,
-            "razon": "Rally +2.27%, quiebre de resistencia en 4400, flujo comprador sostenido"
+            "precio_objetivo": 3900,
+            "razon": "Caída fuerte -4%. Quiebre de soporte técnico, riesgo regulatorio. Stop en 4350."
         },
         {
             "activo": "Mirgor (MIRG)",
             "tipo": "MANTENER",
             "probabilidad": 50,
-            "edge": 0.01,
+            "edge": 0.02,
             "kelly": 0.01,
             "precio_objetivo": 17200,
-            "razon": "Sin dirección clara -0.29%, precio elevado en USD, esperar catalizador sectorial"
+            "razon": "Neutral, sin tendencia definida. Electrónica con incertidumbre arancelaria."
         },
         {
             "activo": "Apple (AAPL)",
-            "tipo": "MANTENER",
-            "probabilidad": 55,
-            "edge": 0.04,
+            "tipo": "COMPRA",
+            "probabilidad": 62,
+            "edge": 0.06,
             "kelly": 0.02,
-            "precio_objetivo": 310.0,
-            "razon": "Variación mínima -0.19%, cerca de máximos, soporte USD 290, esperar pullback para entry"
+            "precio_objetivo": 315,
+            "razon": "Tendencia alcista sostenida. Cerca de máximos, momentum positivo post-WWDC."
         },
         {
             "activo": "Microsoft (MSFT)",
             "tipo": "COMPRA",
-            "probabilidad": 64,
-            "edge": 0.08,
-            "kelly": 0.03,
-            "precio_objetivo": 405.0,
-            "razon": "Caída -2.10% genera oportunidad, soporte fuerte en USD 380, reversión probable"
+            "probabilidad": 60,
+            "edge": 0.05,
+            "kelly": 0.02,
+            "precio_objetivo": 400,
+            "razon": "Cloud + AI como drivers. Consolidando cerca de resistencia, quiebre de 385 habilita 400."
         },
         {
             "activo": "Google (GOOGL)",
             "tipo": "COMPRA",
-            "probabilidad": 63,
-            "edge": 0.07,
+            "probabilidad": 64,
+            "edge": 0.08,
             "kelly": 0.03,
-            "precio_objetivo": 385.0,
-            "razon": "Retroceso -2.23% desde máximos, soporte en USD 360, ratio riesgo/retorno favorable"
+            "precio_objetivo": 390,
+            "razon": "AI y búsqueda impulsan. Suba +1.17% confirma tendencia, soporte sólido en 355."
         },
         {
             "activo": "Amazon (AMZN)",
             "tipo": "COMPRA",
-            "probabilidad": 62,
-            "edge": 0.07,
+            "probabilidad": 66,
+            "edge": 0.09,
             "kelly": 0.03,
-            "precio_objetivo": 255.0,
-            "razon": "Corrección -2.36% ofrece entrada, soporte clave USD 235, fundamentals sólidos"
+            "precio_objetivo": 260,
+            "razon": "Momentum fuerte +2.9%. AWS y retail sólidos. Quiebre alcista confirmado."
         },
         {
             "activo": "NVIDIA (NVDA)",
-            "tipo": "MANTENER",
-            "probabilidad": 56,
-            "edge": 0.05,
-            "kelly": 0.02,
-            "precio_objetivo": 220.0,
-            "razon": "Leve baja -0.32%, consolidación post-rally IA, esperar quiebre de USD 210 para sumar"
+            "tipo": "COMPRA",
+            "probabilidad": 67,
+            "edge": 0.1,
+            "kelly": 0.04,
+            "precio_objetivo": 230,
+            "razon": "Líder AI con +2.95%. Demanda de GPUs insaciable. Soporte en 195, objetivo 230."
         },
         {
             "activo": "MercadoLibre (MELI)",
             "tipo": "COMPRA",
-            "probabilidad": 66,
-            "edge": 0.09,
-            "kelly": 0.04,
-            "precio_objetivo": 1780.0,
-            "razon": "Positiva +0.41% contra mercado rojo, fortaleza relativa, exposición LatAm premium"
+            "probabilidad": 63,
+            "edge": 0.07,
+            "kelly": 0.03,
+            "precio_objetivo": 1750,
+            "razon": "Fintech + ecommerce LatAm. Consolidando en máximos, brecha mínima favorece CEDEAR."
         },
         {
             "activo": "Meta (META)",
             "tipo": "COMPRA",
-            "probabilidad": 65,
-            "edge": 0.1,
-            "kelly": 0.04,
-            "precio_objetivo": 620.0,
-            "razon": "Caída fuerte -3.25% genera sobreventa intradiaria, soporte USD 570, rebote técnico"
+            "probabilidad": 64,
+            "edge": 0.08,
+            "kelly": 0.03,
+            "precio_objetivo": 610,
+            "razon": "AI y publicidad digital fuertes. Tendencia alcista intacta, soporte en 555."
         },
         {
             "activo": "Tesla (TSLA)",
             "tipo": "MANTENER",
-            "probabilidad": 50,
-            "edge": 0.02,
+            "probabilidad": 52,
+            "edge": 0.03,
             "kelly": 0.01,
-            "precio_objetivo": 415.0,
-            "razon": "Baja -0.83%, alta volatilidad, riesgo político/reputacional, esperar definición"
+            "precio_objetivo": 420,
+            "razon": "Sobrevaluada por fundamentals. Volatilidad alta, riesgo político de Musk. Cautela."
         },
         {
             "activo": "Bitcoin (BTC)",
             "tipo": "MANTENER",
-            "probabilidad": 57,
-            "edge": 0.05,
+            "probabilidad": 55,
+            "edge": 0.04,
             "kelly": 0.02,
-            "precio_objetivo": 70000.0,
-            "razon": "Consolidando en USD 65700, soporte USD 63000, resistencia USD 68000, sin definición"
+            "precio_objetivo": 67000,
+            "razon": "Corrección -2.15% dentro de rango. Soporte clave en 60000, resistencia en 68000."
         },
         {
             "activo": "Ethereum (ETH)",
-            "tipo": "COMPRA",
-            "probabilidad": 60,
+            "tipo": "VENTA",
+            "probabilidad": 58,
             "edge": 0.06,
-            "kelly": 0.03,
-            "precio_objetivo": 1950.0,
-            "razon": "Subvaluado en ratio ETH/BTC, soporte USD 1700, potencial recuperación hacia 1950"
+            "kelly": 0.02,
+            "precio_objetivo": 1550,
+            "razon": "Debilidad relativa vs BTC, -3%. Pérdida de soporte de 1700, riesgo de caída a 1550."
         },
         {
             "activo": "Tether (USDT)",
@@ -643,73 +643,73 @@
             "edge": 0.0,
             "kelly": 0.0,
             "precio_objetivo": 1.0,
-            "razon": "Stablecoin, peg estable en 0.999, sin señal de trading, útil como reserva de liquidez"
+            "razon": "Stablecoin, peg estable. Sin señal de trading, útil como refugio de liquidez."
         },
         {
             "activo": "Solana (SOL)",
-            "tipo": "COMPRA",
-            "probabilidad": 61,
+            "tipo": "VENTA",
+            "probabilidad": 60,
             "edge": 0.07,
             "kelly": 0.03,
-            "precio_objetivo": 82.0,
-            "razon": "Positiva +0.44% vs mercado, ecosistema en crecimiento, soporte USD 70, objetivo 82"
+            "precio_objetivo": 60,
+            "razon": "Mayor caída del panel cripto -3.75%. Quiebre bajista, siguiente soporte en 60 USD."
         },
         {
             "activo": "BNB",
             "tipo": "MANTENER",
-            "probabilidad": 54,
-            "edge": 0.03,
+            "probabilidad": 50,
+            "edge": 0.02,
             "kelly": 0.01,
-            "precio_objetivo": 630.0,
-            "razon": "Leve baja -0.32%, rango lateral USD 580-630, sin catalizador, esperar quiebre"
+            "precio_objetivo": 560,
+            "razon": "Corrección general cripto. Soporte en 550, sin catalizador propio. Esperar señal."
         },
         {
             "activo": "XRP",
-            "tipo": "MANTENER",
-            "probabilidad": 53,
-            "edge": 0.03,
-            "kelly": 0.01,
-            "precio_objetivo": 1.3,
-            "razon": "Estable +0.04%, lateraliza entre USD 1.10-1.30, depende de resolución regulatoria"
+            "tipo": "VENTA",
+            "probabilidad": 58,
+            "edge": 0.06,
+            "kelly": 0.02,
+            "precio_objetivo": 1.0,
+            "razon": "Debilidad persistente -3.16%. Riesgo regulatorio latente, soporte en 1.05 vulnerable."
         },
         {
             "activo": "AL30",
             "tipo": "COMPRA",
-            "probabilidad": 66,
-            "edge": 0.09,
+            "probabilidad": 68,
+            "edge": 0.1,
             "kelly": 0.04,
-            "precio_objetivo": 82000,
-            "razon": "Corrección -1.26% con brecha 2.1%, yield atractivo, riesgo país comprimido"
+            "precio_objetivo": 83000,
+            "razon": "Brecha 1% y carry atractivo. Riesgo país comprimiendo, upside en paridad hacia 70 USD."
         },
         {
             "activo": "GD30",
             "tipo": "COMPRA",
-            "probabilidad": 65,
-            "edge": 0.08,
-            "kelly": 0.03,
-            "precio_objetivo": 84500,
-            "razon": "Retroceso -1.46% ofrece entrada, ley NY protege, paridad USD 69.6 atractiva"
+            "probabilidad": 70,
+            "edge": 0.11,
+            "kelly": 0.05,
+            "precio_objetivo": 85500,
+            "razon": "Ley NY preferible. Suba +1.37% confirma demanda. Convergencia a paridad 72-73 USD."
         },
         {
             "activo": "AL35",
             "tipo": "COMPRA",
-            "probabilidad": 64,
-            "edge": 0.08,
+            "probabilidad": 66,
+            "edge": 0.09,
             "kelly": 0.03,
-            "precio_objetivo": 83000,
-            "razon": "Baja -1.71% mayor del tramo, mayor duration captura upside si riesgo país baja"
+            "precio_objetivo": 83500,
+            "razon": "Duration más larga ofrece mayor upside si riesgo país sigue bajando. Carry sólido."
         },
         {
             "activo": "GD35",
             "tipo": "COMPRA",
-            "probabilidad": 65,
-            "edge": 0.09,
+            "probabilidad": 69,
+            "edge": 0.1,
             "kelly": 0.04,
-            "precio_objetivo": 83500,
-            "razon": "Caída -1.32%, ley extranjera + duration larga, mejor risk/reward de la curva"
+            "precio_objetivo": 84500,
+            "razon": "Mejor jurisdicción + duration. Flujo favorable con brecha mínima, objetivo paridad 72."
         }
     ],
-    "fecha_senales": "17/06/2026 13:01",
+    "fecha_senales": "19/06/2026 09:01",
     "resumen_mercado": null,
     "resumen_diario": null
 }
